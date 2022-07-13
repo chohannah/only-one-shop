@@ -12,6 +12,10 @@
     overflow: hidden;
     background-color: rgba($primary, 0.12);
 
+    &:hover {
+      opacity: 0.6;
+    }
+
     img {
       display: block;
       width: 100%;
@@ -31,6 +35,10 @@
       padding: 8px 10px;
       border: 1px solid $primary;
       border-radius: 2px;
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 
