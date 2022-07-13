@@ -34,20 +34,23 @@
     color: $color;
   }
 
-  @if ($size: 19) {
+  @if ($size == 19) {
     @include text-style-19;
   }
 
-  @if ($size: 17) {
+  @if ($size == 17) {
     @include text-style-17;
   }
-  @if ($size: 14) {
+
+  @if ($size == 14) {
     @include text-style-14;
   }
-  @if ($size: 12) {
+
+  @if ($size == 12) {
     @include text-style-12;
   }
-  @if ($size: 11) {
+
+  @if ($size == 11) {
     @include text-style-11;
   }
 }
