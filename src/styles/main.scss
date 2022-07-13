@@ -9,3 +9,6 @@
 @import "./mixins/responsive";
 @import "./mixins/text-styles";
 @import "./mixins/flexbox";
+
+@import "../components/category-card/category-card.styles.scss";
+@import "../components/directory/directory.styles.scss";
