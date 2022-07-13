@@ -1,4 +1,4 @@
-import CategoryCard from "./components/category-card/category-card.component";
+import Directory from "./components/directory/directory.components";
 
 const App = () => {
   const categories = [
@@ -16,13 +16,7 @@ const App = () => {
     },
   ];
 
-  return (
-    <main className="categories-group">
-      {categories.map((category) => (
-        <CategoryCard key={category.id} category={category} />
-      ))}
-    </main>
-  );
+  return <Directory categories={categories} />;
 };
 
 export default App;
