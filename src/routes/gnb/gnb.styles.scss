@@ -1,0 +1,44 @@
+.gnb {
+  @include flex(between);
+  margin-bottom: 35px;
+  border-bottom: 1px solid $primary;
+
+  &-left {
+    @include flex(start);
+    margin: 15px 0;
+    padding-left: 22px;
+    overflow: hidden;
+    max-width: 150px;
+    height: 35px;
+
+    .logo-wrapper {
+      @include flex;
+      height: 100%;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-right {
+    @include flex(end);
+
+    .user,
+    .cart,
+    .menu {
+      @include flex;
+      padding: 10px 11px;
+    }
+
+    .icon-user,
+    .icon-cart,
+    .icon-menu {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
