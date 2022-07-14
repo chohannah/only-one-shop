@@ -1,6 +1,5 @@
 .directory-group {
   $category-card-padding-left: 30px;
-  $desktop-additional-side-padding: 18px;
 
   @include column-flex;
   flex-wrap: wrap;
@@ -12,9 +11,5 @@
     justify-content: center;
     margin-left: -#{calc($category-card-padding-left / 2)};
     padding: 0 55px;
-  }
-
-  @include responsive(D) {
-    padding: 0 (55px + $desktop-additional-side-padding);
   }
 }
