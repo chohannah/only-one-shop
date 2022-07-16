@@ -1,7 +1,12 @@
 import { useState } from "react";
 
+import {
+  createAuthWithEmailAndPassword,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase/firebase.utils";
+
 const defaultFormFields = {
-  nickname: "",
+  displayName: "",
   email: "",
   password: "",
   confirmPassword: "",
@@ -9,9 +14,35 @@ const defaultFormFields = {
 
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { nickname, email, password, confirmPassword } = formFields;
+  const { displayName, email, password, confirmPassword } = formFields;
 
   console.log(formFields);
+
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("oops! your password don't math. please try again.");
+      return;
+    }
+
+    try {
+      const { user } = await createAuthWithEmailAndPassword(email, password);
+      await createUserDocumentFromAuth(user, { displayName });
+      resetFormFields();
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        alert("uh-oh, the email is already exists.");
+      } else {
+        console.log("email creation encountered error");
+      }
+      console.log("user creation an encountered error", error);
+    }
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -20,17 +51,17 @@ const SignUpForm = () => {
   };
 
   return (
-    <div>
+    <section>
       <h1>type your email and password</h1>
 
-      <form onSubmit={() => {}}>
-        <label>Nickname</label>
+      <form onSubmit={handleSubmit}>
+        <label>Display Name</label>
         <input
           type="text"
           required
           onChange={handleChange}
-          name="nickname"
-          value={nickname}
+          name="displayName"
+          value={displayName}
         />
 
         <label>Email</label>
@@ -62,7 +93,7 @@ const SignUpForm = () => {
 
         <button type="submit">Sign up</button>
       </form>
-    </div>
+    </section>
   );
 };
 
