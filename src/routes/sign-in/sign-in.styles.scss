@@ -1,0 +1,23 @@
+.sign-in {
+  @include column-flex(start, center);
+  margin: 0 22px 55px 22px;
+
+  &-header {
+    @include text-style(35, $primary);
+    margin-bottom: 17.5px;
+    width: 100%;
+    text-align: center;
+    font-weight: $font-main-weight;
+  }
+
+  &-google {
+    @include flex;
+    margin-bottom: 35px;
+    width: 100%;
+  }
+
+  @include responsive(T) {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

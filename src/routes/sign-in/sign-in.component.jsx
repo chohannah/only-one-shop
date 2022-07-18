@@ -12,11 +12,16 @@ const SignIn = () => {
   };
 
   return (
-    <div>
-      <h1>this is sign in page</h1>
-      <button onClick={logGoogleUser}>Sign in with Google popup</button>
+    <section className="sign-in">
+      <h2 className="sign-in-header">Sign in</h2>
+
+      <article className="sign-in-google">
+        <button className="sign-in-button" onClick={logGoogleUser}>
+          Sign in with Google
+        </button>
+      </article>
       <SignUpForm />
-    </div>
+    </section>
   );
 };
 
