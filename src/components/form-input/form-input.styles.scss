@@ -1,13 +1,12 @@
 %shrink-label {
+  @include text-style(12, $primary);
   top: -20px;
-  font-size: 12px;
-  color: $primary;
   opacity: 1;
 }
 
 .form-input {
   position: relative;
-  margin-bottom: 19.4px;
+  margin-bottom: 42.4px;
 
   &-input {
     @include text-style(14, $primary);
@@ -33,7 +32,7 @@
   }
 
   &-label {
-    @include text-style(17, $primary);
+    @include text-style(14, $primary);
     position: absolute;
     top: 9px;
     left: 5px;
