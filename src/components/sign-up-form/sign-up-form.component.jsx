@@ -53,10 +53,10 @@ const SignUpForm = () => {
   };
 
   return (
-    <section>
-      <h1>Create account</h1>
+    <article className="sign-up-form">
+      <h3 className="sign-up-form-header">Create account with email</h3>
 
-      <form onSubmit={handleSubmit}>
+      <form className="sign-up-form-form" onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
           type="text"
@@ -93,9 +93,11 @@ const SignUpForm = () => {
           value={confirmPassword}
         />
 
-        <button type="submit">Sign up</button>
+        <button className="sign-up-form-button" type="submit">
+          Sign up
+        </button>
       </form>
-    </section>
+    </article>
   );
 };
 

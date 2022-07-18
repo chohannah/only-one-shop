@@ -1,0 +1,11 @@
+.sign-up-form {
+  width: 100%;
+
+  &-header {
+    @include text-style(35, $primary);
+    margin-bottom: 35.5px;
+    width: 100%;
+    text-align: center;
+    font-weight: $font-main-weight;
+  }
+}
