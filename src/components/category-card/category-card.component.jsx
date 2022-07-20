@@ -1,5 +1,10 @@
+import { Link } from "react-router-dom";
+
+import Button from "../button/button.component";
+
 const CategoryCard = ({ category }) => {
   const { image, title } = category;
+  const titleInUrl = title.toLowerCase();
 
   return (
     <article className="category-card">
@@ -13,7 +18,9 @@ const CategoryCard = ({ category }) => {
 
       <div className="category-contents">
         <p className="title">{title}</p>
-        <button className="cta">shop now</button>
+        <Link className="cta" to={`/${titleInUrl}`}>
+          <Button buttonType="outlined">shop now</Button>
+        </Link>
       </div>
     </article>
   );

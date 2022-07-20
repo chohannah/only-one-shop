@@ -29,17 +29,6 @@
       @include text-style(17, $primary);
       margin-bottom: 17.5px;
     }
-
-    .cta {
-      @include text-style(12, $primary);
-      padding: 8px 10px;
-      border: 1px solid $primary;
-      border-radius: 2px;
-
-      &:hover {
-        opacity: 0.6;
-      }
-    }
   }
 
   @include responsive(T) {
