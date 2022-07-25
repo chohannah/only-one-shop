@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
 
 import {
   createAuthWithEmailAndPassword,
@@ -54,7 +56,7 @@ const SignUpForm = () => {
 
   return (
     <article className="sign-up-form">
-      <h3 className="sign-up-form-header">Create account with email</h3>
+      <h3 className="sign-up-form-header">Create Account</h3>
 
       <form className="sign-up-form-form" onSubmit={handleSubmit}>
         <FormInput
@@ -93,9 +95,13 @@ const SignUpForm = () => {
           value={confirmPassword}
         />
 
-        <button className="sign-up-form-button" type="submit">
-          Sign up
-        </button>
+        <Button buttonType="filled" buttonSize="md" type="submit">
+          create
+        </Button>
+
+        <Link className="link-to-login" to="/login">
+          Already have an account?
+        </Link>
       </form>
     </article>
   );
