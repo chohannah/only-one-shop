@@ -41,4 +41,8 @@
       height: 20px;
     }
   }
+
+  @include responsive(T) {
+    margin-bottom: 55px;
+  }
 }
