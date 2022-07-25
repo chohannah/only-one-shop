@@ -19,14 +19,14 @@ const GNB = () => {
           <nav className="gnb-nav sm-hidden">
             <h2 className="visually-hidden">menu</h2>
 
-            <ul className="gnb-nav-list">
-              <Link className="gnb-nav-item" to="/all">
+            <ul className="nav-list">
+              <Link className="nav-list-item" to="/all">
                 All
               </Link>
-              <Link className="gnb-nav-item" to="/clothing">
+              <Link className="nav-list-item" to="/clothing">
                 Clothing
               </Link>
-              <Link className="gnb-nav-item" to="/accessories">
+              <Link className="nav-list-item" to="/accessories">
                 Accessories
               </Link>
             </ul>
