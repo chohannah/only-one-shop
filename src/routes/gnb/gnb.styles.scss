@@ -1,7 +1,7 @@
 .gnb {
   @include flex(between);
   margin-bottom: 35px;
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $border;
 
   &-left {
     @include flex(start);
@@ -25,6 +25,7 @@
 
   &-right {
     @include flex(end);
+    padding-right: 11px;
 
     .user,
     .cart,
@@ -44,5 +45,30 @@
 
   @include responsive(T) {
     margin-bottom: 55px;
+    padding: 0 55px;
+    height: 77px;
+
+    &-nav {
+      @include flex;
+      width: 50%;
+      height: 100%;
+
+      .nav-list {
+        @include flex;
+        height: 100%;
+
+        .nav-list-item {
+          padding: 12px;
+
+          &:not(:last-child) {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    &-right {
+      max-width: 150px;
+    }
   }
 }
