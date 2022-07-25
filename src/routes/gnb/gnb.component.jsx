@@ -39,7 +39,7 @@ const GNB = () => {
             <Link className="cart" to="/cart">
               <CartIcon className="icon-cart" />
             </Link>
-            <Link className="menu" to="/menu">
+            <Link className="menu sm-only" to="/menu">
               <MenuIcon className="icon-menu" />
             </Link>
           </div>
