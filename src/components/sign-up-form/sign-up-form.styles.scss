@@ -14,7 +14,7 @@
     @include column-flex;
   }
 
-  .link-to-login {
+  .link-to-log-in {
     @include text-style(14, $primary);
     margin-top: 32px;
     font-style: italic;
