@@ -1,11 +1,23 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+
 import { ReactComponent as OpensLogo } from "../../assets/logo.svg";
 import { ReactComponent as UserIcon } from "../../assets/icon-user.svg";
 import { ReactComponent as CartIcon } from "../../assets/icon-cart.svg";
 import { ReactComponent as MenuIcon } from "../../assets/icon-menu.svg";
+import { ReactComponent as LogInIcon } from "../../assets/icon-login.svg";
+import { ReactComponent as LogOutIcon } from "../../assets/icon-logout.svg";
+
+import { UserContext } from "../../contexts/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const GNB = () => {
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const signOutHandler = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  };
+
   return (
     <Fragment>
       <header className="gnb">
@@ -32,9 +44,16 @@ const GNB = () => {
         </nav>
 
         <div className="gnb-right">
-          <Link className="user" to="/log-in">
-            <UserIcon className="icon-user" />
-          </Link>
+          {currentUser ? (
+            <div className="logout">
+              <LogOutIcon className="icon-logout" onClick={signOutHandler} />
+            </div>
+          ) : (
+            <Link className="login" to="/log-in">
+              <LogInIcon className="icon-login" />
+            </Link>
+          )}
+
           <Link className="cart" to="/cart">
             <CartIcon className="icon-cart" />
           </Link>
