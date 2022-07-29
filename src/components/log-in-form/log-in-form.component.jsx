@@ -35,7 +35,19 @@ const LogInForm = () => {
       await signInAuthWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-      console.log("user sign in failed", error);
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert(
+            `Oops! this password doesn't match with the email. 
+            Please try another password.`
+          );
+          break;
+        case "auth/user-not-found":
+          alert(`Uh-oh, this email doesn't exit.`);
+          break;
+        default:
+          console.log(error);
+      }
     }
   };
 
