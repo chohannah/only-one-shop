@@ -5,6 +5,7 @@ import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
 import {
+  signInWithGooglePopup,
   createAuthWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
@@ -20,7 +21,10 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
+  const signUpWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    await createUserDocumentFromAuth(user);
+  };
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -103,6 +107,16 @@ const SignUpForm = () => {
           Already have an account?
         </Link>
       </form>
+
+      <div className="sign-up-form-divider">
+        <span className="text">or</span>
+      </div>
+
+      <div className="sign-up-form-google">
+        <button className="sign-up-button" onClick={signUpWithGoogle}>
+          Continue with Google
+        </button>
+      </div>
     </article>
   );
 };
