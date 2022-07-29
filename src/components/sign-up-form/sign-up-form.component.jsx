@@ -99,7 +99,7 @@ const SignUpForm = () => {
           create
         </Button>
 
-        <Link className="link-to-login" to="/login">
+        <Link className="link-to-log-in" to="/log-in">
           Already have an account?
         </Link>
       </form>

@@ -32,7 +32,7 @@ const GNB = () => {
         </nav>
 
         <div className="gnb-right">
-          <Link className="user" to="/login">
+          <Link className="user" to="/log-in">
             <UserIcon className="icon-user" />
           </Link>
           <Link className="cart" to="/cart">
