@@ -1,0 +1,22 @@
+.log-in-form {
+  width: 100%;
+  margin-bottom: 32px;
+
+  &-header {
+    @include text-style(35, $primary);
+    margin-bottom: 35.5px;
+    width: 100%;
+    text-align: center;
+    font-weight: $font-main-weight;
+  }
+
+  &-form {
+    @include column-flex;
+  }
+
+  .link-to-sign-up {
+    @include text-style(14, $primary);
+    margin-top: 32px;
+    font-style: italic;
+  }
+}
