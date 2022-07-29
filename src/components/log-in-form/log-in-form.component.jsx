@@ -6,46 +6,36 @@ import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
 import {
-  createAuthWithEmailAndPassword,
-  createUserDocumentFromAuth,
+  signInWithGooglePopup,
+  signInAuthWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
 const defaultFormFields = {
-  displayName: "",
   email: "",
   password: "",
-  confirmPassword: "",
 };
 
 const LogInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { displayName, email, password, confirmPassword } = formFields;
-
-  console.log(formFields);
+  const { email, password } = formFields;
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    await signInWithGooglePopup(user);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (password !== confirmPassword) {
-      alert("oops! your password don't math. please try again.");
-      return;
-    }
-
     try {
-      const { user } = await createAuthWithEmailAndPassword(email, password);
-      await createUserDocumentFromAuth(user, { displayName });
+      await signInAuthWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-      if (error.code === "auth/email-already-in-use") {
-        alert("uh-oh, the email is already exists.");
-      } else {
-        console.log("email creation encountered error");
-      }
-      console.log("user creation an encountered error", error);
+      console.log("user sign in failed", error);
     }
   };
 
@@ -60,15 +50,6 @@ const LogInForm = () => {
       <h3 className="log-in-form-header">Log In</h3>
 
       <form className="log-in-form-form" onSubmit={handleSubmit}>
-        <FormInput
-          label="Display Name"
-          type="text"
-          required
-          onChange={handleChange}
-          name="displayName"
-          value={displayName}
-        />
-
         <FormInput
           label="Email"
           type="email"
@@ -87,23 +68,28 @@ const LogInForm = () => {
           value={password}
         />
 
-        <FormInput
-          label="Confirm Password"
-          type="password"
-          required
-          onChange={handleChange}
-          name="confirmPassword"
-          value={confirmPassword}
-        />
-
         <Button buttonType="filled" buttonSize="md" type="submit">
-          create
+          log in
         </Button>
 
         <Link className="link-to-sign-up" to="/sign-up">
           Need a new account?
         </Link>
       </form>
+
+      <div className="log-in-form-divider">
+        <span className="text">or</span>
+      </div>
+
+      <div className="log-in-form-google">
+        <button
+          className="log-in-button"
+          type="button"
+          onClick={signInWithGoogle}
+        >
+          Continue with Google
+        </button>
+      </div>
     </article>
   );
 };
