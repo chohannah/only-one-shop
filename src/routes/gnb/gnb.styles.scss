@@ -29,14 +29,18 @@
 
     .user,
     .cart,
-    .menu {
+    .menu,
+    .login,
+    .logout {
       @include flex;
       padding: 10px 11px;
     }
 
     .icon-user,
     .icon-cart,
-    .icon-menu {
+    .icon-menu,
+    .icon-login,
+    .icon-logout {
       display: block;
       width: 20px;
       height: 20px;
