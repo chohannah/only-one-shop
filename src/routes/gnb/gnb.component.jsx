@@ -12,11 +12,7 @@ import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const GNB = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-  const signOutHandler = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  };
+  const { currentUser } = useContext(UserContext);
 
   return (
     <Fragment>
@@ -46,7 +42,7 @@ const GNB = () => {
         <div className="gnb-right">
           {currentUser ? (
             <div className="logout">
-              <LogOutIcon className="icon-logout" onClick={signOutHandler} />
+              <LogOutIcon className="icon-logout" onClick={signOutUser} />
             </div>
           ) : (
             <Link className="login" to="/log-in">
