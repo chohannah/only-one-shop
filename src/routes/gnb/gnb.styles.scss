@@ -1,4 +1,6 @@
 .gnb {
+  $badge-size: 16px;
+
   @include flex(between);
   margin-bottom: 35px;
   border-bottom: 1px solid $border;
@@ -44,6 +46,27 @@
       display: block;
       width: 20px;
       height: 20px;
+    }
+
+    .cart {
+      position: relative;
+
+      &-count {
+        position: absolute;
+        top: 3px;
+        right: 0;
+        display: block;
+        min-width: $badge-size;
+        height: $badge-size;
+        padding: 0 4px;
+        text-align: center;
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: -0.01em;
+        color: $primary-text;
+        border-radius: calc($badge-size / 2);
+        background-color: $primary;
+      }
     }
   }
 
