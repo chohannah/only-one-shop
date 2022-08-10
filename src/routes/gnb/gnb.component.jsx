@@ -2,7 +2,7 @@ import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import { ReactComponent as OpensLogo } from "../../assets/logo.svg";
-import { ReactComponent as UserIcon } from "../../assets/icon-user.svg";
+// import { ReactComponent as UserIcon } from "../../assets/icon-user.svg";
 import { ReactComponent as CartIcon } from "../../assets/icon-cart.svg";
 import { ReactComponent as MenuIcon } from "../../assets/icon-menu.svg";
 import { ReactComponent as LogInIcon } from "../../assets/icon-login.svg";
@@ -50,9 +50,10 @@ const GNB = () => {
             </Link>
           )}
 
-          <Link className="cart" to="/cart">
+          <button type="button" className="cart" to="/cart">
             <CartIcon className="icon-cart" />
-          </Link>
+            <span className="cart-count">8</span>
+          </button>
           <Link className="menu sm-only" to="/menu">
             <MenuIcon className="icon-menu" />
           </Link>
