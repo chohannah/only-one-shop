@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { CartContext } from "../../../contexts/cart.context";
 
@@ -10,6 +10,15 @@ import { ReactComponent as CloseIcon } from "../../../assets/icon-close.svg";
 
 const CartDropdownContent = () => {
   const { cartItems } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const goToCartHandler = () => {
+    navigate("/cart");
+  };
+
+  const goToAllHandler = () => {
+    navigate("/shop");
+  };
 
   return (
     <aside className="cart-dropdown-content">
@@ -27,16 +36,14 @@ const CartDropdownContent = () => {
       </ul>
 
       <footer className="footer">
-        <Link className="link-to-cart" to="/cart">
-          <Button buttonType="outlined" buttonSize="md">
-            view cart
-            <span className="count">(2)</span>
-          </Button>
-        </Link>
+        <Button buttonType="outlined" buttonSize="md" onClick={goToCartHandler}>
+          view cart
+          <span className="count">(2)</span>
+        </Button>
 
-        <Link className="link-to-all" to="/all">
+        <button className="link-to-all" onClick={goToAllHandler}>
           Continue shopping
-        </Link>
+        </button>
       </footer>
     </aside>
   );
