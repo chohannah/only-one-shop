@@ -1,11 +1,11 @@
 import { useContext } from "react";
 
-import { ReactComponent as CartIcon } from "../../../assets/icon-cart.svg";
+import { ReactComponent as CartIcon } from "../../assets/icon-cart.svg";
 
 import CartDropdownContent from "../cart-dropdown-content/cart-dropdown-content.component.jsx";
-import Button from "../../../components/button/button.component";
+import Button from "../button/button.component";
 
-import { CartContext } from "../../../contexts/cart.context";
+import { CartContext } from "../../contexts/cart.context";
 
 const CartDropdown = () => {
   const { isCartOpen, setIsCartOpen } = useContext(CartContext);
