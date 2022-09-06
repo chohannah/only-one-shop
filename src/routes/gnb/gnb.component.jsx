@@ -8,7 +8,10 @@ import { ReactComponent as MenuIcon } from "../../assets/icon-menu.svg";
 import { ReactComponent as LogInIcon } from "../../assets/icon-login.svg";
 import { ReactComponent as LogOutIcon } from "../../assets/icon-logout.svg";
 
+import GnbCartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+
 import { UserContext } from "../../contexts/user.context";
+
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const GNB = () => {
@@ -27,7 +30,7 @@ const GNB = () => {
           <h2 className="visually-hidden">menu</h2>
 
           <ul className="nav-list">
-            <Link className="nav-list-item" to="/all">
+            <Link className="nav-list-item" to="/shop">
               All
             </Link>
             <Link className="nav-list-item" to="/clothing">
@@ -50,10 +53,12 @@ const GNB = () => {
             </Link>
           )}
 
-          <button type="button" className="cart" to="/cart">
+          <Link className="cart sm-only" to="/cart">
             <CartIcon className="icon-cart" />
             <span className="cart-count">8</span>
-          </button>
+          </Link>
+          <GnbCartDropdown />
+
           <Link className="menu sm-only" to="/menu">
             <MenuIcon className="icon-menu" />
           </Link>
