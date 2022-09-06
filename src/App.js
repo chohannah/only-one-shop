@@ -4,6 +4,7 @@ import GNB from "./routes/gnb/gnb.component";
 import SignUp from "./routes/sign-up/sign-up.component";
 import LogIn from "./routes/log-in/log-in.component";
 import Shop from "./routes/shop/shop.component";
+import Cart from "./routes/cart/cart.component";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="log-in" element={<LogIn />}></Route>
         <Route path="sign-up" element={<SignUp />}></Route>
         <Route path="shop" element={<Shop />}></Route>
+        <Route path="cart" element={<Cart />}></Route>
       </Route>
     </Routes>
   );
