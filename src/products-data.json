@@ -2,12 +2,7 @@
   {
     "id": 1,
     "name": "Big Tote",
-    "currency": {
-      "usd": "$"
-    },
-    "price": {
-      "usd": 35.0
-    },
+    "price": 35.0,
     "is-on-sale": true,
     "images": {
       "img1": "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/Resized1_1080x.png?v=1645672886",
@@ -27,12 +22,7 @@
   {
     "id": 2,
     "name": "Crewneck White",
-    "currency": {
-      "usd": "$"
-    },
-    "price": {
-      "usd": 80.0
-    },
+    "price": 80.0,
     "is-on-sale": true,
     "images": {
       "img1": "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/L1020172-Edit_1024x1024@2x.jpg?v=1661198169",
@@ -58,12 +48,7 @@
   {
     "id": 3,
     "name": "Crewneck Black",
-    "currency": {
-      "usd": "$"
-    },
-    "price": {
-      "usd": 80.0
-    },
+    "price": 80.0,
     "is-on-sale": true,
     "images": {
       "img1": "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/ScreenShot2021-09-02at10.56.06AM_1024x1024@2x.png?v=1643152916",
@@ -89,12 +74,7 @@
   {
     "id": 4,
     "name": "Long Sleeve",
-    "currency": {
-      "usd": "$"
-    },
-    "price": {
-      "usd": 45.0
-    },
+    "price": 45.0,
     "is-on-sale": true,
     "images": {
       "img1": "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/D32A9823-Edit_1024x1024@2x.jpg?v=1661199556",
@@ -122,12 +102,7 @@
   {
     "id": 5,
     "name": "Open Water Bottle",
-    "currency": {
-      "usd": "$"
-    },
-    "price": {
-      "usd": 30.0
-    },
+    "price": 30.0,
     "is-on-sale": true,
     "images": {
       "img1": "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/ScreenShot2021-09-02at11.48.34AM_1024x1024@2x.png?v=1643152828",
@@ -141,12 +116,7 @@
   {
     "id": 6,
     "name": "Shorts",
-    "currency": {
-      "usd": "$"
-    },
-    "price": {
-      "usd": 45.0
-    },
+    "price": 45.0,
     "is-on-sale": true,
     "images": {
       "img1": "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/D32A0921_1024x1024@2x.jpg?v=1661199773",
