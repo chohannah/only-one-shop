@@ -36,7 +36,7 @@ const Cart = () => {
         })}
 
         <div className="cart-content-footer">
-          <strong className="price-total">${cartTotal}USD</strong>
+          <strong className="price-total">${cartTotal} USD</strong>
           <p className="misc">
             Taxes and{" "}
             <strong onClick={handleNavigateToShipping}>shipping</strong>{" "}
