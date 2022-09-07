@@ -1,6 +1,6 @@
 const SHOP_DATA = [
   {
-    category: "Clothings",
+    title: "Clothings",
     items: [
       {
         id: 1,
@@ -118,7 +118,7 @@ const SHOP_DATA = [
     ],
   },
   {
-    cetagory: "Accessories",
+    title: "Accessories",
     items: [
       {
         id: 5,
