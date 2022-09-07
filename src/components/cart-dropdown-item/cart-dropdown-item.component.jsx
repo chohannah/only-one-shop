@@ -1,5 +1,5 @@
 const CartDropdownItem = ({ cartItem }) => {
-  const { name, quantity, currency, price, images } = cartItem;
+  const { name, quantity, price, images } = cartItem;
 
   return (
     <li className="cart-item">
@@ -10,10 +10,7 @@ const CartDropdownItem = ({ cartItem }) => {
       <div className="text-group">
         <div className="left">
           <h3 className="name">{name}</h3>
-          <p className="price">
-            <span className="currency">{currency.usd}</span>
-            {price.usd}
-          </p>
+          <p className="price">${price}</p>
         </div>
 
         <div className="right">

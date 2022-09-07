@@ -4,7 +4,7 @@ import Button from "../button/button.component";
 import { CartContext } from "../../contexts/cart.context";
 
 const ProductCard = ({ product }) => {
-  const { name, currency, price, images } = product;
+  const { name, price, images } = product;
   const { addItemToCart } = useContext(CartContext);
 
   const addProductToCart = () => addItemToCart(product);
@@ -16,10 +16,7 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="text-group">
         <h3 className="name">{name}</h3>
-        <p className="price">
-          <span className="currency">{currency.usd}</span>
-          {price.usd}
-        </p>
+        <p className="price">${price}</p>
       </div>
       <Button buttonType="filled" buttonSize="md" onClick={addProductToCart}>
         Add to cart
