@@ -1,26 +1,33 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Button from "../button/button.component";
 
 const CategoryCard = ({ category }) => {
   const { image, title } = category;
+  const navigate = useNavigate();
   const titleInUrl = title.toLowerCase();
+
+  const handleNavigateToCategory = () => {
+    navigate(`/${titleInUrl}`);
+  };
 
   return (
     <article className="category-card">
       <h1 className="visually-hidden">Category Card</h1>
 
-      <div className="category-image-wrapper">
-        <a className="category-iamge" href="/">
-          <img src={image} alt={`click to open ${title} page`} />
-        </a>
+      <div
+        className="category-image-wrapper"
+        onClick={handleNavigateToCategory}
+      >
+        <img src={image} alt={`click to open ${title} page`} />
       </div>
 
       <div className="category-contents">
         <p className="title">{title}</p>
-        <Link className="cta" to={`/${titleInUrl}`}>
-          <Button buttonType="outlined">shop now</Button>
-        </Link>
+
+        <Button buttonType="outlined" onClick={handleNavigateToCategory}>
+          shop now
+        </Button>
       </div>
     </article>
   );
