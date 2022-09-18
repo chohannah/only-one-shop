@@ -1,4 +1,15 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+
+import { setCurrentUser } from "./store/user/user.action";
+
+import {
+  onAuthStateChangedListener,
+  createUserDocumentFromAuth,
+} from "./utils/firebase/firebase.utils";
+
 import Home from "./routes/home/home.component";
 import GNB from "./routes/gnb/gnb.component";
 import SignUp from "./routes/sign-up/sign-up.component";
@@ -7,6 +18,19 @@ import Shop from "./routes/shop/shop.component";
 import Cart from "./routes/cart/cart.component";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        createUserDocumentFromAuth(user);
+      }
+      dispatch(setCurrentUser(user));
+    });
+
+    return unsubscribe;
+  }, []);
+
   return (
     <Routes>
       <Route path="/" element={<GNB />}>
