@@ -9,7 +9,7 @@ import Button from "../../components/button/button.component";
 import { ReactComponent as CloseIcon } from "../../assets/icon-close.svg";
 
 const CartDropdownContent = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, cartCount } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleNavigateToCart = () => {
@@ -42,7 +42,7 @@ const CartDropdownContent = () => {
           onClick={handleNavigateToCart}
         >
           view cart
-          <span className="count">(2)</span>
+          <span className="count">({cartCount})</span>
         </Button>
 
         <button className="link-to-all" onClick={handleNavigateToShop}>
