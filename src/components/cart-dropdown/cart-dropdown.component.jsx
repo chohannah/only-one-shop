@@ -8,7 +8,7 @@ import Button from "../button/button.component";
 import { CartContext } from "../../contexts/cart.context";
 
 const CartDropdown = () => {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
 
   const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
 
@@ -21,7 +21,7 @@ const CartDropdown = () => {
         onClick={toggleIsCartOpen}
       >
         <CartIcon className="icon-cart" />
-        <span className="cart-count">8</span>
+        <span className="cart-count">{cartCount}</span>
       </Button>
 
       {isCartOpen && <CartDropdownContent />}

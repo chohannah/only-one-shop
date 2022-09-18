@@ -15,7 +15,7 @@ import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const GNB = () => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, cartCount } = useContext(UserContext);
 
   return (
     <Fragment>
@@ -55,7 +55,7 @@ const GNB = () => {
 
           <Link className="cart sm-only" to="/cart">
             <CartIcon className="icon-cart" />
-            <span className="cart-count">8</span>
+            <span className="cart-count">{cartCount}</span>
           </Link>
           <GnbCartDropdown />
 
