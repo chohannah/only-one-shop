@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const addCartItem = (cartItems, productToAdd) => {
   // find if same product exists
@@ -50,12 +49,22 @@ export const CartContext = createContext({
   removeItemFromCart: () => {},
   clearItemFromCart: () => {},
   cartTotal: 0,
+  cartCount: 0,
 });
 
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const newCartCount = cartItems.reduce(
+      (total, cartItem) => total + cartItem.quantity,
+      0
+    );
+    setCartCount(newCartCount);
+  }, [cartItems]);
 
   useEffect(() => {
     const newCartTotal = cartItems.reduce(
@@ -85,6 +94,7 @@ export const CartProvider = ({ children }) => {
     clearItemFromCart,
     cartItems,
     cartTotal,
+    cartCount,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
