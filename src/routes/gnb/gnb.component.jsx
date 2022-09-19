@@ -1,5 +1,6 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { ReactComponent as OpensLogo } from "../../assets/logo.svg";
 // import { ReactComponent as UserIcon } from "../../assets/icon-user.svg";
@@ -11,11 +12,13 @@ import { ReactComponent as LogOutIcon } from "../../assets/icon-logout.svg";
 import GnbCartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
 import { UserContext } from "../../contexts/user.context";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const GNB = () => {
-  const { currentUser, cartCount } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
+  const { cartCount } = useContext(UserContext);
 
   return (
     <Fragment>
@@ -33,10 +36,10 @@ const GNB = () => {
             <Link className="nav-list-item" to="/shop">
               All
             </Link>
-            <Link className="nav-list-item" to="/clothing">
+            <Link className="nav-list-item" to="/shop/clothing">
               Clothing
             </Link>
-            <Link className="nav-list-item" to="/accessories">
+            <Link className="nav-list-item" to="/shop/accessories">
               Accessories
             </Link>
           </ul>
