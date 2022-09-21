@@ -1,4 +1,4 @@
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -11,14 +11,15 @@ import { ReactComponent as LogOutIcon } from "../../assets/icon-logout.svg";
 
 import GnbCartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
-import { UserContext } from "../../contexts/user.context";
 import { selectCurrentUser } from "../../store/user/user.selector";
+
+import { selectCartCount } from "../../store/cart/cart.selector";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const GNB = () => {
   const currentUser = useSelector(selectCurrentUser);
-  const { cartCount } = useContext(UserContext);
+  const cartCount = useSelector(selectCartCount);
 
   return (
     <Fragment>

@@ -1,6 +1,12 @@
-import { useContext } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import { CartContext } from "../../contexts/cart.context";
+import { selectCartItems } from "../../store/cart/cart.selector";
+
+import {
+  addItemToCart,
+  removeItemFromCart,
+  clearItemFromCart,
+} from "../../store/cart/cart.action";
 
 import { ReactComponent as PlusIcon } from "../../assets/icon-plus.svg";
 import { ReactComponent as MinusIcon } from "../../assets/icon-minus.svg";
@@ -8,20 +14,19 @@ import { ReactComponent as CloseIcon } from "../../assets/icon-close.svg";
 
 const CartItem = ({ cartItem }) => {
   const { name, quantity, price, images } = cartItem;
-
-  const { addItemToCart, removeItemFromCart, clearItemFromCart } =
-    useContext(CartContext);
+  const cartItems = useSelector(selectCartItems);
+  const dispatch = useDispatch();
 
   const handleClearItem = () => {
-    clearItemFromCart(cartItem);
+    dispatch(clearItemFromCart(cartItems, cartItem));
   };
 
   const handleRemoveItem = () => {
-    removeItemFromCart(cartItem);
+    dispatch(removeItemFromCart(cartItems, cartItem));
   };
 
   const handleAddItem = () => {
-    addItemToCart(cartItem);
+    dispatch(addItemToCart(cartItems, cartItem));
   };
 
   return (
