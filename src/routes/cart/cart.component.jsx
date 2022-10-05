@@ -7,6 +7,7 @@ import {
 } from "../../store/cart/cart.selector";
 
 import CartItem from "../../components/cart-item/cart-item.component";
+import PaymentForm from "../../components/payment-form/payment-form.component";
 
 const Cart = () => {
   const cartItems = useSelector(selectCartItems);
@@ -38,8 +39,10 @@ const Cart = () => {
         {cartItems.map((cartItem) => {
           return <CartItem key={cartItem.id} cartItem={cartItem} />;
         })}
+      </article>
 
-        <div className="cart-content-footer">
+      <footer className="cart-footer">
+        <div className="cart-footer-total">
           <strong className="price-total">${cartTotal} USD</strong>
           <p className="misc">
             Taxes and{" "}
@@ -47,7 +50,11 @@ const Cart = () => {
             calculated at checkout
           </p>
         </div>
-      </article>
+
+        <div className="cart-footer-payment">
+          <PaymentForm />
+        </div>
+      </footer>
     </section>
   );
 };
