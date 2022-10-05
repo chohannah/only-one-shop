@@ -1,6 +1,12 @@
 import { Fragment } from "react";
 import { Outlet, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { selectCurrentUser } from "../../store/user/user.selector";
+import { signOutStart } from "../../store/user/user.action";
+import { selectCartCount } from "../../store/cart/cart.selector";
+
+import GnbCartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
 import { ReactComponent as OpensLogo } from "../../assets/logo.svg";
 // import { ReactComponent as UserIcon } from "../../assets/icon-user.svg";
@@ -9,17 +15,12 @@ import { ReactComponent as MenuIcon } from "../../assets/icon-menu.svg";
 import { ReactComponent as LogInIcon } from "../../assets/icon-login.svg";
 import { ReactComponent as LogOutIcon } from "../../assets/icon-logout.svg";
 
-import GnbCartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
-
-import { selectCurrentUser } from "../../store/user/user.selector";
-
-import { selectCartCount } from "../../store/cart/cart.selector";
-
-import { signOutUser } from "../../utils/firebase/firebase.utils";
-
 const GNB = () => {
   const currentUser = useSelector(selectCurrentUser);
   const cartCount = useSelector(selectCartCount);
+  const dispatch = useDispatch();
+
+  const signOutUser = dispatch(signOutStart());
 
   return (
     <Fragment>
@@ -48,12 +49,14 @@ const GNB = () => {
 
         <div className="gnb-right">
           {currentUser ? (
-            <div className="logout">
-              <LogOutIcon className="icon-logout" onClick={signOutUser} />
+            <div className="logout" onClick={signOutUser}>
+              <LogOutIcon className="icon-logout" />
+              sign out
             </div>
           ) : (
             <Link className="login" to="/log-in">
               <LogInIcon className="icon-login" />
+              log in
             </Link>
           )}
 
