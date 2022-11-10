@@ -3,11 +3,11 @@ export enum CATEGORIES_ACTION_TYPES {
   FETCH_CATEGORIES_SUCESS = "category/FETCH_CATEGORIES_SUCESS",
   FETCH_CATEGORIES_FAILED = "category/FETCH_CATEGORIES_FAILED",
 }
-export type CateogryItemSizeUnit = {
+export type CategoryItemSizeUnit = {
   inch: string;
 };
 
-export type CateogryItemSizeInch = {
+export type CategoryItemSizeInch = {
   length: Array<string>;
   chest: Array<string>;
   sleeve: Array<string>;
@@ -16,8 +16,8 @@ export type CateogryItemSizeInch = {
 export type CategoryItemSize = {
   type: Array<string>;
   name: Array<string>;
-  inch: CateogryItemSizeInch[];
-  unit: CateogryItemSizeUnit[];
+  inch: CategoryItemSizeInch[];
+  unit: CategoryItemSizeUnit[];
 };
 
 export type CategoryItemImage = {
@@ -32,7 +32,7 @@ export type CategoryItemDescription = {
   desc2?: string;
 };
 
-export type CateogryItem = {
+export type CategoryItem = {
   id: number;
   name: string;
   price: number;
@@ -45,5 +45,5 @@ export type CateogryItem = {
 export type Category = {
   title: string;
   imageUrl: string;
-  items: CateogryItem[];
+  items: CategoryItem[];
 };
