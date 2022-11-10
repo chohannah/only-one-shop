@@ -18,7 +18,7 @@
   <img src="https://img.shields.io/badge/license-MIT-8B8C8D.svg?style=flat-square" />
 </p>
 
-<p align="middle"><a href="https://www.endangered-animals-info.tk/">👉 Project link</a></p>
+<!-- <p align="middle"><a href="https://www.endangered-animals-info.tk/">👉 Project link</a></p> -->
 
 <br />
 <br />
@@ -28,7 +28,7 @@
 <br />
 <br />
 
-## Project in progress
+## 🚧 Project in progress
 
 <br />
 <br />
