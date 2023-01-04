@@ -97,7 +97,7 @@ export type UserData = {
 
 export const createUserDocumentFromAuth = async (
   userAuth: User,
-  additionalInfo = {} as AdditionalInformation
+  additionalInformation = {} as AdditionalInformation
 ): Promise<void | QueryDocumentSnapshot<UserData>> => {
   if (!userAuth) return;
 
@@ -117,7 +117,7 @@ export const createUserDocumentFromAuth = async (
         displayName,
         email,
         createdAt,
-        ...additionalInfo,
+        ...additionalInformation,
       });
     } catch (error) {
       console.log("eror creating the user", error);
