@@ -1,4 +1,9 @@
-import { compose, legacy_createStore, applyMiddleware } from "redux";
+import {
+  compose,
+  legacy_createStore,
+  applyMiddleware,
+  Middleware,
+} from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import logger from "redux-logger";
@@ -30,7 +35,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const middleWares = [
   process.env.NODE_ENV !== "production" && logger,
   sagaMiddleware,
-].filter(Boolean);
+].filter((middleware): middleware is Middleware => Boolean(middleware));
 
 const composeEnhancer =
   (process.env.NODE_ENV !== "production" &&
