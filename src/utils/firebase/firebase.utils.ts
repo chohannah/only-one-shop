@@ -11,6 +11,7 @@ import {
   onAuthStateChanged,
   NextOrObserver,
   User,
+  UserCredential,
 } from "firebase/auth";
 
 import {
@@ -130,7 +131,7 @@ export const createUserDocumentFromAuth = async (
 export const createAuthWithEmailAndPassword = async (
   email: string,
   password: string
-) => {
+): Promise<UserCredential | void> => {
   if (!email || !password) return;
   return await createUserWithEmailAndPassword(auth, email, password);
 };
@@ -138,7 +139,7 @@ export const createAuthWithEmailAndPassword = async (
 export const signInAuthWithEmailAndPassword = async (
   email: string,
   password: string
-) => {
+): Promise<UserCredential | void> => {
   if (!email || !password) return;
   return await signInWithEmailAndPassword(auth, email, password);
 };
