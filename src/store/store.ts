@@ -5,9 +5,11 @@ import logger from "redux-logger";
 // import { loggerMiiddleware } from "./middleware/logger";
 import createSagaMiddleware from "@redux-saga/core";
 
+import { rootSaga } from "./root-saga";
+
 import { rootReducer } from "./root-reducer";
 
-import { rootSaga } from "./root-saga";
+export type RootState = ReturnType<typeof rootReducer>;
 
 const persistConfig = {
   key: "root",
