@@ -6,7 +6,7 @@ const SHOP_DATA = [
         id: 1,
         name: "Crewneck White",
         price: 80.0,
-        "is-on-sale": true,
+        isOnSale: true,
         images: {
           img1: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/L1020172-Edit_1024x1024@2x.jpg?v=1661198169",
           img2: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/ScreenShot2021-09-02at11.56.44AM_1024x1024@2x.png?v=1661198169",
@@ -34,7 +34,7 @@ const SHOP_DATA = [
         id: 2,
         name: "Crewneck Black",
         price: 80.0,
-        "is-on-sale": true,
+        isOnSale: true,
         images: {
           img1: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/ScreenShot2021-09-02at10.56.06AM_1024x1024@2x.png?v=1643152916",
           img2: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/ScreenShot2021-09-02at11.51.27AM_1024x1024@2x.png?v=1643152916",
@@ -62,7 +62,7 @@ const SHOP_DATA = [
         id: 3,
         name: "Long Sleeve",
         price: 45.0,
-        "is-on-sale": true,
+        isOnSale: true,
         images: {
           img1: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/D32A9823-Edit_1024x1024@2x.jpg?v=1661199556",
           img2: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/D32A9862_1024x1024@2x.jpg?v=1661199556",
@@ -92,7 +92,7 @@ const SHOP_DATA = [
         id: 4,
         name: "Shorts",
         price: 45.0,
-        "is-on-sale": true,
+        isOnSale: true,
         images: {
           img1: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/D32A0921_1024x1024@2x.jpg?v=1661199773",
           img2: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/ScreenShot2021-09-02at10.36.11AM_1024x1024@2x.png?v=1661199935",
@@ -124,7 +124,7 @@ const SHOP_DATA = [
         id: 5,
         name: "Big Tote",
         price: 35.0,
-        "is-on-sale": true,
+        isOnSale: true,
         images: {
           img1: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/Resized1_1080x.png?v=1645672886",
           img2: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/DSC05547_1_1296x.jpg?v=1645672886",
@@ -145,7 +145,7 @@ const SHOP_DATA = [
         id: 6,
         name: "Open Water Bottle",
         price: 30.0,
-        "is-on-sale": true,
+        isOnSale: true,
         images: {
           img1: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/ScreenShot2021-09-02at11.48.34AM_1024x1024@2x.png?v=1643152828",
           img2: "https://cdn.shopify.com/s/files/1/0567/9690/5677/products/ScreenShot2021-09-02at12.02.43PM_1024x1024@2x.png?v=1643152828",
