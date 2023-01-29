@@ -8,7 +8,7 @@ const CategoryCard = ({ category }) => {
   const titleInUrl = title.toLowerCase();
 
   const handleNavigateToCategory = () => {
-    navigate(`/${titleInUrl}`);
+    navigate(`/shop/${titleInUrl}`);
   };
 
   return (
