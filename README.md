@@ -3,11 +3,11 @@
 
 <!-- Header -->
 
-<div align="middle" >
+<!-- <div align="middle" >
   <img width="216" alt="Opens logo" src="https://user-images.githubusercontent.com/46529118/198095031-2d3f5b0b-2401-4d02-8bad-f5023f53aa37.png">
-</div>
-<h1 align="middle">Opens</h2>
-<p align="middle">Online shop with Opens' merchandises</p>
+</div> -->
+<h1 align="middle">Only One shop</h2>
+<p align="middle">Online shop with unique & timeless colletions from Braun & Bauhaus</p>
 
 <p align="middle">
   <img src="https://img.shields.io/badge/version-1.0.0-F1F0E7?style=flat-square" alt="template version"/>
