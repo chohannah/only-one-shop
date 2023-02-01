@@ -20,7 +20,7 @@ const GNB = () => {
   const cartCount = useSelector(selectCartCount);
   const dispatch = useDispatch();
 
-  const signOutUser = dispatch(signOutStart());
+  const signOutUser = () => dispatch(signOutStart());
 
   return (
     <Fragment>
