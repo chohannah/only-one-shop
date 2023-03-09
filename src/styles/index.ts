@@ -24,9 +24,15 @@ const lineHeights = {
   sm: 1.5,
 };
 
+const letterSpacings = {
+  base: "normal",
+  sm: "1px",
+};
+
 export const theme: DefaultTheme = {
   breakpoints,
   fontFamily,
   fontSizes,
   lineHeights,
+  letterSpacings,
 };
