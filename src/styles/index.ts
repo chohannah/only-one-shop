@@ -9,7 +9,18 @@ const fontFamily = {
   main: "Poppins, sans-serif",
 };
 
+const fontSizes = {
+  xxs: "13px",
+  xs: "14px",
+  base: "17px",
+  sm: "20px",
+  md: "25px",
+  lg: "31px",
+  xlg: "43px",
+};
+
 export const theme: DefaultTheme = {
   breakpoints,
   fontFamily,
+  fontSizes,
 };
