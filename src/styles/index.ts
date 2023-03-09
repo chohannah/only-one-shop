@@ -19,8 +19,14 @@ const fontSizes = {
   xlg: "43px",
 };
 
+const lineHeights = {
+  base: 1.2,
+  sm: 1.5,
+};
+
 export const theme: DefaultTheme = {
   breakpoints,
   fontFamily,
   fontSizes,
+  lineHeights,
 };
