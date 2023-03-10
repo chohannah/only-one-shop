@@ -16,7 +16,7 @@ const fontSizes = {
   sm: "20px",
   md: "25px",
   lg: "31px",
-  xlg: "43px",
+  xl: "43px",
 };
 
 const lineHeights = {
