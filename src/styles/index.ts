@@ -11,8 +11,10 @@ const fontFamily = {
 
 const fontSizes = {
   xxs: "13px",
+  xxsWide: "13px",
   xs: "14px",
   base: "17px",
+  baseWide: "17px",
   sm: "20px",
   md: "25px",
   lg: "31px",
@@ -20,13 +22,27 @@ const fontSizes = {
 };
 
 const lineHeights = {
-  base: 1.2,
-  sm: 1.5,
+  xxs: 1.5,
+  xxsWide: 1.5,
+  xs: 1.5,
+  base: 1.5,
+  baseWide: 1.5,
+  md: 1.5,
+  lg: 1.2,
+  xl: 1.2,
+  xxl: 1.2,
 };
 
 const letterSpacings = {
+  xxs: "normal",
+  xxsWide: "1px",
+  xs: "normal",
   base: "normal",
-  sm: "1px",
+  baseWide: "1px",
+  md: "normal",
+  lg: "normal",
+  xl: "normal",
+  xxl: "normal",
 };
 
 const colors = {
