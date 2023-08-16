@@ -1,33 +1,29 @@
-import { Fragment } from "react";
-import { Outlet, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { Fragment } from 'react'
+import { Outlet, Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
-import { selectCurrentUser } from "../../store/user/user.selector";
-import { signOutStart } from "../../store/user/user.action";
-import { selectCartCount } from "../../store/cart/cart.selector";
+import { selectCurrentUser } from '../../store/user/user.selector'
+import { signOutStart } from '../../store/user/user.action'
+import { selectCartCount } from '../../store/cart/cart.selector'
 
-import GnbCartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+import GnbCartDropdown from '../../components/cart-dropdown/cart-dropdown.component'
 
-import { ReactComponent as OpensLogo } from "../../assets/logo.svg";
-// import { ReactComponent as UserIcon } from "../../assets/icon-user.svg";
-import { ReactComponent as CartIcon } from "../../assets/icon-cart.svg";
-import { ReactComponent as MenuIcon } from "../../assets/icon-menu.svg";
-import { ReactComponent as LogInIcon } from "../../assets/icon-login.svg";
-import { ReactComponent as LogOutIcon } from "../../assets/icon-logout.svg";
+import { CartIcon, MenuIcon, LogInIcon, LogOutIcon } from '../../assets/icons'
+import { Logo } from '../../assets/images'
 
 const GNB = () => {
-  const currentUser = useSelector(selectCurrentUser);
-  const cartCount = useSelector(selectCartCount);
-  const dispatch = useDispatch();
+  const currentUser = useSelector(selectCurrentUser)
+  const cartCount = useSelector(selectCartCount)
+  const dispatch = useDispatch()
 
-  const signOutUser = () => dispatch(signOutStart());
+  const signOutUser = () => dispatch(signOutStart())
 
   return (
     <Fragment>
       <header className="gnb">
         <h1 className="gnb-left">
           <Link className="logo-wrapper" to="/">
-            <OpensLogo className="logo" />
+            <Logo className="logo" />
           </Link>
         </h1>
 
@@ -74,7 +70,7 @@ const GNB = () => {
 
       <Outlet />
     </Fragment>
-  );
-};
+  )
+}
 
-export default GNB;
+export default GNB
