@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 import { media } from '../../styles/utils'
 
+import type { ContainerProps } from './container'
 import type { ColumnProps } from './column'
 import type { RowProps } from './row'
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled.div<ContainerProps>`
   width: 100%;
   padding: 0 4px;
   margin: 0 auto;

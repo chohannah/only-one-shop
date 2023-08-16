@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import { StyledContainer } from './styles'
 
-interface ContainerProps {
+export interface ContainerProps {
   children?: ReactNode
   className?: string
 }
