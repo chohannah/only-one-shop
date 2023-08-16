@@ -1,33 +1,31 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux'
 
-import { selectCartItems } from "../../store/cart/cart.selector";
+import { selectCartItems } from '../../store/cart/cart.selector'
 
 import {
   addItemToCart,
   removeItemFromCart,
   clearItemFromCart,
-} from "../../store/cart/cart.action";
+} from '../../store/cart/cart.action'
 
-import { ReactComponent as PlusIcon } from "../../assets/icon-plus.svg";
-import { ReactComponent as MinusIcon } from "../../assets/icon-minus.svg";
-import { ReactComponent as CloseIcon } from "../../assets/icon-close.svg";
+import { PlusIcon, MinusIcon, CloseIcon } from '../../assets/icons'
 
 const CartItem = ({ cartItem }) => {
-  const { name, quantity, price, images } = cartItem;
-  const cartItems = useSelector(selectCartItems);
-  const dispatch = useDispatch();
+  const { name, quantity, price, images } = cartItem
+  const cartItems = useSelector(selectCartItems)
+  const dispatch = useDispatch()
 
   const handleClearItem = () => {
-    dispatch(clearItemFromCart(cartItems, cartItem));
-  };
+    dispatch(clearItemFromCart(cartItems, cartItem))
+  }
 
   const handleRemoveItem = () => {
-    dispatch(removeItemFromCart(cartItems, cartItem));
-  };
+    dispatch(removeItemFromCart(cartItems, cartItem))
+  }
 
   const handleAddItem = () => {
-    dispatch(addItemToCart(cartItems, cartItem));
-  };
+    dispatch(addItemToCart(cartItems, cartItem))
+  }
 
   return (
     <div className="cart-item">
@@ -59,7 +57,7 @@ const CartItem = ({ cartItem }) => {
         <CloseIcon className="icon-close" />
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default CartItem;
+export default CartItem

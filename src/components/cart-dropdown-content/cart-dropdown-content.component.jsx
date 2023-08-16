@@ -1,27 +1,28 @@
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-import CartDropdownItem from "../cart-dropdown-item/cart-dropdown-item.component";
-import Button from "../../components/button/button.component";
+import CartDropdownItem from '../cart-dropdown-item/cart-dropdown-item.component'
+import Button from '../../components/button/button.component'
 
-import { ReactComponent as CloseIcon } from "../../assets/icon-close.svg";
+import { CloseIcon } from '../../assets/icons'
+
 import {
   selectCartCount,
   selectCartItems,
-} from "../../store/cart/cart.selector";
+} from '../../store/cart/cart.selector'
 
 const CartDropdownContent = () => {
-  const cartItems = useSelector(selectCartItems);
-  const cartCount = useSelector(selectCartCount);
-  const navigate = useNavigate();
+  const cartItems = useSelector(selectCartItems)
+  const cartCount = useSelector(selectCartCount)
+  const navigate = useNavigate()
 
   const handleNavigateToCart = () => {
-    navigate("/cart");
-  };
+    navigate('/cart')
+  }
 
   const handleNavigateToShop = () => {
-    navigate("/shop");
-  };
+    navigate('/shop')
+  }
 
   return (
     <aside className="cart-dropdown-content">
@@ -53,7 +54,7 @@ const CartDropdownContent = () => {
         </button>
       </footer>
     </aside>
-  );
-};
+  )
+}
 
-export default CartDropdownContent;
+export default CartDropdownContent
