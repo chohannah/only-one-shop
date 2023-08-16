@@ -1,61 +1,61 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useState, FormEvent, ChangeEvent } from 'react'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
-import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import FormInput from '../form-input/form-input.component'
+import Button from '../button/button.component'
 
 import {
   googleSignInStart,
   emailSignInStart,
-} from "../../store/user/user.action";
+} from '../../store/user/user.action'
 
 const defaultFormFields = {
-  email: "",
-  password: "",
-};
+  email: '',
+  password: '',
+}
 
 const LogInForm = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
-  const { email, password } = formFields;
-  const dispatch = useDispatch();
+  const [formFields, setFormFields] = useState(defaultFormFields)
+  const { email, password } = formFields
+  const dispatch = useDispatch()
 
   const resetFormFields = () => {
-    setFormFields(defaultFormFields);
-  };
+    setFormFields(defaultFormFields)
+  }
 
   const signInWithGoogle = async () => {
-    dispatch(googleSignInStart());
-  };
+    dispatch(googleSignInStart())
+  }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
 
     try {
-      dispatch(emailSignInStart(email, password));
-      resetFormFields();
+      dispatch(emailSignInStart(email, password))
+      resetFormFields()
     } catch (error) {
-      switch (error.code) {
-        case "auth/wrong-password":
+      switch (error) {
+        case 'auth/wrong-password':
           alert(
             `Oops! this password doesn't match with the email. 
             Please try another password.`
-          );
-          break;
-        case "auth/user-not-found":
-          alert(`Uh-oh, this email doesn't exit.`);
-          break;
+          )
+          break
+        case 'auth/user-not-found':
+          alert(`Uh-oh, this email doesn't exit.`)
+          break
         default:
-          console.log(error);
+          console.log(error)
       }
     }
-  };
+  }
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target
 
-    setFormFields({ ...formFields, [name]: value });
-  };
+    setFormFields({ ...formFields, [name]: value })
+  }
 
   return (
     <article className="log-in-form">
@@ -103,7 +103,7 @@ const LogInForm = () => {
         </button>
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default LogInForm;
+export default LogInForm
