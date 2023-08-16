@@ -72,6 +72,8 @@ const colors = {
   },
 }
 
+const gutter = '8px'
+
 export const theme: DefaultTheme = {
   breakpoints,
   fontFamily,
@@ -79,4 +81,5 @@ export const theme: DefaultTheme = {
   lineHeights,
   letterSpacings,
   colors,
+  gutter,
 }

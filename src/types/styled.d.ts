@@ -82,5 +82,7 @@ declare module 'styled-components' {
         400: string
       }
     }
+
+    gutter: string
   }
 }
