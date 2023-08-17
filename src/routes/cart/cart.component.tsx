@@ -1,27 +1,27 @@
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import {
   selectCartItems,
   selectCartTotal,
-} from "../../store/cart/cart.selector";
+} from '../../store/cart/cart.selector'
 
-import CartItem from "../../components/cart-item/cart-item.component";
-import PaymentForm from "../../components/payment-form/payment-form.component";
+import CartItem from '../../components/cart-item/cart-item.component'
+import PaymentForm from '../../components/payment-form/payment-form.component'
 
 const Cart = () => {
-  const cartItems = useSelector(selectCartItems);
-  const cartTotal = useSelector(selectCartTotal);
+  const cartItems = useSelector(selectCartItems)
+  const cartTotal = useSelector(selectCartTotal)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleNavigateToShop = () => {
-    navigate("/shop");
-  };
+    navigate('/shop')
+  }
 
   const handleNavigateToShipping = () => {
-    navigate("/policies/shipping-policy");
-  };
+    navigate('/policies/shipping-policy')
+  }
 
   return (
     <section className="cart">
@@ -37,7 +37,7 @@ const Cart = () => {
       <article className="cart-content">
         <h3 className="cart-content-title">shopping bag items</h3>
         {cartItems.map((cartItem) => {
-          return <CartItem key={cartItem.id} cartItem={cartItem} />;
+          return <CartItem key={cartItem.id} cartItem={cartItem} />
         })}
       </article>
 
@@ -45,8 +45,8 @@ const Cart = () => {
         <div className="cart-footer-total">
           <strong className="price-total">${cartTotal} USD</strong>
           <p className="misc">
-            Taxes and{" "}
-            <strong onClick={handleNavigateToShipping}>shipping</strong>{" "}
+            Taxes and{' '}
+            <strong onClick={handleNavigateToShipping}>shipping</strong>{' '}
             calculated at checkout
           </p>
         </div>
@@ -56,7 +56,7 @@ const Cart = () => {
         </div>
       </footer>
     </section>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart
