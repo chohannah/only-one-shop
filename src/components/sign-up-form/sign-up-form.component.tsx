@@ -1,64 +1,61 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useState, FormEvent, ChangeEvent } from 'react'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
-import {
-  signInWithGooglePopup,
-  createAuthWithEmailAndPassword,
-  createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase.utils";
+import { signInWithGooglePopup } from '../../utils/firebase/firebase.utils'
+import { AuthError, AuthErrorCodes } from 'firebase/auth'
 
-import { signUpStart } from "../../store/user/user.action";
+import { signUpStart } from '../../store/user/user.action'
 
-import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import FormInput from '../form-input/form-input.component'
+import { Button } from '../button'
 
 const defaultFormFields = {
-  displayName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-};
+  displayName: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
+}
 
 const SignUpForm = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
-  const { displayName, email, password, confirmPassword } = formFields;
-  const dispatch = useDispatch();
+  const [formFields, setFormFields] = useState(defaultFormFields)
+  const { displayName, email, password, confirmPassword } = formFields
+  const dispatch = useDispatch()
 
   const signUpWithGoogle = async () => {
-    await signInWithGooglePopup();
-  };
+    await signInWithGooglePopup()
+  }
 
   const resetFormFields = () => {
-    setFormFields(defaultFormFields);
-  };
+    setFormFields(defaultFormFields)
+  }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
 
     if (password !== confirmPassword) {
-      alert("oops! your password don't math. please try again.");
-      return;
+      alert("oops! your password don't math. please try again.")
+      return
     }
 
     try {
-      dispatch(signUpStart(email, password, displayName));
-      resetFormFields();
+      dispatch(signUpStart(email, password, displayName))
+      resetFormFields()
     } catch (error) {
-      if (error.code === "auth/email-already-in-use") {
-        alert("uh-oh, the email is already exists.");
+      if ((error as AuthError).code === AuthErrorCodes.EMAIL_EXISTS) {
+        alert('uh-oh, the email is already exists.')
       } else {
-        console.log("email creation encountered error");
+        console.log('email creation encountered error')
       }
-      console.log("user creation an encountered error", error);
+      console.log('user creation an encountered error', error)
     }
-  };
+  }
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target
 
-    setFormFields({ ...formFields, [name]: value });
-  };
+    setFormFields({ ...formFields, [name]: value })
+  }
 
   return (
     <article className="sign-up-form">
@@ -101,7 +98,7 @@ const SignUpForm = () => {
           value={confirmPassword}
         />
 
-        <Button buttonType="filled" buttonSize="md" type="submit">
+        <Button variant="filled" type="submit">
           create
         </Button>
 
@@ -120,7 +117,7 @@ const SignUpForm = () => {
         </button>
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default SignUpForm;
+export default SignUpForm
