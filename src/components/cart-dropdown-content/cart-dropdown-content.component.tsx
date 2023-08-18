@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import CartDropdownItem from '../cart-dropdown-item/cart-dropdown-item.component'
-import Button from '../../components/button/button.component'
+import { Button } from '../button'
 
 import { CloseIcon } from '../../assets/icons'
 
@@ -40,11 +40,7 @@ const CartDropdownContent = () => {
       </ul>
 
       <footer className="footer">
-        <Button
-          buttonType="outlined"
-          buttonSize="md"
-          onClick={handleNavigateToCart}
-        >
+        <Button variant="filled" onClick={handleNavigateToCart}>
           view cart
           <span className="count">({cartCount})</span>
         </Button>
