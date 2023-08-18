@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { CartIcon } from '../../assets/icons'
 
-import CartDropdownContent from '../cart-dropdown-content/cart-dropdown-content.component.jsx'
-import Button from '../button/button.component'
+import CartDropdownContent from '../cart-dropdown-content/cart-dropdown-content.component'
+import { Button } from '../button'
 
 import {
   selectIsCartOpen,
@@ -22,7 +22,7 @@ const CartDropdown = () => {
   return (
     <div className="cart-dropdown sm-hidden">
       <Button
-        type="button"
+        variant="filled"
         className="cart cart-dropdown-button"
         to="/cart"
         onClick={toggleIsCartOpen}
