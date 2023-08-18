@@ -8,9 +8,15 @@ import {
   clearItemFromCart,
 } from '../../store/cart/cart.action'
 
+import { CartItem as TCartItem } from '../../store/cart/cart.types'
+
 import { PlusIcon, MinusIcon, CloseIcon } from '../../assets/icons'
 
-const CartItem = ({ cartItem }) => {
+type CartItemProps = {
+  cartItem: TCartItem
+}
+
+const CartItem: React.FC<CartItemProps> = ({ cartItem }) => {
   const { name, quantity, price, images } = cartItem
   const cartItems = useSelector(selectCartItems)
   const dispatch = useDispatch()
@@ -30,7 +36,7 @@ const CartItem = ({ cartItem }) => {
   return (
     <div className="cart-item">
       <div className="thumbnail-container">
-        <img className="thumbnail" src={images.img1} alt={name} />
+        <img className="thumbnail" src={images[0].img1} alt={name} />
       </div>
       <div className="text-group">
         <div className="text-group-header">
