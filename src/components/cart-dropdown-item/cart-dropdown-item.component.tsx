@@ -1,10 +1,16 @@
-const CartDropdownItem = ({ cartItem }) => {
-  const { name, quantity, price, images } = cartItem;
+import { CartItem as TCartItem } from '../../store/cart/cart.types'
+
+type CartItemProps = {
+  cartItem: TCartItem
+}
+
+const CartDropdownItem: React.FC<CartItemProps> = ({ cartItem }) => {
+  const { name, quantity, price, images } = cartItem
 
   return (
     <li className="cart-item">
       <div className="thumbnail-container">
-        <img className="thumbnail" src={images.img1} alt={`${name}`} />
+        <img className="thumbnail" src={images[0].img1} alt={`${name}`} />
       </div>
 
       <div className="text-group">
@@ -18,7 +24,7 @@ const CartDropdownItem = ({ cartItem }) => {
         </div>
       </div>
     </li>
-  );
-};
+  )
+}
 
-export default CartDropdownItem;
+export default CartDropdownItem
