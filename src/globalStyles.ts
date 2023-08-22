@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { visuallyHidden } from "./styles/utils/a11y";
+import { createGlobalStyle } from 'styled-components'
+import { visuallyHidden } from './styles/utils/a11y'
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -14,6 +14,7 @@ html {
   font-family: ${({ theme }) => theme.fontFamily.main}
   font-size: ${({ theme }) => theme.fontSizes.base}
   letter-spacing: ${({ theme }) => theme.letterSpacings.base}
+  background-color: ${({ theme }) => theme.colors.white}
 }
 
 body {
@@ -35,7 +36,7 @@ input,
 select,
 textarea {
   background-color: transparent;
-  border: 0
+  border: 0;
 
   &:focus {
     outline: none;
@@ -65,4 +66,4 @@ address {
 .visuallyHidden {
   ${visuallyHidden()}
 }
-`;
+`
