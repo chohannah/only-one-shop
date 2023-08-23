@@ -5,12 +5,12 @@ type CartItemProps = {
 }
 
 const CartDropdownItem: React.FC<CartItemProps> = ({ cartItem }) => {
-  const { name, quantity, price, images } = cartItem
+  const { name, quantity, price, image } = cartItem
 
   return (
     <li className="cart-item">
       <div className="thumbnail-container">
-        <img className="thumbnail" src={images[0].img1} alt={`${name}`} />
+        <img className="thumbnail" src={image} alt={`${name}`} />
       </div>
 
       <div className="text-group">

@@ -1,12 +1,15 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import CartDropdownItem from '../cart-dropdown-item/cart-dropdown-item.component'
+import { setIsCartOpen } from '../../store/cart/cart.action'
+
+import CartDropdownItem from './cart-dropdown-item.component'
 import { Button } from '../button'
 
 import { CloseIcon } from '../../assets/icons'
 
 import {
+  selectIsCartOpen,
   selectCartCount,
   selectCartItems,
 } from '../../store/cart/cart.selector'
@@ -15,6 +18,10 @@ const CartDropdownContent = () => {
   const cartItems = useSelector(selectCartItems)
   const cartCount = useSelector(selectCartCount)
   const navigate = useNavigate()
+
+  const dispatch = useDispatch()
+  const isCartOpen = useSelector(selectIsCartOpen)
+  const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen))
 
   const handleNavigateToCart = () => {
     navigate('/cart')
@@ -28,7 +35,7 @@ const CartDropdownContent = () => {
     <aside className="cart-dropdown-content">
       <header className="header">
         <h3 className="title">my cart</h3>
-        <button className="close" type="button">
+        <button className="close" type="button" onClick={toggleIsCartOpen}>
           <CloseIcon />
         </button>
       </header>
