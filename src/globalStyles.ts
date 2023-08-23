@@ -63,7 +63,7 @@ address {
   font-style:normal;
 }
 
-.visuallyHidden {
+.visually-hidden {
   ${visuallyHidden()}
 }
 `
