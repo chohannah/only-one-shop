@@ -1,15 +1,16 @@
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-
-import { CartIcon } from '../../assets/icons'
-
-import CartDropdownContent from '../cart-dropdown-content/cart-dropdown-content.component'
-import { Button } from '../button'
 
 import {
   selectIsCartOpen,
   selectCartCount,
 } from '../../store/cart/cart.selector'
 import { setIsCartOpen } from '../../store/cart/cart.action'
+
+import CartDropdownContent from './cart-dropdown-content.component'
+
+import { StyledCartCounterButton } from './styles'
+import { useResponsive } from '../../hooks/useResponsive'
 
 const CartDropdown = () => {
   const dispatch = useDispatch()
@@ -19,17 +20,27 @@ const CartDropdown = () => {
 
   const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen))
 
+  const { isMobile } = useResponsive()
+
   return (
-    <div className="cart-dropdown sm-hidden">
-      <Button
-        variant="filled"
-        className="cart cart-dropdown-button"
-        to="/cart"
-        onClick={toggleIsCartOpen}
-      >
-        <CartIcon className="icon-cart" />
-        <span className="cart-count">{cartCount}</span>
-      </Button>
+    <div className="cart-dropdown">
+      {isMobile ? (
+        <StyledCartCounterButton
+          className="cart cart-dropdown-button"
+          as={Link}
+          to="/cart"
+        >
+          {cartCount}
+        </StyledCartCounterButton>
+      ) : (
+        <StyledCartCounterButton
+          className="cart cart-dropdown-button"
+          type="button"
+          onClick={toggleIsCartOpen}
+        >
+          {cartCount}
+        </StyledCartCounterButton>
+      )}
 
       {isCartOpen && <CartDropdownContent />}
     </div>
