@@ -83,6 +83,12 @@ declare module 'styled-components' {
       }
     }
 
+    levels: {
+      gnb: number
+      menuToggle: number
+      sidebarModal: number
+    }
+
     gutter: string
   }
 }
