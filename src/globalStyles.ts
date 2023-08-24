@@ -5,21 +5,21 @@ export const GlobalStyle = createGlobalStyle`
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: ${({ theme }) => theme.fontFamily.main}
+    font-family: ${({ theme }) => theme.fontFamily.main};
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 } 
 
 html {
-  font-family: ${({ theme }) => theme.fontFamily.main}
-  font-size: ${({ theme }) => theme.fontSizes.base}
-  letter-spacing: ${({ theme }) => theme.letterSpacings.base}
-  background-color: ${({ theme }) => theme.colors.white}
+  font-family: ${({ theme }) => theme.fontFamily.main};
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  letter-spacing: ${({ theme }) => theme.letterSpacings.base};
+  background-color: ${({ theme }) => theme.colors.white};
 }
 
 body {
-  font-family: ${({ theme }) => theme.fontFamily.main}
-  color: ${({ theme }) => theme.colors.bodyText}
+  font-family: ${({ theme }) => theme.fontFamily.main};
+  color: ${({ theme }) => theme.colors.bodyText};
 }
 
 h1 {
@@ -64,6 +64,6 @@ address {
 }
 
 .visually-hidden {
-  ${visuallyHidden()}
+  ${visuallyHidden()};
 }
 `
