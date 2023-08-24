@@ -66,4 +66,8 @@ address {
 .visually-hidden {
   ${visuallyHidden()};
 }
+
+#root {
+  position: relative;
+}
 `
