@@ -10,7 +10,7 @@ import { LogoLetter } from '../../assets/images'
 import { StyledGnb } from './styles'
 import { Grid } from '..'
 import { GnbNav } from './nav'
-import Drawer from './drawer'
+import Sidebar from './sidebar'
 import AuthControlButton from './auth-control-button'
 
 const Gnb = () => {
@@ -22,7 +22,7 @@ const Gnb = () => {
         <Grid sm={4}>
           <div className="gnb-wrapper">
             <div className="gnb-left">
-              {isDesktop ? <GnbNav /> : <Drawer />}
+              {isDesktop ? <GnbNav /> : <Sidebar />}
             </div>
 
             <h1 className="logo">

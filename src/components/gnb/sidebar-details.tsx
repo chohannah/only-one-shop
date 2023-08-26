@@ -5,21 +5,25 @@ import clsx from 'clsx'
 import { navMap } from '../nav-map'
 
 import {
-  StyledGnbDrawerDetails,
+  StyledGnbSidebarDetails,
   StyledMainNav,
   StyledMainNavList,
   StyledMainNavListItem,
 } from './styles'
+import AuthControlButton from './auth-control-button'
 
-interface DrawerDetailsProps {
+interface SidebarDetailsProps {
   isOpen: boolean
 }
 
-const DrawerDetails: React.FC<DrawerDetailsProps> = ({ isOpen }) => {
+const SidebarDetails: React.FC<SidebarDetailsProps> = ({ isOpen }) => {
   const menuList = Object.keys(navMap.menuName)
 
   return (
-    <StyledGnbDrawerDetails className={clsx('drawer-details')} isOpen={isOpen}>
+    <StyledGnbSidebarDetails
+      className={clsx('sidebar-details')}
+      isOpen={isOpen}
+    >
       <StyledMainNav>
         <StyledMainNavList>
           {menuList.map((menuItem) => (
@@ -29,10 +33,12 @@ const DrawerDetails: React.FC<DrawerDetailsProps> = ({ isOpen }) => {
               </NavLink>
             </StyledMainNavListItem>
           ))}
+
+          <AuthControlButton />
         </StyledMainNavList>
       </StyledMainNav>
-    </StyledGnbDrawerDetails>
+    </StyledGnbSidebarDetails>
   )
 }
 
-export default DrawerDetails
+export default SidebarDetails
