@@ -32,7 +32,7 @@ const Gnb = () => {
             </h1>
 
             <div className="gnb-right">
-              <AuthControlButton />
+              {isDesktop ? <AuthControlButton /> : null}
 
               <GnbCartDropdown />
             </div>
