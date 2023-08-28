@@ -74,8 +74,9 @@ const colors = {
 
 const levels = {
   gnb: 10,
-  menuToggle: 50,
   sidebarModal: 50,
+  sidebarMenuToggle: 60,
+  cartDropdownToggle: 60,
 }
 
 const gutter = '8px'

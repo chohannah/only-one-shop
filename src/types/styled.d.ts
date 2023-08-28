@@ -85,8 +85,9 @@ declare module 'styled-components' {
 
     levels: {
       gnb: number
-      menuToggle: number
       sidebarModal: number
+      sidebarMenuToggle: number
+      cartDropdownToggle: number
     }
 
     gutter: string
