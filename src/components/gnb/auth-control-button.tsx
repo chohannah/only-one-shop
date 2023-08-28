@@ -23,12 +23,20 @@ const AuthControlButton = () => {
       {currentUser ? (
         <StyledGnbIconButton className="signout" onClick={signOutUser}>
           <SignOutIcon />
-          {isMobile ? null : <p className="signout-text">Sign Out</p>}
+          {isMobile ? (
+            <p className="signout-text-sm">Sign Out</p>
+          ) : (
+            <p className="signout-text-lg">Sign Out</p>
+          )}
         </StyledGnbIconButton>
       ) : (
         <StyledGnbIconButton className="login" as={Link} to="/log-in">
           <LogInIcon />
-          {isMobile ? null : <p className="login-text">Log In</p>}
+          {isMobile ? (
+            <p className="login-text-sm">Log In</p>
+          ) : (
+            <p className="login-text-lg">Log In</p>
+          )}
         </StyledGnbIconButton>
       )}
     </>
