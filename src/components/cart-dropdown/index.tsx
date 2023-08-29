@@ -7,9 +7,9 @@ import {
 } from '../../store/cart/cart.selector'
 import { setIsCartOpen } from '../../store/cart/cart.action'
 
-import CartDropdownContent from './cart-dropdown-content.component'
+import CartDropdownContent from './cart-dropdown-content'
 
-import { StyledCartCounterButton } from './styles'
+import { StyledCartDropdown, StyledCartCounterButton } from './styles'
 import { useResponsive } from '../../hooks/useResponsive'
 
 const CartDropdown = () => {
@@ -20,30 +20,22 @@ const CartDropdown = () => {
 
   const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen))
 
-  const { isMobile } = useResponsive()
+  const { isMobile, isDesktop } = useResponsive()
 
   return (
-    <div className="cart-dropdown">
+    <StyledCartDropdown>
       {isMobile ? (
-        <StyledCartCounterButton
-          className="cart cart-dropdown-button"
-          as={Link}
-          to="/cart"
-        >
+        <StyledCartCounterButton as={Link} to="/cart">
           {cartCount}
         </StyledCartCounterButton>
       ) : (
-        <StyledCartCounterButton
-          className="cart cart-dropdown-button"
-          type="button"
-          onClick={toggleIsCartOpen}
-        >
+        <StyledCartCounterButton type="button" onClick={toggleIsCartOpen}>
           {cartCount}
         </StyledCartCounterButton>
       )}
 
-      {isCartOpen && <CartDropdownContent />}
-    </div>
+      {isDesktop && isCartOpen && <CartDropdownContent />}
+    </StyledCartDropdown>
   )
 }
 
