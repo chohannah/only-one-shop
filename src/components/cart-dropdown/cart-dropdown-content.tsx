@@ -1,62 +1,74 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
 import { setIsCartOpen } from '../../store/cart/cart.action'
 
-import CartDropdownItem from './cart-dropdown-item.component'
-import { Button } from '../button'
-
-import { CloseIcon } from '../../assets/icons'
+import CartDropdownItem from './cart-dropdown-item'
 
 import {
   selectIsCartOpen,
   selectCartCount,
   selectCartItems,
+  selectCartTotal,
 } from '../../store/cart/cart.selector'
+
+import {
+  StyleCartDropdownContent,
+  StyledCartDropdownFooter,
+  StyledCartDropdownFooterText,
+  StyledCartDropdownFooterTotal,
+  StyledCartDropdownFooterTotalPrice,
+  StyledCartDropdownFooterTotalTitle,
+  StyledCartDropdownHeader,
+  StyledCartDropdownList,
+  StyledCartDropdownTitle,
+} from './styles'
+import { Button } from '../button'
 
 const CartDropdownContent = () => {
   const cartItems = useSelector(selectCartItems)
   const cartCount = useSelector(selectCartCount)
-  const navigate = useNavigate()
+  const cartTotal = useSelector(selectCartTotal)
 
   const dispatch = useDispatch()
   const isCartOpen = useSelector(selectIsCartOpen)
   const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen))
 
-  const handleNavigateToCart = () => {
-    navigate('/cart')
-  }
-
-  const handleNavigateToShop = () => {
-    navigate('/shop')
-  }
-
   return (
-    <aside className="cart-dropdown-content">
-      <header className="header">
-        <h3 className="title">my cart</h3>
-        <button className="close" type="button" onClick={toggleIsCartOpen}>
-          <CloseIcon />
-        </button>
-      </header>
+    <StyleCartDropdownContent isCartOpen={isCartOpen}>
+      <StyledCartDropdownHeader>
+        <StyledCartDropdownTitle>my cart</StyledCartDropdownTitle>
 
-      <ul className="list">
+        <Button variant="underlined" type="button" onClick={toggleIsCartOpen}>
+          Close
+        </Button>
+      </StyledCartDropdownHeader>
+
+      <StyledCartDropdownList>
         {cartItems?.map((cartItem) => (
           <CartDropdownItem key={cartItem.id} cartItem={cartItem} />
         ))}
-      </ul>
+      </StyledCartDropdownList>
 
-      <footer className="footer">
-        <Button variant="filled" onClick={handleNavigateToCart}>
-          view cart
-          <span className="count">({cartCount})</span>
+      <StyledCartDropdownFooter>
+        <StyledCartDropdownFooterTotal>
+          <StyledCartDropdownFooterTotalTitle>
+            Subtotal
+          </StyledCartDropdownFooterTotalTitle>
+          <StyledCartDropdownFooterTotalPrice>
+            € {cartTotal}
+          </StyledCartDropdownFooterTotalPrice>
+        </StyledCartDropdownFooterTotal>
+
+        <StyledCartDropdownFooterText>
+          Delivery: Your shipping costs <br /> will be calculated in the last
+          step.
+        </StyledCartDropdownFooterText>
+
+        <Button variant="filled" size={54} to="/cart">
+          View Cart ({cartCount})
         </Button>
-
-        <button className="link-to-all" onClick={handleNavigateToShop}>
-          Continue shopping
-        </button>
-      </footer>
-    </aside>
+      </StyledCartDropdownFooter>
+    </StyleCartDropdownContent>
   )
 }
 
