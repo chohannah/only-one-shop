@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { defaultEasing } from '../../styles/utils/animations'
+import { truncate } from '../../styles/utils'
 
 import {
   columnFlexbox,
@@ -334,10 +335,20 @@ export const StyledGnbNavDropdownLinkCardGroup = styled.section`
   gap: 16px;
 `
 
-export const StyledGnbNavDropdownLinkCard = styled.article``
+export const StyledGnbNavDropdownLinkCard = styled.article`
+  width: 24vw;
+  overflow: hidden;
+
+  // link button
+  a:last-child {
+    max-width: 100%;
+    ${truncate()};
+  }
+`
 
 export const StyledGnbNavDropdownLinkCardImage = styled.button`
-  width: 100%;
+  ${flexbox()};
+  margin-bottom: 16px;
 
   img {
     width: 100%;
