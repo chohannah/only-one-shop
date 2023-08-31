@@ -21,7 +21,10 @@ interface NavDropdownProps {
   isActive: boolean
 }
 
-const NavDropdown: React.FC<NavDropdownProps> = ({ menuItem, isActive }) => {
+export const NavDropdown: React.FC<NavDropdownProps> = ({
+  menuItem,
+  isActive,
+}) => {
   const [isItemHovered, setIsItemHovered] = useState<string | null>(null)
 
   const dropdownMenuList = Object.values(navMap.navMenu[menuItem])
@@ -79,12 +82,8 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ menuItem, isActive }) => {
                 />
               </StyledGnbNavDropdownLinkCardImage>
 
-              <Button
-                to={`${menuItem}/${menu}`}
-                type="button"
-                variant="underlined"
-              >
-                {Object.values(navMap.navMenu.sideProducts[menu])}
+              <Button to={`${menuItem}/${menu}`} variant="underlined">
+                {navMap.navMenu.sideProducts[menu][0]}
               </Button>
             </StyledGnbNavDropdownLinkCard>
           ))}
@@ -115,5 +114,3 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ menuItem, isActive }) => {
     </StyledGnbNavDropdown>
   )
 }
-
-export default NavDropdown

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
 import { StyledGnbSidebarIconButton } from './styles'
-import SidebarDetails from './sidebar-details'
+import { SidebarDetails } from './sidebar-details'
 import clsx from 'clsx'
 
-const Sidebar = () => {
+export const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const toggleSidebar = () => {
@@ -28,5 +28,3 @@ const Sidebar = () => {
     </>
   )
 }
-
-export default Sidebar

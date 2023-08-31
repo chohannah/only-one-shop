@@ -1,19 +1,20 @@
 import { Fragment } from 'react'
 import { Outlet, Link } from 'react-router-dom'
-
 import clsx from 'clsx'
 
 import { useResponsive } from '../../hooks/useResponsive'
 import GnbCartDropdown from '../cart-dropdown'
 
-import { LogoLetter } from '../../assets/images'
-import { StyledGnb } from './styles'
-import { Grid } from '..'
-import { GnbNav } from './nav'
-import Sidebar from './sidebar'
-import AuthControlButton from './auth-control-button'
+import { LogoLetter } from '../../assets/logos'
 
-const Gnb = () => {
+import { Grid } from '..'
+import { GnbNav } from '..'
+import { Sidebar } from '..'
+import { AuthControlButton } from '..'
+
+import { StyledGnb } from './styles'
+
+export const Gnb = () => {
   const { isDesktop } = useResponsive()
 
   return (
@@ -44,5 +45,3 @@ const Gnb = () => {
     </Fragment>
   )
 }
-
-export default Gnb

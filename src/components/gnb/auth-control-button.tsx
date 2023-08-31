@@ -10,7 +10,7 @@ import { SignOutIcon, LogInIcon } from '../../assets/icons'
 
 import { StyledGnbIconButton } from './styles'
 
-const AuthControlButton = () => {
+export const AuthControlButton = () => {
   const currentUser = useSelector(selectCurrentUser)
   const dispatch = useDispatch()
 
@@ -42,5 +42,3 @@ const AuthControlButton = () => {
     </>
   )
 }
-
-export default AuthControlButton

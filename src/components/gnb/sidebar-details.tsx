@@ -10,7 +10,7 @@ import {
   SocialInstagram,
   SocialPinterest,
 } from '../../assets/icons'
-import { LogoCircle } from '../../assets/images'
+import { LogoCircle } from '../../assets/logos'
 
 import {
   StyledGnbIconButton,
@@ -24,13 +24,14 @@ import {
   StyledSubNavListItem,
   StyledSubNavSocialIconGroup,
 } from './styles'
-import AuthControlButton from './auth-control-button'
+
+import { AuthControlButton } from './auth-control-button'
 
 interface SidebarDetailsProps {
   isOpen: boolean
 }
 
-const SidebarDetails: React.FC<SidebarDetailsProps> = ({ isOpen }) => {
+export const SidebarDetails: React.FC<SidebarDetailsProps> = ({ isOpen }) => {
   const mainMenuList = Object.keys(navMap.mainMenuName)
   const subMenuList = Object.keys(navMap.subMenuName)
 
@@ -87,5 +88,3 @@ const SidebarDetails: React.FC<SidebarDetailsProps> = ({ isOpen }) => {
     </StyledGnbSidebarDetails>
   )
 }
-
-export default SidebarDetails
