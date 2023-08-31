@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
+import { defaultEasing } from '../../styles/utils/animations'
+
 import {
+  columnFlexbox,
   flexbox,
   inlineFlexbox,
   positionCenter,
@@ -27,7 +30,8 @@ export const StyledGnb = styled.header`
     height: ${GNB_HEIGHT};
 
     .gnb-right {
-      ${flexbox()}
+      ${flexbox()};
+      position: relative;
     }
   }
 
@@ -47,12 +51,11 @@ export const StyledGnb = styled.header`
 `
 
 export const StyledGnbIconButton = styled.button`
-  ${flexbox()}
+  ${flexbox()};
   padding: 4px;
 
   svg {
-    ${flexbox()}
-    position: relative;
+    ${flexbox()};
     flex-grow: 0;
     flex-shrink: 0;
     width: 24px;
@@ -78,22 +81,26 @@ export const StyledGnbIconButton = styled.button`
 `
 // GnbNav
 export const StyledGnbNav = styled.nav`
-  ${inlineFlexbox('start', 'center')}
+  ${inlineFlexbox('start', 'center')};
 `
 
 export const StyledGnbNavMenuList = styled.ul`
-  ${inlineFlexbox('start', 'center')}
+  ${inlineFlexbox('start', 'center')};
 `
 
-export const StyledGnbNavMenuListItem = styled.li`
-  li:first-child {
-    margin-right: 24px;
-  }
-
-  a {
-    ${textStyle('xxs')}
+export const StyledGnbNavMenuListItem = styled.li<{ isActive: boolean }>`
+  .item-button {
+    ${textStyle('xxs')};
+    position: relative;
     padding: 4px;
+    z-index: ${({ theme }) => theme.levels.sidebarMenuToggle};
     font-weight: 400;
+    color: ${({ theme, isActive }) =>
+      isActive ? theme.colors.black : theme.colors.coolGray[600]};
+
+    &:first-child {
+      margin-right: 24px;
+    }
   }
 `
 
@@ -176,7 +183,7 @@ export const StyledGnbSidebarDetails = styled.aside<StyledGnbSidebarDetailsProps
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   transform: ${({ isOpen }) =>
     isOpen ? 'translateY(0)' : 'translateY(-100vh)'};
-  transition: all 200ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 200ms ${defaultEasing};
 
   .main-nav,
   .sub-nav,
@@ -184,7 +191,6 @@ export const StyledGnbSidebarDetails = styled.aside<StyledGnbSidebarDetailsProps
     opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
     transition-property: 'opacity';
     transition-duration: ${({ isOpen }) => (isOpen ? '250ms' : '25ms')};
-    /* transition-timing-function: 'cubic-bezier(0.19, 1, 0.22, 1)'; */
     transition-timing-function: ${({ isOpen }) =>
       isOpen ? 'ease-in' : 'ease-out'};
   }
@@ -255,6 +261,85 @@ export const StyledSidebarLogo = styled.div`
 
   svg {
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`
+
+// GnbNavDropdown
+
+export const StyledGnbNavDropdown = styled.section`
+  ${flexbox('start', 'start')};
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: calc(${GNB_HEIGHT} + 54px) 32px 54px;
+  width: 100%;
+  height: 475px;
+  background-color: ${({ theme }) => theme.colors.white};
+  transition: all 2000ms ${defaultEasing};
+`
+export const StyledGnbNavDropdownNav = styled.nav`
+  ${flexbox('start', 'start')};
+`
+
+export const StyledGnbNavDropdownNavList = styled.ul`
+  ${columnFlexbox('start', 'start')};
+  padding: 8px 16px;
+  margin-right: 32px;
+`
+
+export const StyledGnbNavDropdownNavListItem = styled.li`
+  color: ${({ theme }) => theme.colors.coolGray[900]};
+  margin-bottom: 8px;
+
+  &:hover {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  a {
+    ${textStyle('base')};
+    font-weight: 400;
+
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+  }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`
+
+export const StyledGnbNavDropdownNavThumbnail = styled.div`
+  width: 24vw;
+  margin-right: 32px;
+  padding: 0 32px 0 16px;
+  border-right: 1px solid ${({ theme }) => theme.colors.coolGray[300]};
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`
+
+export const StyledGnbNavDropdownLinkCardGroup = styled.section`
+  ${flexbox()};
+  gap: 16px;
+`
+
+export const StyledGnbNavDropdownLinkCard = styled.article``
+
+export const StyledGnbNavDropdownLinkCardImage = styled.button`
+  width: 100%;
+
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
