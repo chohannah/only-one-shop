@@ -18,7 +18,7 @@ type CartItemProps = {
   cartItem: TCartItem
 }
 
-const CartDropdownItem: React.FC<CartItemProps> = ({ cartItem }) => {
+export const CartDropdownItem: React.FC<CartItemProps> = ({ cartItem }) => {
   const { name, quantity, price, image } = cartItem
   const cartItems = useSelector(selectCartItems)
   const dispatch = useDispatch()
@@ -63,5 +63,3 @@ const CartDropdownItem: React.FC<CartItemProps> = ({ cartItem }) => {
     </StyledCartDropdownListItem>
   )
 }
-
-export default CartDropdownItem

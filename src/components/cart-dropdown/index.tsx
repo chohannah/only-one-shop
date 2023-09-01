@@ -7,12 +7,12 @@ import {
 } from '../../store/cart/cart.selector'
 import { setIsCartOpen } from '../../store/cart/cart.action'
 
-import CartDropdownContent from './cart-dropdown-content'
+import { CartDropdownContent } from './cart-dropdown-content'
 
 import { StyledCartDropdown, StyledCartCounterButton } from './styles'
 import { useResponsive } from '../../hooks/useResponsive'
 
-const CartDropdown = () => {
+export const CartDropdown = () => {
   const dispatch = useDispatch()
 
   const isCartOpen = useSelector(selectIsCartOpen)
@@ -26,11 +26,11 @@ const CartDropdown = () => {
     <StyledCartDropdown>
       {isMobile ? (
         <StyledCartCounterButton as={Link} to="/cart">
-          {cartCount}
+          {cartCount > 99 ? '99+' : cartCount}
         </StyledCartCounterButton>
       ) : (
         <StyledCartCounterButton type="button" onClick={toggleIsCartOpen}>
-          {cartCount}
+          {cartCount > 99 ? '99+' : cartCount}
         </StyledCartCounterButton>
       )}
 
@@ -38,5 +38,3 @@ const CartDropdown = () => {
     </StyledCartDropdown>
   )
 }
-
-export default CartDropdown

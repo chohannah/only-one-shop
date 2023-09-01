@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { setIsCartOpen } from '../../store/cart/cart.action'
 
-import CartDropdownItem from './cart-dropdown-item'
+import { CartDropdownItem } from './cart-dropdown-item'
 
 import {
   selectIsCartOpen,
@@ -24,7 +24,7 @@ import {
 } from './styles'
 import { Button } from '../button'
 
-const CartDropdownContent = () => {
+export const CartDropdownContent = () => {
   const cartItems = useSelector(selectCartItems)
   const cartCount = useSelector(selectCartCount)
   const cartTotal = useSelector(selectCartTotal)
@@ -71,5 +71,3 @@ const CartDropdownContent = () => {
     </StyleCartDropdownContent>
   )
 }
-
-export default CartDropdownContent
