@@ -70,7 +70,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
       >
         {menuItem === 'products' &&
           productsSideMenuList?.map((menu) => (
-            <StyledGnbNavDropdownLinkCard>
+            <StyledGnbNavDropdownLinkCard key={menu}>
               <StyledGnbNavDropdownLinkCardImage
                 as={Link}
                 to={`${menuItem}/${menu}`}
@@ -89,7 +89,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
           ))}
         {menuItem === 'magazine' &&
           magazineSideMenuList?.map((menu) => (
-            <StyledGnbNavDropdownLinkCard>
+            <StyledGnbNavDropdownLinkCard key={menu}>
               <StyledGnbNavDropdownLinkCardImage
                 as={Link}
                 to={`${menuItem}/${menu}`}
