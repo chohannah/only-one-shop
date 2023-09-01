@@ -1,10 +1,12 @@
 import styled, { css } from 'styled-components'
 
 import { inlineFlexbox, textStyle } from '../../styles/utils'
+import { defaultEasing } from './../../styles/utils/animations'
 
 import { ButtonSize, ButtonVariant } from '.'
 
 const underlinedButtonStyle = css`
+  position: relative;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.coolGray[900]};
   background-color: transparent;
@@ -13,19 +15,21 @@ const underlinedButtonStyle = css`
     &::after {
       transform: scaleX(0);
       transform-origin: right;
-      transition-delay: 0;
     }
   }
 
   &::after {
     content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 1px;
     opacity: 0.6;
     background-color: ${({ theme }) => theme.colors.coolGray[900]};
     transform: scaleX(1);
     transform-origin: left;
-    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+    transition: transform 0.7s ${defaultEasing} 0.2s;
   }
 `
 
@@ -58,7 +62,7 @@ const button24 = css`
 
 const button34 = css`
   ${textStyle('base')}
-  padding-bottom: 8px;
+  padding-bottom: 4px;
   height: 34px;
 `
 
