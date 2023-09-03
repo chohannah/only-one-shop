@@ -36,13 +36,14 @@ export const StyledNewsletterTitle = styled.h3`
 
   span {
     ${textStyle('sm')};
+    width: 100%;
     font-weight: 500;
   }
 `
 
 export const StyledNewsletterForm = styled.form<UseResponsive>`
   ${columnFlexbox('center', 'start')};
-  width: 100%;
+  width: 70vw;
 
   button {
     ${flexbox('start', 'center')};
