@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom'
 import clsx from 'clsx'
 
 import { useResponsive } from '../../hooks/useResponsive'
-import GnbCartDropdown from '../cart-dropdown'
+import { CartDropdown } from '../cart-dropdown'
 
 import { LogoLetter } from '../../assets/logos'
 
@@ -35,7 +35,7 @@ export const Gnb = () => {
             <div className="gnb-right">
               {isDesktop ? <AuthControlButton /> : null}
 
-              <GnbCartDropdown />
+              <CartDropdown />
             </div>
           </div>
         </Grid>
