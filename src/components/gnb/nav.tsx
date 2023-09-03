@@ -52,8 +52,6 @@ export const GnbNav = () => {
                   isActive={isActive}
                 />
               )}
-
-              {/* <NavDropdown menuItem={menuItem as keyof typeof navMap.navMenu} /> */}
             </StyledGnbNavMenuListItem>
           )
         })}
