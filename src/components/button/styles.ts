@@ -7,6 +7,7 @@ import { ButtonSize, ButtonVariant } from '.'
 
 const underlinedButtonStyle = css`
   position: relative;
+  padding-bottom: 4px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.coolGray[900]};
   background-color: transparent;
@@ -43,12 +44,25 @@ const filledButtonStyle = css`
   }
 `
 
+const iconButtonStyle = css`
+  ${inlineFlexbox()};
+  padding: 2px 4px;
+  width: 100%;
+  letter-spacing: ${({ theme }) => theme.letterSpacings.xxsWide};
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+`
+
 function setButtonVariant(variant: ButtonVariant) {
   switch (variant) {
     case 'underlined':
       return underlinedButtonStyle
     case 'filled':
       return filledButtonStyle
+    case 'icon':
+      return iconButtonStyle
     default:
       return underlinedButtonStyle
   }
@@ -56,13 +70,21 @@ function setButtonVariant(variant: ButtonVariant) {
 
 const button24 = css`
   ${textStyle('xxs')}
-  padding-bottom: 4px;
+  height: 24px;
+`
+
+const wideButton24 = css`
+  ${textStyle('xxsWide')}
   height: 24px;
 `
 
 const button34 = css`
   ${textStyle('base')}
-  padding-bottom: 4px;
+  height: 34px;
+`
+
+const wideButton34 = css`
+  ${textStyle('baseWide')}
   height: 34px;
 `
 
@@ -75,8 +97,12 @@ function setButtonSize(size: ButtonSize) {
   switch (size) {
     case 24:
       return button24
+    case '24wide':
+      return wideButton24
     case 34:
       return button34
+    case '34wide':
+      return wideButton34
     case 54:
       return button54
     default:
@@ -90,7 +116,27 @@ interface StyledButtonProps {
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
-  ${inlineFlexbox()}
-  ${({ variant }) => setButtonVariant(variant)}
-  ${({ size }) => setButtonSize(size)}
+  ${inlineFlexbox()};
+
+  svg {
+    display: inline-block;
+    margin-left: 16px;
+    width: 20px;
+    height: 20px;
+    transition: transform 200ms ${defaultEasing};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(8px);
+    }
+  }
+
+  ${({ variant }) => setButtonVariant(variant)};
+  ${({ size }) => setButtonSize(size)};
 `
