@@ -2,13 +2,14 @@ import React, { ReactNode, forwardRef, RefObject } from 'react'
 import { Link } from 'react-router-dom'
 import { StyledButton } from './styles'
 
-export type ButtonSize = 24 | 34 | 54
-export type ButtonVariant = 'underlined' | 'filled'
+export type ButtonSize = 24 | '24wide' | 34 | '34wide' | 54
+export type ButtonVariant = 'underlined' | 'filled' | 'icon'
 
 interface ButtonProps {
   variant: ButtonVariant
   size?: ButtonSize
   disabled?: boolean
+  isLoading?: boolean
   children?: ReactNode
   type?: 'button' | 'submit' | 'reset'
   to?: string
@@ -29,6 +30,7 @@ export const Button = forwardRef<ButtonElement, ButtonProps>(
       size = 34,
       to,
       type = 'button',
+      isLoading,
       children,
       onBlur,
       onClick,
@@ -59,7 +61,7 @@ export const Button = forwardRef<ButtonElement, ButtonProps>(
         ref={ref as RefObject<HTMLButtonElement>}
         variant={variant}
         size={size}
-        disabled={disabled}
+        disabled={isLoading || disabled}
         type={type}
         className={className}
         onBlur={onBlur}
