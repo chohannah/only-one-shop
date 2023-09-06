@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 import { theme } from '../styles'
 import { stripPx } from '../styles/utils'
 
-interface UseResponsive {
-  breakpoint: string
-  isMobile: boolean
-  isTablet: boolean
-  isDesktop: boolean
+export interface UseResponsive {
+  breakpoint?: string
+  isMobile?: boolean
+  isTablet?: boolean
+  isDesktop?: boolean
 }
 
-function getResponsive() {
+export function getResponsive() {
   const { innerWidth } = window
 
   let breakpoint = 'M'
@@ -17,13 +17,13 @@ function getResponsive() {
   let isTablet = false
   let isDesktop = false
 
-  if (innerWidth > stripPx(theme.breakpoints.tablet)) {
+  if (innerWidth >= stripPx(theme.breakpoints.tablet)) {
     breakpoint = 'T'
     isMobile = false
     isTablet = true
   }
 
-  if (innerWidth > stripPx(theme.breakpoints.desktop)) {
+  if (innerWidth >= stripPx(theme.breakpoints.desktop)) {
     breakpoint = 'D'
     isTablet = false
     isDesktop = true
