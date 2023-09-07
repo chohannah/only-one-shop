@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 
 import { checkUserSession } from './store/user/user.action'
 
-import Home from './pages/home'
+import { Home } from './pages'
 import LogIn from './pages/log-in/log-in.component'
 import { Gnb } from './components'
 import SignUp from './pages/sign-up/sign-up.component'
