@@ -13,6 +13,7 @@ import SignUp from './pages/sign-up/sign-up.component'
 import Shop from './pages/shop/shop.component'
 import Cart from './pages/cart/cart.component'
 import { GlobalFooter } from './components'
+import { Newsletter } from './components/newsletter'
 import NotFound from './pages/not-found'
 
 const App: React.FC = () => {
@@ -36,6 +37,7 @@ const App: React.FC = () => {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Newsletter />
       <GlobalFooter />
     </div>
   )
