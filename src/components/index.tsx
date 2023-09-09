@@ -17,3 +17,6 @@ export { GlobalFooter } from './global-footer'
 export { CartDropdown } from './cart-dropdown'
 export { CartDropdownItem } from './cart-dropdown/cart-dropdown-item'
 export { CartDropdownContent } from './cart-dropdown/cart-dropdown-content'
+
+// CategoryCard
+export { CategoryCard } from './category-card'
