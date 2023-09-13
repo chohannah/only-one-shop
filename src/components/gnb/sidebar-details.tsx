@@ -4,13 +4,16 @@ import clsx from 'clsx'
 
 import { navMap } from '../nav-map'
 
+import { AuthControlButton } from './auth-control-button'
+
 import { Grid } from '../grid'
+
+import { LogoCircle } from '../../assets/logos'
 import {
   SocialTwitter,
   SocialInstagram,
   SocialPinterest,
 } from '../../assets/icons'
-import { LogoCircle } from '../../assets/logos'
 
 import {
   StyledGnbIconButton,
@@ -24,8 +27,6 @@ import {
   StyledSubNavListItem,
   StyledSubNavSocialIconGroup,
 } from './styles'
-
-import { AuthControlButton } from './auth-control-button'
 
 interface SidebarDetailsProps {
   isOpen: boolean
@@ -62,7 +63,7 @@ export const SidebarDetails: React.FC<SidebarDetailsProps> = ({ isOpen }) => {
             {subMenuList.map((subMenuItem) => (
               <StyledSubNavListItem key={subMenuItem}>
                 <NavLink to={`/${subMenuItem}`}>
-                  {Object.values(navMap.subMenuName[subMenuItem])}
+                  {navMap.subMenuName[subMenuItem]}
                 </NavLink>
               </StyledSubNavListItem>
             ))}
