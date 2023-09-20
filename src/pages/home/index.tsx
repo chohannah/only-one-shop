@@ -1,6 +1,11 @@
 import { Outlet } from 'react-router-dom'
 
-import { Directory, Collections, FeaturedMagazine } from '../../components'
+import {
+  Directory,
+  Collections,
+  FeaturedMagazine,
+  Instagram,
+} from '../../components'
 
 export const Home = () => {
   return (
@@ -8,6 +13,7 @@ export const Home = () => {
       <Directory />
       <Collections />
       <FeaturedMagazine />
+      <Instagram />
       <Outlet />
     </main>
   )
