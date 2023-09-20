@@ -1,0 +1,1 @@
+export { FeaturedMagazine } from './featured'
