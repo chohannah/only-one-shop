@@ -30,7 +30,6 @@ export const StyledCollectionsHeader = styled.header<UseResponsive>`
   button {
     ${textStyle('xxsWide')};
     width: auto;
-    font-weight: 400;
   }
 
   ${({ isTablet, theme }) =>

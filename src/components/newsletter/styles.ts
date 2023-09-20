@@ -49,7 +49,6 @@ export const StyledNewsletterForm = styled.form<UseResponsive>`
     ${flexbox('start', 'center')};
     ${textStyle('xxsWide')};
     margin-top: 32px;
-    font-weight: 400;
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.white};
 
