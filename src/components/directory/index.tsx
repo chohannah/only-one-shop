@@ -1,8 +1,6 @@
 import { Key } from 'react'
 import { Balancer } from 'react-wrap-balancer'
 
-import { useResponsive } from '../../hooks/useResponsive'
-
 import { CategoryCard } from '../category-card'
 
 import { Container, Row, Column } from '../grid'
@@ -31,14 +29,12 @@ const categories: DirectoryCategory[] = [
 ]
 
 export const Directory = () => {
-  const { isTablet, isDesktop } = useResponsive()
-
   return (
-    <StyledDirectory isTablet={isTablet} isDesktop={isDesktop}>
+    <StyledDirectory>
       <Container>
         <Row justifyContent="center">
           <Column sm={4} md={10} lg={8}>
-            <StyledDirectoryTitle isTablet={isTablet} isDesktop={isDesktop}>
+            <StyledDirectoryTitle>
               <Balancer>
                 Our mission is to collect unique & timeless design artefacts.
                 From heritage to contemporary.

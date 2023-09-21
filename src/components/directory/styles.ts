@@ -1,19 +1,15 @@
 import styled from 'styled-components'
 
-import { UseResponsive } from '../../hooks/useResponsive'
+import { flexbox, textStyle, media } from '../../styles/utils'
 
-import { flexbox } from '../../styles/utils'
-import { textStyle } from '../../styles/utils'
-
-export const StyledDirectory = styled.section<UseResponsive>`
+export const StyledDirectory = styled.section`
   padding: 48px 0;
   background-color: ${({ theme }) => theme.colors.warmGray[200]};
 
-  ${({ isTablet }) => isTablet && `padding: 112px 0;`}
-  ${({ isDesktop }) => isDesktop && `padding: 112px 0;`};
+  ${media.greaterThan('tablet')`padding: 112px 0;`}
 `
 
-export const StyledDirectoryTitle = styled.h2<UseResponsive>`
+export const StyledDirectoryTitle = styled.h2`
   ${flexbox()};
   flex-grow: 1;
   padding: 0 38px;
@@ -25,19 +21,12 @@ export const StyledDirectoryTitle = styled.h2<UseResponsive>`
     text-align: center;
   }
 
-  ${({ isTablet, theme }) =>
-    isTablet &&
-    `padding: 16px 38px; 
+  ${media.greaterThan('tablet')`padding: 16px 38px; 
     margin-bottom: 96px; 
 
     span {
-        font-size: ${theme.fontSizes.md}`}
+        font-size: ${({ theme }) => theme.fontSizes.md};`}
 
-  ${({ isDesktop, theme }) =>
-    isDesktop &&
-    `padding: 16px 38px; 
-    margin-bottom: 96px; 
-
-    span {
-        font-size: ${theme.fontSizes.lg}`}
+  ${media.greaterThan('desktop')`span {font-size: ${({ theme }) =>
+    theme.fontSizes.lg}};`}
 `
