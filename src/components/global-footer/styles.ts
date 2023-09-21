@@ -1,24 +1,22 @@
 import styled from 'styled-components'
 
-import { UseResponsive } from '../../hooks/useResponsive'
-
-import { flexbox, inlineFlexbox, textStyle } from '../../styles/utils'
+import { flexbox, inlineFlexbox, textStyle, media } from '../../styles/utils'
 
 export const StyledGlobalFooter = styled.footer`
   margin-bottom: 80px;
 `
 
-export const StyledGlobalFooterWrapper = styled.div<UseResponsive>`
+export const StyledGlobalFooterWrapper = styled.div`
   ${flexbox('between', 'center')};
   padding: 24px 12px;
 
-  ${({ isTablet }) => isTablet && `padding: 48px 24px;`}
+  ${media.greaterThan('tablet')`padding: 48px 24px;`}
 `
 export const StyledGlobalFooterLeft = styled.div`
   ${flexbox()}
 `
 
-export const StyledGlobalFooterLogo = styled.div<UseResponsive>`
+export const StyledGlobalFooterLogo = styled.div`
   ${inlineFlexbox()};
   width: 108px;
   height: 108px;
@@ -28,9 +26,8 @@ export const StyledGlobalFooterLogo = styled.div<UseResponsive>`
     height: 100%;
     object-fit: cover;
   }
-
-  ${({ isTablet }) => isTablet && `width: 120px; height: 120px;`}
-  ${({ isDesktop }) => isDesktop && `margin: 0 82px 0 16px;`}
+  ${media.greaterThan('tablet')`width: 120px; height: 120px;`}
+  ${media.greaterThan('desktop')`margin: 0 82px 0 16px;`}
 `
 
 export const StyledGlobalFooterRight = styled.div`
@@ -76,14 +73,11 @@ export const StyledGlobalFooterIconButton = styled.button`
   }
 `
 
-export const StyledGlobalFooterSubMenuText = styled.p<UseResponsive>`
+export const StyledGlobalFooterSubMenuText = styled.p`
   ${textStyle('xxs')};
   font-weight: 600;
   text-align: right;
 
-  ${({ isTablet, theme }) =>
-    isTablet && `font-size: ${theme.fontSizes.md}; font-weight: 500;`}
-
-  ${({ isDesktop, theme }) =>
-    isDesktop && `font-size: ${theme.fontSizes.md}; font-weight: 500;`}
+  ${media.greaterThan('tablet')`font-size: ${({ theme }) =>
+    theme.fontSizes.md}; font-weight: 500;`}
 `

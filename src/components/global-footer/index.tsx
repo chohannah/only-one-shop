@@ -24,16 +24,17 @@ import {
 } from './styles'
 import { Grid } from '../grid'
 
-export const GlobalFooter = () => {
-  const { isDesktop, isTablet } = useResponsive()
+export function GlobalFooter() {
+  const { isDesktop } = useResponsive()
+
   const subMenuList = Object.keys(navMap.subMenuName)
 
   return (
     <StyledGlobalFooter>
       <Grid sm={4}>
-        <StyledGlobalFooterWrapper isTablet={isTablet}>
+        <StyledGlobalFooterWrapper>
           <StyledGlobalFooterLeft>
-            <StyledGlobalFooterLogo isTablet={isTablet} isDesktop={isDesktop}>
+            <StyledGlobalFooterLogo>
               <LogoCircle />
             </StyledGlobalFooterLogo>
 
@@ -65,10 +66,7 @@ export const GlobalFooter = () => {
               </StyledGlobalFooterIconButton>
             </StyledGlobalFooterSocialIconGroup>
 
-            <StyledGlobalFooterSubMenuText
-              isTablet={isTablet}
-              isDesktop={isDesktop}
-            >
+            <StyledGlobalFooterSubMenuText>
               Honouring masters, <br /> Collecting design icons.
             </StyledGlobalFooterSubMenuText>
           </StyledGlobalFooterRight>
