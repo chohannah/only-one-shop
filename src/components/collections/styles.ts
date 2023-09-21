@@ -1,16 +1,10 @@
 import styled from 'styled-components'
 
-import { UseResponsive } from './../../hooks/useResponsive'
-
-import { columnFlexbox, flexbox, textStyle } from '../../styles/utils'
-
-interface StyledCollectionsProps extends UseResponsive {
-  pathname: string
-}
+import { columnFlexbox, flexbox, textStyle, media } from '../../styles/utils'
 
 const CARD_HEIGHT = '36vw'
 
-export const StyledCollections = styled.section<StyledCollectionsProps>`
+export const StyledCollections = styled.section<{ pathname: string }>`
   ${columnFlexbox()};
   padding: 24px 0;
   width: 100%;
@@ -18,11 +12,10 @@ export const StyledCollections = styled.section<StyledCollectionsProps>`
   background-color: ${({ theme, pathname }) =>
     pathname === '/' ? theme.colors.warmGray[300] : theme.colors.white};
 
-  ${({ isTablet }) => isTablet && `padding: 48px 0`};
-  ${({ isDesktop }) => isDesktop && `padding: 48px 0`};
+  ${media.greaterThan('tablet')`padding: 48px 0;`}
 `
 
-export const StyledCollectionsHeader = styled.header<UseResponsive>`
+export const StyledCollectionsHeader = styled.header`
   ${flexbox('between', 'center')};
   margin-bottom: 32px;
   width: 100%;
@@ -32,23 +25,20 @@ export const StyledCollectionsHeader = styled.header<UseResponsive>`
     width: auto;
   }
 
-  ${({ isTablet, theme }) =>
-    isTablet &&
-    `margin-bottom: 48px; button {font-size: ${theme.fontSizes.baseWide}};`}
-  ${({ isDesktop, theme }) =>
-    isDesktop &&
-    `margin-bottom: 48px; button {font-size: ${theme.fontSizes.baseWide}};`}
+  ${media.greaterThan('tablet')`margin-bottom: 48px; button {font-size: ${({
+    theme,
+  }) => theme.fontSizes.baseWide};}`}
 `
 
-export const StyledCollectionsTitle = styled.h2<UseResponsive>`
+export const StyledCollectionsTitle = styled.h2`
   ${textStyle('md')};
   font-weight: 500;
 
-  ${({ isTablet, theme }) => isTablet && `font-size: ${theme.fontSizes.lg};`}
-  ${({ isDesktop, theme }) => isDesktop && `font-size: ${theme.fontSizes.lg};`}
+  ${media.greaterThan('tablet')`font-size: ${({ theme }) =>
+    theme.fontSizes.lg};`}
 `
 
-export const StyledCollectionsLinkCard = styled.article<UseResponsive>`
+export const StyledCollectionsLinkCard = styled.article`
   ${columnFlexbox('center', 'start')};
   margin-bottom: 32px;
   width: 100%;
@@ -59,13 +49,11 @@ export const StyledCollectionsLinkCard = styled.article<UseResponsive>`
     font-weight: 400;
   }
 
-  ${({ isTablet, theme }) =>
-    isTablet && `a {font-size: ${theme.fontSizes.base};}`}
-  ${({ isDesktop, theme }) =>
-    isDesktop && `a {font-size: ${theme.fontSizes.base};}`}
+  ${media.greaterThan('tablet')`a {font-size: ${({ theme }) =>
+    theme.fontSizes.base};}`}
 `
 
-export const StyledCollectionsLinkCardImageButton = styled.button<UseResponsive>`
+export const StyledCollectionsLinkCardImageButton = styled.button`
   margin-bottom: 8px;
   width: 100%;
   height: auto;
@@ -76,10 +64,7 @@ export const StyledCollectionsLinkCardImageButton = styled.button<UseResponsive>
     object-fit: cover;
   }
 
-  ${({ isTablet }) =>
-    isTablet && `margin-bottom: 16px; height: ${CARD_HEIGHT};`}
-  ${({ isDesktop }) =>
-    isDesktop && `margin-bottom: 16px; height: ${CARD_HEIGHT};`}
+  ${media.greaterThan('tablet')`margin-bttom: 16px; height: ${CARD_HEIGHT};`}
 `
 
 export const StyledCollectionsQuoteCard = styled.article`

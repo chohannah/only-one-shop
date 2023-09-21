@@ -4,6 +4,8 @@ import Balancer from 'react-wrap-balancer'
 import { useResponsive } from '../../hooks'
 import { collectionsMap } from '../collections-map'
 
+import { SectionHeader } from '../section-header'
+
 import { LogoLetter } from '../../assets/logos'
 
 import { Button } from '../button'
@@ -11,42 +13,24 @@ import { Container, Row, Column } from '../grid'
 
 import {
   StyledCollections,
-  StyledCollectionsHeader,
   StyledCollectionsLinkCard,
   StyledCollectionsLinkCardImageButton,
   StyledCollectionsQuoteCard,
   StyledCollectionsQuoteCardTitle,
-  StyledCollectionsTitle,
 } from './styles'
-import { ArrowLongRight } from '../../assets/icons'
 
 export const Collections = () => {
   const collectionsList = Object.keys(collectionsMap)
   let pathname = window.location.pathname
 
-  const { isMobile, isTablet, isDesktop } = useResponsive()
+  const { isMobile } = useResponsive()
 
   return (
-    <StyledCollections
-      pathname={pathname}
-      isTablet={isTablet}
-      isDesktop={isDesktop}
-    >
+    <StyledCollections pathname={pathname}>
       <Container>
         <Row>
-          <Column sm={4}>
-            <StyledCollectionsHeader isTablet={isTablet} isDesktop={isDesktop}>
-              <StyledCollectionsTitle>Collections</StyledCollectionsTitle>
+          <SectionHeader title="Collections" />
 
-              <Button variant="icon">
-                See all
-                <ArrowLongRight />
-              </Button>
-            </StyledCollectionsHeader>
-          </Column>
-        </Row>
-
-        <Row>
           {collectionsList.map((item) => (
             <Column
               sm={4}
@@ -56,14 +40,9 @@ export const Collections = () => {
               <StyledCollectionsLinkCard
                 as={Link}
                 to={`collections/${item}`}
-                isTablet={isTablet}
-                isDesktop={isDesktop}
                 key={item}
               >
-                <StyledCollectionsLinkCardImageButton
-                  isTablet={isTablet}
-                  isDesktop={isDesktop}
-                >
+                <StyledCollectionsLinkCardImageButton>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/collections/${item}/hero.jpg`}
                     alt={`Link to ${item} collections}`}
@@ -71,7 +50,7 @@ export const Collections = () => {
                 </StyledCollectionsLinkCardImageButton>
 
                 <Button
-                  to={`collections/${item}`}
+                  to={`/collections/${item}`}
                   variant="underlined"
                   size={isMobile ? 24 : 34}
                 >
