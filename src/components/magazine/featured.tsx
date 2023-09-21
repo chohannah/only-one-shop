@@ -14,7 +14,7 @@ import {
 } from './styles'
 
 export const FeaturedMagazine = () => {
-  const { isMobile, isTablet, isDesktop } = useResponsive()
+  const { isMobile } = useResponsive()
 
   return (
     <StyledFeaturedMagazine>
@@ -35,25 +35,16 @@ export const FeaturedMagazine = () => {
           </Column>
 
           <Column sm={4} md={6} lg={6}>
-            <StyledFeaturedMagazineTextGroup isTablet={isTablet}>
-              <StyledFeaturedMagazineCategory
-                isTablet={isTablet}
-                isDesktop={isDesktop}
-              >
+            <StyledFeaturedMagazineTextGroup>
+              <StyledFeaturedMagazineCategory>
                 Design
               </StyledFeaturedMagazineCategory>
 
-              <StyledFeaturedMagazineTitle
-                isTablet={isTablet}
-                isDesktop={isDesktop}
-              >
+              <StyledFeaturedMagazineTitle>
                 <Balancer>Dieter Rams 10 principles of good Design</Balancer>
               </StyledFeaturedMagazineTitle>
 
-              <StyledFeaturedMagazineDesc
-                isTablet={isTablet}
-                isDesktop={isDesktop}
-              >
+              <StyledFeaturedMagazineDesc>
                 Dieter Rams famous 10 principles of good design have become
                 iconic and have inspired designers across the world.
               </StyledFeaturedMagazineDesc>

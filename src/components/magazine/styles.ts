@@ -4,14 +4,14 @@ import {
   flexbox,
   lineClamp,
   textStyle,
+  media,
 } from '../../styles/utils'
-import { UseResponsive } from '../../hooks/useResponsive'
 
-export const StyledFeaturedMagazine = styled.section<UseResponsive>`
+export const StyledFeaturedMagazine = styled.section`
   padding: 24px 0;
   width: 100%;
 
-  ${({ isTablet }) => isTablet && `padding: 48px 0;`}
+  ${media.greaterThan('tablet')`padding: 48px 0;`}
 `
 
 export const StyledFeaturedMagazineCardImage = styled.div`
@@ -28,7 +28,7 @@ export const StyledFeaturedMagazineCardImage = styled.div`
   }
 `
 
-export const StyledFeaturedMagazineTextGroup = styled.div<UseResponsive>`
+export const StyledFeaturedMagazineTextGroup = styled.div`
   ${columnFlexbox('center', 'start')};
   padding: 40px 32px;
   height: 100%;
@@ -38,43 +38,33 @@ export const StyledFeaturedMagazineTextGroup = styled.div<UseResponsive>`
     ${textStyle('xxsWide')};
   }
 
-  ${({ isTablet, theme }) =>
-    isTablet && `button {font-size: ${theme.fontSizes.baseWide}};`}
+  ${media.greaterThan('tablet')`button {font-size: ${({ theme }) =>
+    theme.fontSizes.baseWide}};`}
 `
 
-export const StyledFeaturedMagazineCategory = styled.h4<UseResponsive>`
+export const StyledFeaturedMagazineCategory = styled.h4`
   ${textStyle('xxsWide')};
   margin-bottom: 16px;
   font-weight: 400;
-
-  ${({ isTablet, theme }) =>
-    isTablet && `margin-bottom: 24px; font-size: ${theme.fontSizes.base};`}
-  ${({ isDesktop, theme }) =>
-    isDesktop && `margin-bottom: 24px; font-size: ${theme.fontSizes.base};`}
+  ${media.greaterThan('tablet')`margin-bottom: 24px; font-size: ${({ theme }) =>
+    theme.fontSizes.base};`}
 `
-export const StyledFeaturedMagazineTitle = styled.h1<UseResponsive>`
+export const StyledFeaturedMagazineTitle = styled.h1`
   margin-bottom: 16px;
   span {
     ${textStyle('md')};
     font-weight: 500;
   }
-
-  ${({ isTablet, theme }) =>
-    isTablet &&
-    `margin-bottom: 24px; span {font-size: ${theme.fontSizes.lg}; }`}
-  ${({ isDesktop, theme }) =>
-    isDesktop &&
-    `margin-bottom: 24px; span {font-size: ${theme.fontSizes.lg}; }`}
+  ${media.greaterThan('tablet')`margin-bottom: 24px; span {font-size: ${({
+    theme,
+  }) => theme.fontSizes.lg};}`}
 `
-export const StyledFeaturedMagazineDesc = styled.p<UseResponsive>`
+
+export const StyledFeaturedMagazineDesc = styled.p`
   ${textStyle('xxsWide')};
   ${lineClamp(2)};
   margin-bottom: 16px;
 
-  ${({ isTablet, theme }) =>
-    isTablet &&
-    `margin-bottom: 48px; font-size: ${theme.fontSizes.base}; -webkit-line-clamp: 3;`}
-  ${({ isDesktop, theme }) =>
-    isDesktop &&
-    `margin-bottom: 48px; font-size: ${theme.fontSizes.base}; -webkit-line-clamp: 3;`}
+  ${media.greaterThan('tablet')`margin-bottom: 48px; font-size: ${({ theme }) =>
+    theme.fontSizes.base}; -webkit-line-clamp: 3;`}
 `
