@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import { useResponsive } from '../../hooks'
 import { navMap } from '../nav-map'
 
 import { ArrowLongRight } from '../../assets/icons'
@@ -21,7 +20,6 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   variant = 'default',
   title,
 }) => {
-  const { isTablet, isDesktop } = useResponsive()
   let pathname = window.location.pathname
   const tabList =
     pathname === '/' || '/products' || 'products/*'
@@ -30,11 +28,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 
   return (
     <Column sm={4}>
-      <StyledSectionHeader
-        title={title}
-        isTablet={isTablet}
-        isDesktop={isDesktop}
-      >
+      <StyledSectionHeader title={title}>
         <StyledSectionTitle>{title}</StyledSectionTitle>
 
         {variant === 'tabs' ? (

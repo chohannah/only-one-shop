@@ -1,10 +1,8 @@
 import styled from 'styled-components'
-import { UseResponsive } from '../../hooks/useResponsive'
 
-import { flexbox } from '../../styles/utils'
-import { textStyle } from '../../styles/utils'
+import { flexbox, textStyle, media } from '../../styles/utils'
 
-export const StyledSectionHeader = styled.header<UseResponsive>`
+export const StyledSectionHeader = styled.header`
   ${flexbox('between', 'center')};
   margin-bottom: 32px;
   width: 100%;
@@ -14,18 +12,15 @@ export const StyledSectionHeader = styled.header<UseResponsive>`
     width: auto;
   }
 
-  ${({ isTablet, theme }) =>
-    isTablet &&
-    `margin-bottom: 48px; button {font-size: ${theme.fontSizes.baseWide}};`}
-  ${({ isDesktop, theme }) =>
-    isDesktop &&
-    `margin-bottom: 48px; button {font-size: ${theme.fontSizes.baseWide}};`}
+  ${media.greaterThan('tablet')`margin-bottom: 48px; button {font-size: ${({
+    theme,
+  }) => theme.fontSizes.baseWide}};`}
 `
 
-export const StyledSectionTitle = styled.h2<UseResponsive>`
+export const StyledSectionTitle = styled.h2`
   ${textStyle('md')};
   font-weight: 500;
 
-  ${({ isTablet, theme }) => isTablet && `font-size: ${theme.fontSizes.lg};`}
-  ${({ isDesktop, theme }) => isDesktop && `font-size: ${theme.fontSizes.lg};`}
+  ${media.greaterThan('tablet')`font-size: ${({ theme }) =>
+    theme.fontSizes.lg};`}
 `
