@@ -61,10 +61,10 @@ export const Newsletter = () => {
   }
 
   return (
-    <StyledNewsletter isTablet={isTablet} isDesktop={isDesktop}>
+    <StyledNewsletter>
       {/* {status === null ( */}
 
-      <StyledNewsletterLeft isTablet={isTablet} isDesktop={isDesktop}>
+      <StyledNewsletterLeft>
         <StyledNewsletterTitle>
           <Balancer>
             Sign up for our newsletter to receive special offers, news and great
@@ -74,11 +74,9 @@ export const Newsletter = () => {
 
         <StyledNewsletterForm
           onSubmit={handleNewsletterSubmit}
-          isTablet={isTablet}
-          isDesktop={isDesktop}
           // action=''
         >
-          <StyledNewsletterFormInput isTablet={isTablet} isDesktop={isDesktop}>
+          <StyledNewsletterFormInput>
             <span className="newsletter-input-circle" />
             <input
               className="newsletter-input"
@@ -91,7 +89,7 @@ export const Newsletter = () => {
             />
           </StyledNewsletterFormInput>
 
-          <StyledNewsletterFormInput isTablet={isTablet} isDesktop={isDesktop}>
+          <StyledNewsletterFormInput>
             <span className="newsletter-input-circle" />
             <input
               className="newsletter-input"
@@ -123,7 +121,7 @@ export const Newsletter = () => {
           <img
             src={`${process.env.PUBLIC_URL}/images/global/newsletter.jpg`}
             alt="Newsletter thumbnail"
-            aria-label="Braun TP1 designed by Dieter Rams image"
+            aria-label="Braun TP1(an audio proudct of Braun) designed by Dieter Rams image"
           />
         </StyledNewsletterImage>
       ) : null}

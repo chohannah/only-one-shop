@@ -1,32 +1,30 @@
 import styled from 'styled-components'
 
-import { columnFlexbox, flexbox } from '../../styles/utils'
-import { textStyle } from '../../styles/utils'
-import { UseResponsive } from '../../hooks/useResponsive'
+import { columnFlexbox, flexbox, textStyle, media } from '../../styles/utils'
 
 const NEWSLETTER_PADDING_SM = `32px`
 const NEWSLETTER_PADDING_MD = `48px`
 
-export const StyledNewsletter = styled.section<UseResponsive>`
+export const StyledNewsletter = styled.section`
   ${flexbox()};
   padding: ${NEWSLETTER_PADDING_SM};
   width: 100%;
   background-color: ${({ theme }) => theme.colors.black};
   overflow: hidden;
 
-  ${({ isTablet }) => isTablet && `padding: 0; height: 340px;`}
-  ${({ isDesktop }) => isDesktop && `padding: 0; height: 410px;`}
+  ${media.greaterThan('tablet')`padding: 0; height: 340px;`}
+  ${media.greaterThan('desktop')`height: 410px;`}
 `
 
-export const StyledNewsletterLeft = styled.div<UseResponsive>`
+export const StyledNewsletterLeft = styled.div`
   ${columnFlexbox('center', 'start')};
   flex-grow: 1;
   height: 100%;
 
-  ${({ isTablet }) =>
-    isTablet &&
-    `width: 50vw; padding: ${NEWSLETTER_PADDING_SM} ${NEWSLETTER_PADDING_MD};`}
-  ${({ isDesktop }) => isDesktop && `padding: ${NEWSLETTER_PADDING_MD};`}
+  ${media.greaterThan(
+    'tablet'
+  )`width: 50vw; padding: ${NEWSLETTER_PADDING_SM} ${NEWSLETTER_PADDING_MD};`}
+  ${media.greaterThan('desktop')`padding: ${NEWSLETTER_PADDING_MD};`}
 `
 
 export const StyledNewsletterTitle = styled.h3`
@@ -41,12 +39,13 @@ export const StyledNewsletterTitle = styled.h3`
   }
 `
 
-export const StyledNewsletterForm = styled.form<UseResponsive>`
+export const StyledNewsletterForm = styled.form`
   ${columnFlexbox('center', 'start')};
   width: 70vw;
 
   button {
     ${flexbox('start', 'center')};
+
     ${textStyle('xxsWide')};
     margin-top: 32px;
     text-transform: uppercase;
@@ -57,12 +56,12 @@ export const StyledNewsletterForm = styled.form<UseResponsive>`
     }
   }
 
-  ${({ isTablet }) => isTablet && `width: 30vw;`}
-  ${({ isDesktop, theme }) =>
-    isDesktop && `width: 30vw; button {font-size: ${theme.fontSizes.base}};`}
+  ${media.greaterThan('tablet')`width: 30vw;`}
+  ${media.greaterThan('desktop')`button {font-size: ${({ theme }) =>
+    theme.fontSizes.base}};`}
 `
 
-export const StyledNewsletterFormInput = styled.div<UseResponsive>`
+export const StyledNewsletterFormInput = styled.div`
   ${flexbox('start', 'center')};
   position: relative;
   width: 100%;
@@ -100,25 +99,12 @@ export const StyledNewsletterFormInput = styled.div<UseResponsive>`
     }
   }
 
-  ${({ isTablet, theme }) =>
-    isTablet &&
-    `.newsletter-input {
-      font-size: ${theme.fontSizes.base};
+  ${media.greaterThan('tablet')`.newsletter-input {
+      font-size: ${({ theme }) => theme.fontSizes.base};
 
       &::-webkit-input-placeholder {
-        font-size: ${theme.fontSizes.base};
-      }}
-      `};
-
-  ${({ isDesktop, theme }) =>
-    isDesktop &&
-    `.newsletter-input {
-      font-size: ${theme.fontSizes.base};
-
-      &::-webkit-input-placeholder {
-        font-size: ${theme.fontSizes.base};
-      }}
-      `};
+        font-size: ${({ theme }) => theme.fontSizes.base};
+      }}`}
 `
 
 export const StyledNewsletterImage = styled.div`
