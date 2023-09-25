@@ -1,24 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import { ThemeProvider } from "styled-components";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
 
-import App from "./App";
+import App from './routes'
 
-import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "./store/store";
-import { theme } from "./styles";
-import { GlobalStyle } from "./globalStyles";
+import { PersistGate } from 'redux-persist/integration/react'
+import { store, persistor } from './store/store'
+import { theme } from './styles'
+import { GlobalStyle } from './globalStyles'
 
-import { Elements } from "@stripe/react-stripe-js";
-import { stripePromise } from "./utils/stripe/stripe.utils";
+import { Elements } from '@stripe/react-stripe-js'
+import { stripePromise } from './utils/stripe/stripe.utils'
 
 // import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -34,4 +32,4 @@ root.render(
       </PersistGate>
     </Provider>
   </React.StrictMode>
-);
+)
