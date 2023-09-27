@@ -12,14 +12,14 @@ export const PRODUCTS_DATA = [
         description:
           'Beautiful vintage black German design metal desk lamp by Kaiser Idell produced during 1930-1939 during the famous Bauhaus era. The metal “gooseneck“ allows various adjustments. The metal surface comes in enameled steel including a bakelite table clamp. German plug and E27 socket (bulb not included). Great working condition with beautiful patina.',
         images: {
-          main: `https://i.ibb.co/Fnj5H5D/main.png`,
-          thumbnail: `https://i.ibb.co/2YjHKFD/thumbnail.jpg`,
+          main: 'https://i.ibb.co/vD2t7Z5/main.png',
+          thumbnail: 'https://i.ibb.co/8sdWnVK/thumbnail.jpg',
           sub: {
-            sub1: 'https://i.ibb.co/31Zjzsq/sub-1.jpg',
-            sub2: 'https://i.ibb.co/By33wZM/sub-2.jpg',
-            sub3: 'https://i.ibb.co/WcZTjR6/sub-3.jpg',
-            sub4: 'https://i.ibb.co/G5Cn7gB/sub-4.jpg',
-            sub5: 'https://i.ibb.co/NSpDZGV/sub-5.jpg',
+            sub1: 'https://i.ibb.co/Yys9LgT/sub-1.jpg',
+            sub2: 'https://i.ibb.co/2F1m4zQ/sub-2.jpg',
+            sub3: 'https://i.ibb.co/PMPTHXJ/sub-3.jpg',
+            sub4: 'https://i.ibb.co/9bSjXfY/sub-4.jpg',
+            sub5: 'https://i.ibb.co/GsNDD01/sub-5.jpg',
           },
         },
         specifications: {
@@ -36,14 +36,14 @@ export const PRODUCTS_DATA = [
         isSold: false,
         description:
           'Beautiful vintage grey German design metal desk lamp inspired by the famous BAUHAUS era. The metal “gooseneck“ allows various adjustments. Original white cable, German plug and E27 socket (bulb not included). Excellent working condition.',
-        iamges: {
-          main: 'https://i.ibb.co/3776Tv0/main.png',
-          thumbnail: 'https://i.ibb.co/F8d3yrg/thumbnail.jpg',
+        images: {
+          main: 'https://i.ibb.co/b7KG3DG/main.png',
+          thumbnail: 'https://i.ibb.co/9bdc01z/thumbnail.jpg',
           sub: {
-            sub1: 'https://i.ibb.co/NKndmWN/sub-1.jpg',
-            sub2: 'https://i.ibb.co/p46H1Rw/sub-2.jpg',
-            sub3: 'https://i.ibb.co/Rv7K2MZ/sub-3.jpg',
-            sub4: 'https://i.ibb.co/FmHW6MG/sub-4.jpg',
+            sub1: 'https://i.ibb.co/fMzmW1t/sub-1.jpg',
+            sub2: 'https://i.ibb.co/kMzywzd/sub-2.jpg',
+            sub3: 'https://i.ibb.co/wSmxLh6/sub-3.jpg',
+            sub4: 'https://i.ibb.co/Sm6cZ58/sub-4.jpg',
           },
         },
         specifications: {
