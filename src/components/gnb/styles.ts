@@ -18,7 +18,6 @@ export const GNB_MARGIN_BOTTOM = `24px`
 export const StyledGnb = styled.header`
   position: sticky;
   top: 0;
-  margin-bottom: ${GNB_MARGIN_BOTTOM};
   width: 100%;
   height: ${GNB_HEIGHT};
   z-index: ${({ theme }) => theme.levels.gnb};
