@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay, EffectFade } from 'swiper/modules'
+import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -12,14 +12,13 @@ export const HomeCarousel = () => {
   return (
     <StyledHomeCarousel>
       <Swiper
-        pagination={{ clickable: true }}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
         }}
-        effect={'fade'}
         loop={true}
-        modules={[Pagination, Autoplay, EffectFade]}
+        pagination={{ clickable: true }}
+        modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
         {homeCarouselMap.map((slide) => (
