@@ -16,12 +16,12 @@ export const GNB_MARGIN_BOTTOM = `24px`
 
 // Gnb
 export const StyledGnb = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   height: ${GNB_HEIGHT};
   z-index: ${({ theme }) => theme.levels.gnb};
-  background-color: ${({ theme }) => theme.colors.white};
+  transition: background-color 250ms ${defaultEasing};
 
   .gnb-wrapper {
     ${flexbox('between')};
@@ -36,7 +36,8 @@ export const StyledGnb = styled.header`
   }
 
   .logo {
-    ${positionCenter()}
+    ${positionCenter()};
+    transition: display 560ms ${defaultEasing};
 
     a {
       display: block;
@@ -54,6 +55,7 @@ export const StyledGnbIconButton = styled.button`
   ${flexbox()};
   padding: 4px;
 
+  // SignOutIcon & LogInIcon
   svg {
     ${flexbox()};
     flex-grow: 0;
@@ -62,6 +64,7 @@ export const StyledGnbIconButton = styled.button`
     height: 24px;
     overflow: hidden;
     object-fit: cover;
+    color: ${({ theme }) => theme.colors.coolGray[800]};
   }
 
   .signout-text-sm,
@@ -70,13 +73,15 @@ export const StyledGnbIconButton = styled.button`
     margin-left: 8px;
     font-weight: 500;
     text-align: left;
+    color: ${({ theme }) => theme.colors.coolGray[700]};
   }
 
   .signout-text-lg,
   .login-text-lg {
     ${textStyle('xxs')};
-    font-weight: 400;
     margin-left: 4px;
+    font-weight: 400;
+    color: ${({ theme }) => theme.colors.coolGray[800]};
   }
 `
 // GnbNav
@@ -96,7 +101,7 @@ export const StyledGnbNavMenuListItem = styled.li<{ isActive: boolean }>`
     z-index: ${({ theme }) => theme.levels.sidebarMenuToggle};
     font-weight: 400;
     color: ${({ theme, isActive }) =>
-      isActive ? theme.colors.black : theme.colors.coolGray[600]};
+      isActive ? theme.colors.black : theme.colors.coolGray[700]};
 
     &:first-child {
       margin-right: 24px;
