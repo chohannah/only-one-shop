@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -10,7 +11,7 @@ import { StyledHomeCarousel } from './styles'
 
 export const HomeCarousel = () => {
   return (
-    <StyledHomeCarousel>
+    <StyledHomeCarousel className={clsx('home-carousel')}>
       <Swiper
         autoplay={{
           delay: 3000,
