@@ -1,23 +1,22 @@
 import { useEffect } from 'react'
-import { Routes, Route, Outlet } from 'react-router-dom'
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
 
 import { checkUserSession } from './store/user/user.action'
 
-import { Home } from './pages'
-import LogIn from './pages/log-in/log-in.component'
-import { Gnb } from './components'
-import SignUp from './pages/sign-up/sign-up.component'
+import { Home, Products } from './pages'
+import { Gnb, GnbHome, GlobalFooter, Newsletter } from './components'
+import LogIn from './pages/log-in'
+import SignUp from './pages/sign-up'
 
-import Shop from './pages/shop/shop.component'
 import Cart from './pages/cart/cart.component'
-import { GlobalFooter } from './components'
-import { Newsletter } from './components/newsletter'
+
 import NotFound from './pages/not-found'
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
+  const location = useLocation()
 
   useEffect(() => {
     dispatch(checkUserSession())
@@ -25,13 +24,14 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <Gnb />
+      {location.pathname === '/' ? <GnbHome /> : <Gnb />}
+
       <Routes>
         <Route path="/" element={<Outlet />}>
           <Route index element={<Home />}></Route>
           <Route path="log-in" element={<LogIn />}></Route>
           <Route path="sign-up" element={<SignUp />}></Route>
-          <Route path="shop/*" element={<Shop />}></Route>
+          <Route path="products/*" element={<Products />}></Route>
           <Route path="cart" element={<Cart />}></Route>
         </Route>
 
