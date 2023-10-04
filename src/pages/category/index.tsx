@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -7,7 +7,7 @@ import {
   selectCategoriesMap,
 } from '../../store/categories/category.selector'
 
-import ProductCard from '../../components/product-card/product-card.component'
+import { ProductCard } from '../../components'
 import Spinner from '../../components/spinner/spinner.component'
 // import { createLogger } from "redux-logger";
 
@@ -28,7 +28,7 @@ const Category = () => {
   }, [category, categoriesMap])
 
   return (
-    <Fragment>
+    <>
       {isLoading ? (
         <Spinner />
       ) : (
@@ -39,7 +39,7 @@ const Category = () => {
             ))}
         </div>
       )}
-    </Fragment>
+    </>
   )
 }
 
