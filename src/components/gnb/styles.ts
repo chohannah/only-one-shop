@@ -22,6 +22,7 @@ export const StyledGnb = styled.header`
   height: ${GNB_HEIGHT};
   z-index: ${({ theme }) => theme.levels.gnb};
   transition: background-color 250ms ${defaultEasing};
+  background-color: ${({ theme }) => theme.colors.white};
 
   .gnb-wrapper {
     ${flexbox('between')};
@@ -37,6 +38,7 @@ export const StyledGnb = styled.header`
 
   .logo {
     ${positionCenter()};
+    ${flexbox()};
     transition: display 560ms ${defaultEasing};
 
     a {
