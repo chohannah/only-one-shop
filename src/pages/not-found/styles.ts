@@ -50,7 +50,7 @@ export const StyledNotFoundLogo = styled.div`
   right: -52px;
   width: 135px;
   height: 135px;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.levels.logoCircle};
 
   svg {
     display: block;

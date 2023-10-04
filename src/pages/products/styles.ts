@@ -37,7 +37,7 @@ export const StyledProductsLogo = styled.div`
   right: -43px;
   width: 120px;
   height: 120px;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.levels.logoCircle};
 
   svg {
     display: block;

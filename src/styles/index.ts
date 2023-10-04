@@ -73,7 +73,9 @@ const colors = {
 }
 
 const levels = {
-  gnb: 10,
+  carouselTextGroup: 10,
+  logoCircle: 20,
+  gnb: 30,
   sidebarModal: 50,
   sidebarMenuToggle: 60,
   cartDropdownToggle: 60,

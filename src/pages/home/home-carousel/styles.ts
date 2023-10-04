@@ -26,7 +26,7 @@ export const StyledHomeCarousel = styled.section`
       ${columnFlexbox()};
       width: 100%;
       height: 100%;
-      z-index: 10;
+      z-index: ${({ theme }) => theme.levels.carouselTextGroup};
       text-align: center;
       color: ${({ theme }) => theme.colors.white};
 
