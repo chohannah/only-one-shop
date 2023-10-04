@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { flexbox } from '../../styles/utils'
+import { flexbox } from '../../../styles/utils'
 
 const IMAGE_LENGTH = 5
 

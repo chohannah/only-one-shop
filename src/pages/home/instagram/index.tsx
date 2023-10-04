@@ -1,7 +1,7 @@
-import { useResponsive } from '../../hooks/useResponsive'
+import { useResponsive } from '../../../hooks/useResponsive'
 
-import { Container, Row, Column } from '../grid'
-import { SectionHeader } from '../section-header'
+import { Container, Row, Column } from '../../../components/grid'
+import { SectionHeader } from '../../../components/section-header'
 import {
   StyledInstagram,
   StyledInstagramImage,
@@ -23,7 +23,7 @@ export const Instagram = () => {
         <StyledInstagram>
           <Container>
             <Row>
-              <SectionHeader title="Follow us on Instagram" />
+              <SectionHeader title="Follow us on Instagram" to="/" />
             </Row>
 
             <Row>
