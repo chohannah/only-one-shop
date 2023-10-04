@@ -2,6 +2,12 @@ import styled from 'styled-components'
 
 import { columnFlexbox, flexbox, textStyle, media } from '../../styles/utils'
 
+import { GNB_HEIGHT } from '../../components/gnb/styles'
+
+export const StyledProducts = styled.main`
+  margin-top: ${GNB_HEIGHT};
+`
+
 export const StyledProductsHeader = styled.div`
   ${columnFlexbox('between', 'start')};
   position: relative;
