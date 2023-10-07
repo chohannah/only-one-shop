@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 
 import { checkUserSession } from './store/user/user.action'
 
-import { Home, Products } from './pages'
+import { Home, Products, Shipping } from './pages'
 import { Gnb, GnbHome, GlobalFooter, Newsletter } from './components'
 import LogIn from './pages/log-in'
 import SignUp from './pages/sign-up'
@@ -33,6 +33,7 @@ const App: React.FC = () => {
           <Route path="sign-up" element={<SignUp />}></Route>
           <Route path="products/*" element={<Products />}></Route>
           <Route path="cart" element={<Cart />}></Route>
+          <Route path="shipping" element={<Shipping />}></Route>
         </Route>
 
         <Route path="*" element={<NotFound />} />
