@@ -64,7 +64,12 @@ export const CartDropdownContent = () => {
           step.
         </StyledCartDropdownFooterText>
 
-        <Button variant="filled" size={54} to="/cart">
+        <Button
+          variant="filled"
+          size={54}
+          to="/cart"
+          onClick={toggleIsCartOpen}
+        >
           View Cart ({cartCount})
         </Button>
       </StyledCartDropdownFooter>
