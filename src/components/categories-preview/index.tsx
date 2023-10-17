@@ -1,15 +1,19 @@
-import { Fragment } from 'react'
 import { useSelector } from 'react-redux'
+import clsx from 'clsx'
 
 import {
   selectCategoriesMap,
   selectIsLoading,
 } from '../../store/categories/category.selector'
 
-import CategoryPreview from '../../components/category-preview/category-preview.component'
+import { CategoryPreview, SectionHeader } from '..'
 import Spinner from '../../components/spinner/spinner.component'
 
-const CategoriesPreview = () => {
+import { Container, Row, Column } from '..'
+
+import { StyledCategoriesPreview } from './styles'
+
+export const CategoriesPreview = () => {
   const categoriesMap = useSelector(selectCategoriesMap)
   const isLoading = useSelector(selectIsLoading)
 
@@ -22,12 +26,26 @@ const CategoriesPreview = () => {
           const products = categoriesMap[title]
 
           return (
-            <CategoryPreview key={title} title={title} products={products} />
+            <StyledCategoriesPreview className={clsx('categories-preview')}>
+              <Container>
+                <Row>
+                  <Column sm={4}>
+                    <SectionHeader title={title.toUpperCase()} to={title} />
+                  </Column>
+                </Row>
+
+                <Row>
+                  <CategoryPreview
+                    key={title}
+                    title={title}
+                    products={products}
+                  />
+                </Row>
+              </Container>
+            </StyledCategoriesPreview>
           )
         })
       )}
     </>
   )
 }
-
-export default CategoriesPreview
