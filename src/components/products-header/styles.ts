@@ -5,8 +5,11 @@ import { columnFlexbox, flexbox, textStyle, media } from '../../styles/utils'
 export const StyledProductsHeader = styled.div`
   ${columnFlexbox('between', 'start')};
   position: relative;
+  margin-bottom: 24px;
   padding: 24px calc(${({ theme }) => theme.gutter} + 8px);
   background-color: ${({ theme }) => theme.colors.warmGray[100]};
+
+  ${media.greaterThan('tablet')`margin-bottom: 32px;`}
 `
 
 export const StyledProductsHeaderCategory = styled.h3`
