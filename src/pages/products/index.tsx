@@ -9,6 +9,7 @@ import {
   CategoriesPreview,
   Collections,
   ProductSourcing,
+  ProductsHeader,
 } from '../../components'
 
 import Category from '../category'
@@ -24,12 +25,15 @@ export const Products = () => {
 
   return (
     <StyledProducts className={clsx('products')}>
+      <ProductsHeader />
+
       <Routes>
         <Route index element={<CategoriesPreview />} />
         <Route path=":category" element={<Category />} />
       </Routes>
 
       <ProductSourcing />
+
       <Collections />
     </StyledProducts>
   )

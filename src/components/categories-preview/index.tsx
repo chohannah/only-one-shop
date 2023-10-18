@@ -6,7 +6,7 @@ import {
   selectIsLoading,
 } from '../../store/categories/category.selector'
 
-import { CategoryPreview, SectionHeader, ProductsHeader } from '..'
+import { CategoryPreview, SectionHeader } from '..'
 import Spinner from '../../components/spinner/spinner.component'
 
 import { Container, Row, Column } from '..'
@@ -27,7 +27,6 @@ export const CategoriesPreview = () => {
 
           return (
             <StyledCategoriesPreview className={clsx('categories-preview')}>
-              <ProductsHeader />
               <Container>
                 <Row>
                   <Column sm={4}>
