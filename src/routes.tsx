@@ -5,12 +5,10 @@ import { useDispatch } from 'react-redux'
 
 import { checkUserSession } from './store/user/user.action'
 
-import { Home, Products, Shipping } from './pages'
+import { Home, Products, Cart, Shipping } from './pages'
 import { Gnb, GnbHome, GlobalFooter, Newsletter } from './components'
 import LogIn from './pages/log-in'
 import SignUp from './pages/sign-up'
-
-import Cart from './pages/cart/cart.component'
 
 import NotFound from './pages/not-found'
 
