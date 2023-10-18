@@ -9,10 +9,11 @@ import {
   StyledProductsHeaderTitle,
   StyledProductsLogo,
 } from './styles'
+import clsx from 'clsx'
 
 export const ProductsHeader = () => {
   return (
-    <StyledProductsHeader>
+    <StyledProductsHeader className={clsx('products-header')}>
       <StyledProductsHeaderCategory>
         <Link to="/products">Products</Link>
       </StyledProductsHeaderCategory>
