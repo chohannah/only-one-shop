@@ -8,13 +8,18 @@ import {
   selectCategoriesMap,
 } from '../../store/categories/category.selector'
 
-import { ProductCard } from '../../components'
+import { Button, ProductCard } from '../../components'
 import Spinner from '../../components/spinner/spinner.component'
 // import { createLogger } from "redux-logger";
 
 import { Container, Row, Column } from '../../components'
 
-import { StyledCategory, StyledCategoryTitle } from './styles'
+import {
+  StyledCategory,
+  StyledCategoryHeader,
+  StyledCategoryTitle,
+} from './styles'
+import { ArrowLongRight } from '../../assets/icons'
 
 type CategoryRouteParams = {
   category: string
@@ -41,9 +46,20 @@ const Category = () => {
           <Container>
             <Row>
               <Column sm={4}>
-                <StyledCategoryTitle>
-                  {category.toUpperCase()}
-                </StyledCategoryTitle>
+                <StyledCategoryHeader>
+                  <StyledCategoryTitle>
+                    {category.toUpperCase()}
+                  </StyledCategoryTitle>
+
+                  <Button
+                    className="category-header-button"
+                    variant="icon"
+                    to="/products"
+                  >
+                    Back to list
+                    <ArrowLongRight />
+                  </Button>
+                </StyledCategoryHeader>
               </Column>
             </Row>
             <Row>
