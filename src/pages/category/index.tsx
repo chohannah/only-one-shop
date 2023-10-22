@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import clsx from 'clsx'
 
@@ -31,11 +31,14 @@ const Category = () => {
   >() as CategoryRouteParams
   const categoriesMap = useSelector(selectCategoriesMap)
   const isLoading = useSelector(selectIsLoading)
+  const location = useLocation()
   const [products, setProducts] = useState(categoriesMap[category])
 
   useEffect(() => {
     setProducts(categoriesMap[category])
   }, [category, categoriesMap])
+
+  const isCategoryPage = location.pathname.startsWith('/products/')
 
   return (
     <>
@@ -44,24 +47,26 @@ const Category = () => {
       ) : (
         <StyledCategory className={clsx('category')}>
           <Container>
-            <Row>
-              <Column sm={4}>
-                <StyledCategoryHeader>
-                  <StyledCategoryTitle>
-                    {category.toUpperCase()}
-                  </StyledCategoryTitle>
+            {isCategoryPage && (
+              <Row>
+                <Column sm={4}>
+                  <StyledCategoryHeader>
+                    <StyledCategoryTitle>
+                      {category.toUpperCase()}
+                    </StyledCategoryTitle>
 
-                  <Button
-                    className="category-header-button"
-                    variant="icon"
-                    to="/products"
-                  >
-                    Back to list
-                    <ArrowLongRight />
-                  </Button>
-                </StyledCategoryHeader>
-              </Column>
-            </Row>
+                    <Button
+                      className="category-header-button"
+                      variant="icon"
+                      to="/products"
+                    >
+                      Back to list
+                      <ArrowLongRight />
+                    </Button>
+                  </StyledCategoryHeader>
+                </Column>
+              </Row>
+            )}
             <Row>
               {products &&
                 products.map((product) => (
