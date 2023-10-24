@@ -3,7 +3,7 @@ export const homeCarouselMap = [
     cateogry: 'collection',
     title: 'We’re BRAUN lovers',
     imageUrl: 'https://i.ibb.co/hccdV1t/hero-1.jpg',
-    linkTo: 'collection',
+    linkTo: 'collections',
   },
   {
     cateogry: 'audio',
