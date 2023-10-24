@@ -47,7 +47,7 @@ const Category = () => {
       ) : (
         <StyledCategory className={clsx('category')}>
           <Container>
-            {isCategoryPage && (
+            {!isCategoryPage && (
               <Row>
                 <Column sm={4}>
                   <StyledCategoryHeader>
