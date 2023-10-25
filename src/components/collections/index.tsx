@@ -29,7 +29,7 @@ export const Collections = () => {
     <StyledCollections pathname={pathname}>
       <Container>
         <Row>
-          <SectionHeader title="Collections" />
+          <SectionHeader title="Collections" to="/collections" />
 
           {collectionsList.map((item) => (
             <Column
@@ -39,7 +39,7 @@ export const Collections = () => {
             >
               <StyledCollectionsLinkCard
                 as={Link}
-                to={`collections/${item}`}
+                to={`/collections/${item}`}
                 key={item}
               >
                 <StyledCollectionsLinkCardImageButton>
