@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 
-import { Container, Row, Column } from '../../../components'
-import { Button } from '../../../components'
+import { CategoryItem } from '../../../store/categories/category.types'
+
+import { Container, Row, Column, Button } from '../../../components'
 
 import {
   StyledProductDetailsHeader,
@@ -12,8 +13,7 @@ import {
   StyledProductDetailsHeaderTitle,
   StyledProductDetailsHeaderCategory,
   StyledProductDetailsHeaderTablist,
-} from '../styles'
-import { CategoryItem } from '../../../store/categories/category.types'
+} from './styles'
 
 type ProductDetailsHeaderProps = {
   category?: string
