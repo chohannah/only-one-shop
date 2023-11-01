@@ -439,6 +439,18 @@ CSV 250/1: Fully transistorized HiFi stereo amplifier with 2X65 watts of power (
         designer: ['dieter-rams'],
         description: `The iconic Braun CE 16 Radio Tuner has been design by legendary designer Dieter Rams in the years 1967 - 1969 in Germany. This particular example is in great outer condition with very minor signs of use and has been revised and tested. Fully functional and operational.
 Technical features: Reception ranges VHF 87-108 MHz / FM stereo / AM - medium wave 512-1640 kHz / Sensitivity 0.9 µV 30 dB signal-to-noise ratio / 40 kHz stroke / Selectivity 60 dB / 300 kHz / Distortion> 1% / Channel separation> 32 dB / AF output voltage FM 0.5 V / 40 kHz stroke; AM 0.5 V / 30% modulation (Ri = 10 kOhm) / Signal to noise ratio mono 60 dB / stereo 59 dB / Number of channels FM 14 / AM 11 / Fitted with 17 transistors, 14 germanium diodes, 4 silicon diodes / 220V & 110V / Special features: Automatic sharp tuning with VHF, HF display, tuning display by moving coil instrument, built-in stereo decoder, flywheel drive, gray sheet steel housing.`,
+        images: {
+          main: 'https://i.ibb.co/WVdyJ3k/main.png',
+          thumbnail: 'https://i.ibb.co/DV8Pq9d/thumbnail.jpg',
+          sub: {
+            sub1: 'https://i.ibb.co/b3Mgx7K/sub-1.jpg',
+            sub2: 'https://i.ibb.co/Lt8C52Z/sub-2.jpg',
+            sub3: 'https://i.ibb.co/BZ9zfBY/sub-3.jpg',
+            sub4: 'https://i.ibb.co/QYnN6jL/sub-4.jpg',
+            sub5: 'https://i.ibb.co/MhJ547h/sub-5.jpg',
+            sub6: 'https://i.ibb.co/3NJ269y/sub-6.jpg',
+          },
+        },
         specifications: {
           dimensions: ' L 34 x W 20 x H 11 cm',
           weight: '4,5 kg',
@@ -454,15 +466,17 @@ Technical features: Reception ranges VHF 87-108 MHz / FM stereo / AM - medium wa
         designer: ['reinhold-weiss'],
         description: `BRAUN KH 1000 headphones in its original packaging. Designed by Reinhold Weiß in 1967. Hi-Fi stereo headphones in studio quality. Listen to music with unrestricted dynamics and a full frequency range from 16 ... 20000Hz / 400 Ohm. Comfortable bracket and a large ear pads. Cable with DIN plug (adapter to modern cinch can be installed easily).`,
         images: {
-          main: 'https://i.ibb.co/WVdyJ3k/main.png',
-          thumbnail: 'https://i.ibb.co/DV8Pq9d/thumbnail.jpg',
+          main: 'https://i.ibb.co/dDmVHNx/main.png',
+          thumbnail: 'https://i.ibb.co/HBVwK9K/thumbnail.jpg',
           sub: {
-            sub1: 'https://i.ibb.co/b3Mgx7K/sub-1.jpg',
-            sub2: 'https://i.ibb.co/Lt8C52Z/sub-2.jpg',
-            sub3: 'https://i.ibb.co/BZ9zfBY/sub-3.jpg',
-            sub4: 'https://i.ibb.co/QYnN6jL/sub-4.jpg',
-            sub5: 'https://i.ibb.co/MhJ547h/sub-5.jpg',
-            sub6: 'https://i.ibb.co/3NJ269y/sub-6.jpg',
+            sub1: 'https://i.ibb.co/sFmTbp0/sub-1.jpg',
+            sub2: 'https://i.ibb.co/xLNX6fg/sub-2.jpg',
+            sub3: 'https://i.ibb.co/0ycv1Dz/sub-3.jpg',
+            sub4: 'https://i.ibb.co/rwkwp9L/sub-4.jpg',
+            sub5: 'https://i.ibb.co/N7yDHNb/sub-5.jpg',
+            sub6: 'https://i.ibb.co/4jYQ5gV/sub-6.jpg',
+            sub7: 'https://i.ibb.co/LSzt8jF/sub-7.jpg',
+            sub8: 'https://i.ibb.co/brngcdg/sub-8.jpg',
           },
         },
         specifications: {
@@ -506,6 +520,16 @@ Technical features: Reception ranges VHF 87-108 MHz / FM stereo / AM - medium wa
         isSold: false,
         designer: ['dietrich-lubs'],
         description: `Classic travel radio by Braun Type ABR 314 DF - typ 3869. Designed by Dietrich Lubs in 1980s – Germany. Use this beautiful design classic as an alarm or radio clock or simply just as a radio. This radio combines multiple top functions: digital search for radio stations, automatic adjustment of time & date, analog & digital clock, snooze for up to 60 minutes, display light & many more. The clock runs with a quite and precise Quartz mechanism. The front cover plastic can be opened and shows the world time zones on its back. The radio runs with 4 x AA batteries (not included). Excellent original condition with almost no signs of usage. Radio works seamlessly.`,
+        images: {
+          main: 'https://i.ibb.co/PzvwTj8/main.png',
+          thumbnail: 'https://i.ibb.co/4JtyG1b/thumbnail.jpg',
+          sub: {
+            sub1: 'https://i.ibb.co/3vMJyTt/sub-1.jpg',
+            sub2: 'https://i.ibb.co/02xCLJT/sub-2.jpg',
+            sub3: 'https://i.ibb.co/PG1sBX4/sub-3.jpg',
+            sub4: 'https://i.ibb.co/HBfmXGy/sub-4.jpg',
+          },
+        },
         specifications: {
           dimensions: 'W 16 x L 8 x H 3 cm',
           weight: '0,15 kg',
@@ -521,13 +545,18 @@ Technical features: Reception ranges VHF 87-108 MHz / FM stereo / AM - medium wa
         designer: ['dieter-rams'],
         description: `The legendary Braun SK 5 has been designed by Hans Gugelot + Dieter Rams, in 1958. It is equipped with a vinyl player, radio unit and a built-in Braun speaker box. The SK5 is an absolute beauty and design classic that you will find in MOMA and other museums. The radio part has been extended for longwave reception (LW). The PC3 SV turntable has been equipped with a stereo crystal pickup system and thus prepared for stereo playback (SV ). The SK 5 remains a mono system. Condition: Well preserved original condition with slight patina (see images). It has been reclaimed with great effort and care while making sure to preserve all original parts. Both the speaker and transistor, as well as vinyl player are functional. All parts are original! Sold as a prestige design collectible, not intended for daily use!`,
         images: {
-          main: 'https://i.ibb.co/PzvwTj8/main.png',
-          thumbnail: 'https://i.ibb.co/4JtyG1b/thumbnail.jpg',
+          main: 'https://i.ibb.co/GHFKrbJ/main.png',
+          thumbnail: 'https://i.ibb.co/VC8xfmW/thumbnail.jpg',
           sub: {
-            sub1: 'https://i.ibb.co/3vMJyTt/sub-1.jpg',
-            sub2: 'https://i.ibb.co/02xCLJT/sub-2.jpg',
-            sub3: 'https://i.ibb.co/PG1sBX4/sub-3.jpg',
-            sub4: 'https://i.ibb.co/HBfmXGy/sub-4.jpg',
+            sub1: 'https://i.ibb.co/gzjry2Y/sub-1.jpg',
+            sub2: 'https://i.ibb.co/b7n6SmW/sub-2.jpg',
+            sub3: 'https://i.ibb.co/dGs4ZXR/sub-3.jpg',
+            sub4: 'https://i.ibb.co/YRj5X5G/sub-4.jpg',
+            sub5: 'https://i.ibb.co/9wXLrY7/sub-5.jpg',
+            sub6: 'https://i.ibb.co/Zc3n6y0/sub-6.jpg',
+            sub7: 'https://i.ibb.co/Js7kgPn/sub-7.jpg',
+            sub8: 'https://i.ibb.co/GFnBkyR/sub-8.jpg',
+            sub9: 'https://i.ibb.co/syHZPj8/sub-9.jpg',
           },
         },
         specifications: {
@@ -644,6 +673,15 @@ Technical features: Reception ranges VHF 87-108 MHz / FM stereo / AM - medium wa
         price: 280,
         isSold: false,
         description: `Design classic wall clock "Georg Jensen" Copenhagen, Denmark by famous designer: Henning Koppel in 1978. Battery operated (not included). Great original condition with very minor patina.`,
+        images: {
+          main: 'https://i.ibb.co/6yfVD7V/main.png',
+          thumbnail: 'https://i.ibb.co/K586Cdx/thumbnail.jpg',
+          sub: {
+            sub1: 'https://i.ibb.co/zb4bq7T/sub-1.jpg',
+            sub2: 'https://i.ibb.co/tbBRScd/sub-2.jpg',
+            sub3: 'https://i.ibb.co/j6gFG0r/sub-3.jpg',
+          },
+        },
         specifications: {
           dimensions: 'L 22 x W 22 x H 6 cm',
           weight: '1,4 kg',
@@ -659,12 +697,12 @@ Technical features: Reception ranges VHF 87-108 MHz / FM stereo / AM - medium wa
         designer: ['dietrich-lubs'],
         description: `Large TN clock designed & made in Germany in the 1960s. The square clock is made of a transparent plastic body. Great outer condition: tiny scratches, working perfectly (new quartz mechanism (AA battery not included).`,
         images: {
-          main: 'https://i.ibb.co/6yfVD7V/main.png',
-          thumbnail: 'https://i.ibb.co/K586Cdx/thumbnail.jpg',
+          main: 'https://i.ibb.co/m0wd8ph/main.png',
+          thumbnail: 'https://i.ibb.co/Svq5jqs/thumbnail.jpg',
           sub: {
-            sub1: 'https://i.ibb.co/zb4bq7T/sub-1.jpg',
-            sub2: 'https://i.ibb.co/tbBRScd/sub-2.jpg',
-            sub3: 'https://i.ibb.co/j6gFG0r/sub-3.jpg',
+            sub1: 'https://i.ibb.co/dm2fGNF/sub-1.jpg',
+            sub2: 'https://i.ibb.co/6rvM9PH/sub-2.jpg',
+            sub3: 'https://i.ibb.co/c8HcQt3/sub-3.jpg',
           },
         },
         specifications: {
