@@ -49,7 +49,7 @@ const Category = () => {
           <ProductsHeader />
 
           <Container>
-            {!isCategoryPage && (
+            {isCategoryPage && (
               <Row>
                 <Column sm={4}>
                   <StyledCategoryHeader>
