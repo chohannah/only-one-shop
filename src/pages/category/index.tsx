@@ -8,7 +8,7 @@ import {
   selectCategoriesMap,
 } from '../../store/categories/category.selector'
 
-import { Button, ProductCard } from '../../components'
+import { Button, ProductCard, ProductsHeader } from '../../components'
 import Spinner from '../../components/spinner/spinner.component'
 // import { createLogger } from "redux-logger";
 
@@ -46,6 +46,8 @@ const Category = () => {
         <Spinner />
       ) : (
         <StyledCategory className={clsx('category')}>
+          <ProductsHeader />
+
           <Container>
             {!isCategoryPage && (
               <Row>

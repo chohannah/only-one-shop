@@ -9,12 +9,12 @@ import {
   CategoriesPreview,
   Collections,
   ProductSourcing,
-  ProductsHeader,
 } from '../../components'
 
 import Category from '../category'
 
 import { StyledProducts } from './styles'
+import { ProductDetails } from '../product-details'
 
 export const Products = () => {
   const dispatch = useDispatch()
@@ -25,11 +25,10 @@ export const Products = () => {
 
   return (
     <StyledProducts className={clsx('products')}>
-      <ProductsHeader />
-
       <Routes>
         <Route index element={<CategoriesPreview />} />
         <Route path=":category" element={<Category />} />
+        <Route path=":category/:productPath" element={<ProductDetails />} />
       </Routes>
 
       <ProductSourcing />
