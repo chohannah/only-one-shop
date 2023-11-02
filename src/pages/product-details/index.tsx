@@ -5,7 +5,6 @@ import clsx from 'clsx'
 import { selectCategories } from '../../store/categories/category.selector'
 import { selectCartItems } from '../../store/cart/cart.selector'
 import { addItemToCart } from '../../store/cart/cart.action'
-
 import { useResponsive } from '../../hooks/useResponsive'
 
 import {
@@ -14,9 +13,12 @@ import {
   ProductDetailsHeader,
   RelatedProducts,
 } from '..'
+import { Breadcrumbs, Button } from '../../components'
 
-import { StyledProductDetails } from './styles'
-import { Breadcrumbs } from '../../components'
+import {
+  StyledProductDetails,
+  StyledProductDetailsAddToCartButton,
+} from './styles'
 
 export const ProductDetails = () => {
   const dispatch = useDispatch()
@@ -72,6 +74,19 @@ export const ProductDetails = () => {
           ) : null}
 
           <RelatedProducts currentProduct={product} />
+
+          {isMobile ? (
+            <StyledProductDetailsAddToCartButton>
+              <Button
+                className="add-button"
+                variant="filled"
+                size={54}
+                onClick={handleAddToCart}
+              >
+                Add to cart
+              </Button>
+            </StyledProductDetailsAddToCartButton>
+          ) : null}
         </StyledProductDetails>
       ) : null}
     </>
