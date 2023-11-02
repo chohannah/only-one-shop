@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 
 import { CategoryItem } from '../../../store/categories/category.types'
+import { designersMap } from '../../designers/designers-map'
+import { useResponsive } from '../../../hooks'
 
 import { Container, Row, Column, Button } from '../../../components'
 
@@ -13,6 +15,8 @@ import {
   StyledProductDetailsHeaderTitle,
   StyledProductDetailsHeaderCategory,
   StyledProductDetailsHeaderTablist,
+  StyledProductDetailsHeaderPrice,
+  StyledProductDetailsHeaderDesigner,
 } from './styles'
 
 type ProductDetailsHeaderProps = {
@@ -27,6 +31,10 @@ export const ProductDetailsHeader: React.FC<ProductDetailsHeaderProps> = ({
   handleAddToCart,
 }) => {
   const [activeTab, setActiveTab] = useState<string | null>('tab-1')
+  const { isMobile } = useResponsive()
+
+  const { name, images, price, description, specifications, designer } =
+    product || {}
 
   const toggleTab = (tabId: string) => {
     if (activeTab === tabId) {
@@ -38,12 +46,19 @@ export const ProductDetailsHeader: React.FC<ProductDetailsHeaderProps> = ({
 
   const isTabActive = (tabId: string) => activeTab === tabId
 
-  const { name, images, price, description, specifications } = product || {}
+  const formattedDesignerName = (designerName: string) => {
+    const namesWithoutDash = designerName.split('-')
+    const capicaliseFirstLetters = namesWithoutDash.map((nameWithoutDash) => {
+      return nameWithoutDash.charAt(0).toUpperCase() + nameWithoutDash.slice(1)
+    })
+
+    return capicaliseFirstLetters.join(' ')
+  }
 
   return (
-    <StyledProductDetailsHeader>
+    <StyledProductDetailsHeader className={clsx('product-details-header')}>
       <Container>
-        <Row>
+        <Row alignItems="center">
           <Column sm={4} md={7} lg={8}>
             <StyledProductDetailsHeaderImage>
               <img src={images?.main} alt="" />
@@ -62,22 +77,26 @@ export const ProductDetailsHeader: React.FC<ProductDetailsHeaderProps> = ({
                 </StyledProductDetailsHeaderCategory>
               </Link>
 
-              <p>Price: €{price}</p>
+              <StyledProductDetailsHeaderPrice>
+                € {price}
+              </StyledProductDetailsHeaderPrice>
 
-              <Button
-                className="product-card-add-button"
-                variant="filled"
-                size={54}
-                onClick={handleAddToCart}
-              >
-                Add to cart
-              </Button>
+              {!isMobile ? (
+                <Button
+                  className="add-button"
+                  variant="filled"
+                  size={54}
+                  onClick={handleAddToCart}
+                >
+                  Add to cart
+                </Button>
+              ) : null}
 
               <Link className="header-desc" to="#detaild-description">
                 {description ? description.toString() : ''}
               </Link>
 
-              <StyledProductDetailsHeaderTablist className="header-tablist">
+              <StyledProductDetailsHeaderTablist>
                 <ul className="tablist" role="tablist">
                   <li className="tablist-item" role="tab">
                     <Link
@@ -111,17 +130,17 @@ export const ProductDetailsHeader: React.FC<ProductDetailsHeaderProps> = ({
                     hidden: !isTabActive('tab-1'),
                   })}
                 >
-                  <div>
+                  <div className="dimensions">
                     <dt>Dimensions:</dt>
                     <dd>{specifications?.dimensions}</dd>
                   </div>
 
-                  <div>
+                  <div className="weight">
                     <dt>Weight:</dt>
                     <dd>{specifications?.weight}</dd>
                   </div>
 
-                  <div>
+                  <div className="item-number">
                     <dt>Item No:</dt>
                     <dd>{specifications?.number}</dd>
                   </div>
@@ -136,10 +155,41 @@ export const ProductDetailsHeader: React.FC<ProductDetailsHeaderProps> = ({
                 >
                   Shipping cost is based on size, weight and destination. Just
                   add the product to the cart. The shipping price appears in the
-                  checkout. Read more about Shipping & Payment
-                  <Link to="/shipping">here</Link>
+                  checkout. Read more about Shipping & Payment {/*  */}
+                  <Link className="link-to-shipping" to="/shipping">
+                    here
+                  </Link>
                 </p>
               </StyledProductDetailsHeaderTablist>
+
+              <StyledProductDetailsHeaderDesigner>
+                <h3 className="designer-title">Designed by:</h3>
+
+                {designer?.map((name) => {
+                  const designersListItem = designersMap.find(
+                    (designerInfo) => designerInfo.path === name
+                  )
+
+                  return (
+                    <Link
+                      key={name}
+                      className="designer-link"
+                      to={`/designers/${designersListItem?.path}`}
+                    >
+                      <div className="designer-link-image">
+                        <img
+                          src={designersListItem?.imgUrl}
+                          alt={`portrait of ${designersListItem?.designer}`}
+                        />
+                      </div>
+
+                      <p className="designer-link-name">
+                        {formattedDesignerName(name)}
+                      </p>
+                    </Link>
+                  )
+                })}
+              </StyledProductDetailsHeaderDesigner>
             </StyledProductDetailsHeaderInfo>
           </Column>
         </Row>
