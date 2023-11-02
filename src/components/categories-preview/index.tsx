@@ -22,13 +22,13 @@ export const CategoriesPreview = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        Object.keys(categoriesMap).map((title) => {
-          const products = categoriesMap[title]
+        <StyledCategoriesPreview className={clsx('categories-preview')}>
+          <ProductsHeader />
 
-          return (
-            <StyledCategoriesPreview className={clsx('categories-preview')}>
-              <ProductsHeader />
+          {Object.keys(categoriesMap).map((title) => {
+            const products = categoriesMap[title]
 
+            return (
               <Container>
                 <Row>
                   <Column sm={4}>
@@ -44,9 +44,9 @@ export const CategoriesPreview = () => {
                   />
                 </Row>
               </Container>
-            </StyledCategoriesPreview>
-          )
-        })
+            )
+          })}
+        </StyledCategoriesPreview>
       )}
     </>
   )
