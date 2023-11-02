@@ -38,6 +38,34 @@ export const StyledProductDetailsCarouselHeader = styled.div`
   )`.product-details-carousel-header-wrapper {justify-content: space-between;}`}
 `
 
-export const StyledProductDetailsCarousel = styled.section``
+export const StyledProductDetailsCarousel = styled.section`
+  margin-bottom: 92px;
 
-export const StyledProductDetailsCarouselContent = styled.div``
+  .swiper {
+    padding: 24px 0;
+    background-color: ${({ theme }) => theme.colors.warmGray[100]};
+
+    &-wrapper {
+      .swiper-slide {
+        ${flexbox()};
+        width: 90%;
+        height: auto;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          vertical-align: center;
+        }
+      }
+    }
+  }
+
+  ${media.greaterThan('tablet')`
+  .product-details-carousel-header-wrapper {
+    .carousel-header-title {
+      font-size: ${({ theme }) => theme.fontSizes.lg};
+    }
+  }`}
+`
