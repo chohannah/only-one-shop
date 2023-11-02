@@ -85,6 +85,7 @@ declare module 'styled-components' {
 
     levels: {
       carouselTextGroup: number
+      productDetailsAddToCartButton: number
       logoCircle: number
       gnb: number
       sidebarModal: number
