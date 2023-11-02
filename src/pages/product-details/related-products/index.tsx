@@ -1,9 +1,12 @@
 import { useSelector } from 'react-redux'
+import clsx from 'clsx'
 
-import { CategoryItem } from '../../../store/categories/category.types'
 import { selectCategories } from '../../../store/categories/category.selector'
+import { CategoryItem } from '../../../store/categories/category.types'
 
-import { Container, Row, Column } from '../../../components'
+import { Container, Row, Column, CategoryPreview } from '../../../components'
+
+import { StyledRelatedProducts, StyledRelatedProductsTitle } from './styles'
 
 type RelatedProductsProps = {
   currentProduct: CategoryItem
@@ -26,23 +29,26 @@ export const RelatedProducts: React.FC<RelatedProductsProps> = ({
     .slice(0, 4)
 
   return (
-    <div>
+    <StyledRelatedProducts className={clsx('related-products')}>
       <Container>
         <Row>
           <Column sm={4}>
-            <h3>Related Products</h3>
+            <StyledRelatedProductsTitle>
+              Related Products
+            </StyledRelatedProductsTitle>
           </Column>
         </Row>
 
         <Row>
           {randomRelatedProducts.map((product) => (
-            <Column sm={2} md={3} lg={3} key={product.id}>
-              {product.name}
-              <img src={product.images?.thumbnail} alt="" />
-            </Column>
+            <CategoryPreview
+              key={product.id}
+              title={product.name}
+              products={[product]}
+            />
           ))}
         </Row>
       </Container>
-    </div>
+    </StyledRelatedProducts>
   )
 }
