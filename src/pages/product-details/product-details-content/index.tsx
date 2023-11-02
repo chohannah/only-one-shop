@@ -28,7 +28,9 @@ export const ProductDetailsContent: React.FC<ProductDetailsContentProps> = ({
         <Row>
           <Column sm={4} md={7} lg={8}>
             <StyledProductDetailsContentDesc>
-              <h3 className="desc-title">Description</h3>
+              <h3 className="desc-title" id="description">
+                Description
+              </h3>
               <p className="desc-content">{description}</p>
             </StyledProductDetailsContentDesc>
           </Column>

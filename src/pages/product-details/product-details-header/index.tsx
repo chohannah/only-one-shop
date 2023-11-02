@@ -55,6 +55,17 @@ export const ProductDetailsHeader: React.FC<ProductDetailsHeaderProps> = ({
     return capicaliseFirstLetters.join(' ')
   }
 
+  const handleScrollToDesc = () => {
+    const description = document.querySelector('#description') as HTMLElement
+
+    if (description) {
+      window.scrollTo({
+        top: description.offsetTop,
+        behavior: 'smooth',
+      })
+    }
+  }
+
   return (
     <StyledProductDetailsHeader className={clsx('product-details-header')}>
       <Container>
@@ -92,7 +103,11 @@ export const ProductDetailsHeader: React.FC<ProductDetailsHeaderProps> = ({
                 </Button>
               ) : null}
 
-              <Link className="header-desc" to="#detaild-description">
+              <Link
+                className="header-desc"
+                to="#description"
+                onClick={handleScrollToDesc}
+              >
                 {description ? description.toString() : ''}
               </Link>
 
