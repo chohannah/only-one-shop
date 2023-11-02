@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import clsx from 'clsx'
 
 import { selectCategories } from '../../store/categories/category.selector'
@@ -13,10 +12,11 @@ import {
   ProductDetailsCarousel,
   ProductDetailsContent,
   ProductDetailsHeader,
+  RelatedProducts,
 } from '..'
 
 import { StyledProductDetails } from './styles'
-import { RelatedProducts } from './related-products'
+import { Breadcrumbs } from '../../components'
 
 export const ProductDetails = () => {
   const dispatch = useDispatch()
@@ -47,6 +47,13 @@ export const ProductDetails = () => {
 
   return (
     <>
+      <Breadcrumbs
+        menu="products"
+        category={category}
+        name={name}
+        separator=" > "
+      />
+
       {product ? (
         <StyledProductDetails className={clsx('product-details')}>
           <ProductDetailsHeader
