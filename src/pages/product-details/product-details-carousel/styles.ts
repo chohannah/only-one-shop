@@ -35,7 +35,7 @@ export const StyledProductDetailsCarouselHeader = styled.div`
 
   ${media.greaterThan(
     'tablet'
-  )`.product-details-carousel-header-wrapper {justify-content: space-between;}`}
+  )`.product-details-carousel-header-wrapper {justify-content: space-between; padding: 48px 0;}`}
 `
 
 export const StyledProductDetailsCarousel = styled.section`
