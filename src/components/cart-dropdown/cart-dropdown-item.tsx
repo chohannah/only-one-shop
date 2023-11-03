@@ -1,18 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux'
+
+import { selectCartItems } from '../../store/cart/cart.selector'
 import { addItemToCart, removeItemFromCart } from '../../store/cart/cart.action'
 import { CartItem as TCartItem } from '../../store/cart/cart.types'
+
+import { MinusIcon, PlusIcon } from '../../assets/icons'
 
 import {
   StyledCartDropdownListItem,
   StyledCartDropdownListItemInfo,
   StyledCartDropdownListItemInfoCategory,
-  StyledCartDropdownListItemInfoQuantity,
   StyledCartDropdownListItemInfoTitle,
   StyledCartDropdownListItemPrice,
   StyledCartDropdownListItemThumbnail,
 } from './styles'
-import { selectCartItems } from '../../store/cart/cart.selector'
-import { MinusIcon, PlusIcon } from '../../assets/icons'
+import { QuantityCounter } from '../quantity-counter'
 
 type CartItemProps = {
   cartItem: TCartItem
@@ -46,15 +48,11 @@ export const CartDropdownItem: React.FC<CartItemProps> = ({ cartItem }) => {
           Electronic
         </StyledCartDropdownListItemInfoCategory>
 
-        <StyledCartDropdownListItemInfoQuantity>
-          <button type="button" onClick={handleAddItem}>
-            <PlusIcon />
-          </button>
-          Qty: {quantity}
-          <button type="button" onClick={handleRemoveItem}>
-            <MinusIcon />
-          </button>
-        </StyledCartDropdownListItemInfoQuantity>
+        <QuantityCounter
+          quantity={quantity}
+          onDecrement={handleRemoveItem}
+          onIncrement={handleAddItem}
+        />
       </StyledCartDropdownListItemInfo>
 
       <StyledCartDropdownListItemPrice>
