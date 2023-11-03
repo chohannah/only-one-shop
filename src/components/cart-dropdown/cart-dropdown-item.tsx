@@ -21,7 +21,7 @@ type CartItemProps = {
 }
 
 export const CartDropdownItem: React.FC<CartItemProps> = ({ cartItem }) => {
-  const { name, quantity, price, image } = cartItem
+  const { name, quantity, price, images } = cartItem
   const cartItems = useSelector(selectCartItems)
   const dispatch = useDispatch()
 
@@ -36,7 +36,7 @@ export const CartDropdownItem: React.FC<CartItemProps> = ({ cartItem }) => {
   return (
     <StyledCartDropdownListItem>
       <StyledCartDropdownListItemThumbnail>
-        <img src={image} alt={`thumbnail of ${name}`} />
+        <img src={images.thumbnail} alt={`thumbnail of ${name}`} />
       </StyledCartDropdownListItemThumbnail>
 
       <StyledCartDropdownListItemInfo>
