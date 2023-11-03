@@ -19,6 +19,7 @@ import {
   StyledProductDetails,
   StyledProductDetailsAddToCartButton,
 } from './styles'
+import { LogoCircle } from '../../assets/logos'
 
 export const ProductDetails = () => {
   const dispatch = useDispatch()
@@ -51,6 +52,8 @@ export const ProductDetails = () => {
     <>
       {product ? (
         <StyledProductDetails className={clsx('product-details')}>
+          <LogoCircle className="circle-logo" />
+
           <Breadcrumbs
             menu="products"
             category={category}
