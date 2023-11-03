@@ -24,9 +24,13 @@ import { QuantityCounter } from '../../components/quantity-counter'
 
 type CartItemProps = {
   cartItem: TCartItem
+  isCloseButton: boolean
 }
 
-export const CartItem: React.FC<CartItemProps> = ({ cartItem }) => {
+export const CartItem: React.FC<CartItemProps> = ({
+  cartItem,
+  isCloseButton,
+}) => {
   const { name, quantity, price, images } = cartItem
   const cartItems = useSelector(selectCartItems)
   const dispatch = useDispatch()
@@ -69,13 +73,15 @@ export const CartItem: React.FC<CartItemProps> = ({ cartItem }) => {
       </StyledCartItemMiddle>
 
       <StyledCartItemRight>
-        <StyledCartItemIconButton
-          type="button"
-          className="close-icon"
-          onClick={handleClearItem}
-        >
-          <CloseIcon aria-hidden />
-        </StyledCartItemIconButton>
+        {isCloseButton ? (
+          <StyledCartItemIconButton
+            type="button"
+            className="close-icon"
+            onClick={handleClearItem}
+          >
+            <CloseIcon aria-hidden />
+          </StyledCartItemIconButton>
+        ) : null}
 
         <p className="price">€ {price}</p>
       </StyledCartItemRight>

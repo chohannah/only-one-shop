@@ -7,7 +7,7 @@ import {
 
 import { useResponsive } from '../../hooks'
 
-import CartItem from './cart-item'
+import { CartItem } from '..'
 
 import { Container, Row, Column } from '../../components'
 import { Button } from '../../components'
@@ -71,7 +71,13 @@ export const Cart = () => {
               {cartItems.length === 0
                 ? null
                 : cartItems.map((cartItem) => {
-                    return <CartItem key={cartItem.id} cartItem={cartItem} />
+                    return (
+                      <CartItem
+                        key={cartItem.id}
+                        cartItem={cartItem}
+                        isCloseButton={true}
+                      />
+                    )
                   })}
             </StyledCartContent>
 
