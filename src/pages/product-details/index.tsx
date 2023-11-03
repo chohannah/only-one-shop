@@ -49,15 +49,15 @@ export const ProductDetails = () => {
 
   return (
     <>
-      <Breadcrumbs
-        menu="products"
-        category={category}
-        name={name}
-        separator=" > "
-      />
-
       {product ? (
         <StyledProductDetails className={clsx('product-details')}>
+          <Breadcrumbs
+            menu="products"
+            category={category}
+            name={name}
+            separator=" > "
+          />
+
           <ProductDetailsHeader
             category={category}
             product={product}
