@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
+import { selectCategories } from '../../store/categories/category.selector'
 import { selectCartItems } from '../../store/cart/cart.selector'
 import { selectIsLoading } from '../../store/categories/category.selector'
 
@@ -23,12 +25,21 @@ type ProductCardProps = {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { name, price, images } = product
+  const { name, price, images, path } = product
   const dispatch = useDispatch()
+  const categories = useSelector(selectCategories)
   const cartItems = useSelector(selectCartItems)
   const isLoading = useSelector(selectIsLoading)
 
   const addProductToCart = () => dispatch(addItemToCart(cartItems, product))
+
+  const category = product
+    ? categories
+        .find((category) =>
+          category.items.some((item) => item.path === product.path)
+        )
+        ?.title.toLowerCase()
+    : ''
 
   return (
     <>
@@ -36,9 +47,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <Spinner />
       ) : (
         <StyledProductCard className={clsx('product-card')}>
-          <StyledProductCardThumbnailContainer>
-            <img src={images?.thumbnail} alt="thumbnail" />
-          </StyledProductCardThumbnailContainer>
+          <Link to={`/products/${category}/${path}`}>
+            <StyledProductCardThumbnailContainer>
+              <img src={images?.thumbnail} alt="thumbnail" />
+            </StyledProductCardThumbnailContainer>
+          </Link>
 
           <StyledProductCardTextGroup>
             <StyledProductCardName>{name}</StyledProductCardName>
