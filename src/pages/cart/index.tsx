@@ -7,7 +7,7 @@ import {
 
 import { useResponsive } from '../../hooks'
 
-import { CartItem } from '..'
+import { CartItem } from '../../components'
 
 import { Container, Row, Column } from '../../components'
 import { Button } from '../../components'

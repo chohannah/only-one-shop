@@ -11,6 +11,8 @@ import {
 import { CartItem as TCartItem } from '../../store/cart/cart.types'
 
 import { CloseIcon } from '../../assets/icons'
+import { QuantityCounter } from '..'
+
 import {
   StyledCartItem,
   StyledCartItemIconButton,
@@ -20,7 +22,6 @@ import {
   StyledCartItemRight,
   StyledCartItemThumbnail,
 } from './styles'
-import { QuantityCounter } from '../../components/quantity-counter'
 
 type CartItemProps = {
   cartItem: TCartItem
