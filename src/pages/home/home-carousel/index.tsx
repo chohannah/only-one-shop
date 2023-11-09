@@ -22,8 +22,8 @@ export const HomeCarousel = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        {homeCarouselMap.map((slide) => (
-          <SwiperSlide>
+        {homeCarouselMap.map((slide, i) => (
+          <SwiperSlide key={i}>
             <div className="carousel-text-group">
               <p className="category">{slide.cateogry.toUpperCase()}</p>
               <h2 className="title">{slide.title}</h2>
