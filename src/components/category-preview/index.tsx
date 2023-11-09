@@ -1,30 +1,27 @@
-import ProductCard from '../product-card/product-card.component'
 import { CategoryItem } from '../../store/categories/category.types'
+
+import { ProductCard } from '../product-card'
+
+import { Column } from '../grid'
 
 type CategoryPreviewTypes = {
   title: string
   products: CategoryItem[]
 }
 
-const CategoryPreview: React.FC<CategoryPreviewTypes> = ({
+export const CategoryPreview: React.FC<CategoryPreviewTypes> = ({
   title,
   products,
 }) => {
   return (
-    <section>
-      <h2>{title}</h2>
-
-      <div className="shop">
-        {' '}
-        {/* temp */}
-        {products
-          .filter((_, index) => index < 3)
-          .map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-      </div>
-    </section>
+    <>
+      {products
+        .filter((_, index) => index < 4)
+        .map((product) => (
+          <Column sm={2} md={3} key={product.id}>
+            <ProductCard product={product} />
+          </Column>
+        ))}
+    </>
   )
 }
-
-export default CategoryPreview
