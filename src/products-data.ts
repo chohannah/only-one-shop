@@ -491,7 +491,6 @@ Technical features: Reception ranges VHF 87-108 MHz / FM stereo / AM - medium wa
         path: 'braun-ts-31-radio',
         price: 1150,
         isSold: false,
-        designer: ['herbert-hirche'],
         description: `Original BRAUN TS 31 designed by Herbert Hirche in 1957 in Stuttgart, Germany. The TS 31 radio receiver appeared in the Braun catalogue in 1961 with a new RC82 chassis and is based on the the previous model (TS 3). The FM radio tuner is very powerful in terms of sensitivity & selectivity and delivers an outstanding stereo sound performance. This model is equipped with the "magical eye" (Magische Auge) which lights up in green light on the front operation module. The Braun TS31 is in excellent condition, especially the teak wood which looks almost as new (almost no coloring or scratches) since the previous owner has taken great care. The controls are fully functional and the radio is operating on 220V (contains 110V switch). Please note the given its age you will still hear a slight rustling sound, which only makes this piece of design history more authentic. All parts are original, even the vintage fiber on the front with great patina, the only exception is one of the connecting speaker wires on the back. Please note that we are selling the Braun TS 31 as a design collectors item, and although it is fully functional it is mainly intended for decoration purposes and not everyday use.`,
         images: {
           main: 'https://i.ibb.co/DC98zG9/main.png',
