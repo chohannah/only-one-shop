@@ -1,19 +1,17 @@
-import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import clsx from 'clsx'
 
 import { navMap } from '../nav-map'
 
 import { AuthControlButton } from './auth-control-button'
-
-import { Grid } from '../grid'
-
-import { LogoCircle } from '../../assets/logos'
 import {
   SocialTwitter,
   SocialInstagram,
   SocialPinterest,
 } from '../../assets/icons'
+import { LogoCircle } from '../../assets/logos'
+
+import { Grid } from '../grid'
 
 import {
   StyledGnbIconButton,
@@ -30,9 +28,13 @@ import {
 
 interface SidebarDetailsProps {
   isOpen: boolean
+  toggleSidebar: () => void
 }
 
-export const SidebarDetails: React.FC<SidebarDetailsProps> = ({ isOpen }) => {
+export const SidebarDetails: React.FC<SidebarDetailsProps> = ({
+  isOpen,
+  toggleSidebar,
+}) => {
   const mainMenuList = Object.keys(navMap.mainMenuName)
   const subMenuList = Object.keys(navMap.subMenuName)
 
@@ -45,14 +47,14 @@ export const SidebarDetails: React.FC<SidebarDetailsProps> = ({ isOpen }) => {
         <StyledMainNav className={clsx('main-nav')}>
           <StyledMainNavList>
             {mainMenuList.map((mainMenuItem) => (
-              <StyledMainNavListItem key={mainMenuItem}>
+              <StyledMainNavListItem key={mainMenuItem} onClick={toggleSidebar}>
                 <NavLink to={`/${mainMenuItem}`}>
                   {Object.values(navMap.mainMenuName[mainMenuItem])}
                 </NavLink>
               </StyledMainNavListItem>
             ))}
 
-            <StyledMainNavListItem>
+            <StyledMainNavListItem onClick={toggleSidebar}>
               <AuthControlButton />
             </StyledMainNavListItem>
           </StyledMainNavList>

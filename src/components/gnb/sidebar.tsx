@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { StyledGnbSidebarIconButton } from './styles'
 import { SidebarDetails } from './sidebar-details'
@@ -24,7 +24,7 @@ export const Sidebar = () => {
         <span className="menu-icon" />
       </StyledGnbSidebarIconButton>
 
-      <SidebarDetails isOpen={isSidebarOpen} />
+      <SidebarDetails isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
     </>
   )
 }
