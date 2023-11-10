@@ -29,7 +29,7 @@ export const CategoriesPreview = () => {
             const products = categoriesMap[title]
 
             return (
-              <Container>
+              <Container key={title}>
                 <Row>
                   <Column sm={4}>
                     <SectionHeader title={title.toUpperCase()} to={title} />

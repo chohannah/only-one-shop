@@ -72,8 +72,8 @@ const Category = () => {
             <Row>
               {products &&
                 products.map((product) => (
-                  <Column sm={2} md={3}>
-                    <ProductCard key={product.id} product={product} />
+                  <Column sm={2} md={3} key={product.id}>
+                    <ProductCard product={product} />
                   </Column>
                 ))}
             </Row>
