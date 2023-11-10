@@ -1,6 +1,6 @@
 export const PRODUCTS_DATA = [
   {
-    title: 'Lightning',
+    title: 'Lighting',
     order: 1,
     items: [
       {
