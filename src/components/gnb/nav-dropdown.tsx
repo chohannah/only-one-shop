@@ -39,6 +39,11 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
     <StyledGnbNavDropdown className={clsx('gnb-nav-dropdown')}>
       <StyledGnbNavDropdownNav>
         <StyledGnbNavDropdownNavList className={clsx('dropdown-list')}>
+          <StyledGnbNavDropdownNavListItem
+            onMouseEnter={() => handleMouseEnter('all')}
+          >
+            <NavLink to={`${menuItem}`}>All</NavLink>
+          </StyledGnbNavDropdownNavListItem>
           {dropdownMenuList.map((item) => (
             <StyledGnbNavDropdownNavListItem
               key={item}
@@ -73,7 +78,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
             <StyledGnbNavDropdownLinkCard key={menu}>
               <StyledGnbNavDropdownLinkCardImage
                 as={Link}
-                to={`${menuItem}/${menu}`}
+                to={`collections/${menu}`}
                 type="button"
               >
                 <img
@@ -106,7 +111,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
                 type="button"
                 variant="underlined"
               >
-                {Object.values(navMap.navMenu.sideMagazine[menu])}
+                {navMap.navMenu.sideMagazine[menu][0]}
               </Button>
             </StyledGnbNavDropdownLinkCard>
           ))}
