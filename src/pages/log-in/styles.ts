@@ -1,15 +1,38 @@
 import styled from 'styled-components'
+
+import { columnFlexbox, flexbox, media, textStyle } from '../../styles/utils'
 import { GNB_HEIGHT } from '../../components/gnb/styles'
-import { columnFlexbox, flexbox, textStyle } from '../../styles/utils'
+import { DEFAULT_CONTAINER_GUTTER } from '../../components/grid/styles'
 
 export const StyledLogIn = styled.section`
+  ${flexbox()};
   position: relative;
   margin-top: ${GNB_HEIGHT};
   padding: 48px 0;
   overflow: hidden;
+
+  ${media.greaterThan('tablet')`
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0;
+  `}
 `
 
-export const StyledLogInHeader = styled.header`
+export const StyledLogInContentGroup = styled.div`
+  padding: 64px calc(${DEFAULT_CONTAINER_GUTTER}* 4);
+  width: 100%;
+
+  ${media.greaterThan('tablet')`
+    width: 100%;
+    padding-right: calc(${DEFAULT_CONTAINER_GUTTER}* 12);
+  `}
+
+  ${media.greaterThan('desktop')`
+  padding-left: calc(${DEFAULT_CONTAINER_GUTTER}* 6);
+  `}
+`
+
+export const StyledLogInContentHeader = styled.header`
   margin-bottom: 64px;
 
   .header-welcome {
@@ -43,9 +66,22 @@ export const StyledLogInHeader = styled.header`
     height: 120px;
     z-index: ${({ theme }) => theme.levels.logoCircle};
   }
+
+  ${media.greaterThan('tablet')`
+    .header-title {
+      font-size: ${({ theme }) => theme.fontSizes.lg};
+    }
+
+    .circle-logo {
+      top: calc(${GNB_HEIGHT} + 30px);
+      right: -18px;
+      width: 135px;
+      height: 135px;
+    }
+  `}
 `
 
-export const StyledLogInForm = styled.form`
+export const StyledLogInContentForm = styled.form`
   margin-bottom: 48px;
 
   .form-submit-button {
@@ -54,12 +90,26 @@ export const StyledLogInForm = styled.form`
   }
 `
 
-export const StyledLogInFooter = styled.footer`
+export const StyledLogInContentFooter = styled.footer`
   ${columnFlexbox()};
 
   .footer-title {
     ${textStyle('xs')};
     margin-bottom: 4px;
     color: ${({ theme }) => theme.colors.coolGray[700]};
+  }
+`
+
+export const StyledLogInImage = styled.div`
+  ${flexbox()};
+  flex-shrink: 0;
+  width: 50vw;
+  height: auto;
+  overflow: hidden;
+
+  img {
+    display: inline-block;
+    height: 100%;
+    object-fit: cover;
   }
 `

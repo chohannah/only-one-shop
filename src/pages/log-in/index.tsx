@@ -9,13 +9,15 @@ import {
 
 import { useResponsive } from '../../hooks/useResponsive'
 
-import { FormInput, Button, Container, Row, Column } from '../../components'
+import { FormInput, Button } from '../../components'
 
 import {
   StyledLogIn,
-  StyledLogInFooter,
-  StyledLogInForm,
-  StyledLogInHeader,
+  StyledLogInContentGroup,
+  StyledLogInContentFooter,
+  StyledLogInContentForm,
+  StyledLogInContentHeader,
+  StyledLogInImage,
 } from './styles'
 import { ArrowLongRight, GoogleIcon } from '../../assets/icons'
 import { LogoCircle } from '../../assets/logos'
@@ -70,71 +72,77 @@ export const LogIn = () => {
 
   return (
     <StyledLogIn className={clsx('log-in')}>
-      <Container>
-        <Row>
-          <Column sm={4}>
-            <StyledLogInHeader>
-              <span className="header-welcome">Welcom back</span>
-              <h3 className="header-title">Log In</h3>
+      {!isMobile ? (
+        <StyledLogInImage>
+          <img
+            src="https://i.ibb.co/CB9KmJH/log-in.jpg"
+            alt="Log In"
+            aria-label="A cozy room with audio products in log in page."
+          />
+        </StyledLogInImage>
+      ) : null}
 
-              <button
-                className="google-button"
-                type="button"
-                onClick={signInWithGoogle}
-              >
-                <GoogleIcon aria-hidden />
-                Continue with Google
-              </button>
+      <StyledLogInContentGroup>
+        <StyledLogInContentHeader>
+          <span className="header-welcome">Welcom back</span>
+          <h3 className="header-title">Log In</h3>
 
-              <LogoCircle className="circle-logo" aria-hidden />
-            </StyledLogInHeader>
+          <button
+            className="google-button"
+            type="button"
+            onClick={signInWithGoogle}
+          >
+            <GoogleIcon aria-hidden />
+            Continue with Google
+          </button>
 
-            <StyledLogInForm onSubmit={handleSubmit}>
-              <FormInput
-                label="Email"
-                type="email"
-                required
-                onChange={handleChange}
-                name="email"
-                value={email}
-                placeholder="example@example.com"
-              />
+          <LogoCircle className="circle-logo" aria-hidden />
+        </StyledLogInContentHeader>
 
-              <FormInput
-                label="Password"
-                type="password"
-                required
-                onChange={handleChange}
-                name="password"
-                value={password}
-                placeholder="Enter your password"
-              />
+        <StyledLogInContentForm onSubmit={handleSubmit}>
+          <FormInput
+            label="Email"
+            type="email"
+            required
+            onChange={handleChange}
+            name="email"
+            value={email}
+            placeholder="example@example.com"
+          />
 
-              <Button
-                className="form-submit-button"
-                variant="filled"
-                size={54}
-                type="submit"
-              >
-                log in
-              </Button>
-            </StyledLogInForm>
+          <FormInput
+            label="Password"
+            type="password"
+            required
+            onChange={handleChange}
+            name="password"
+            value={password}
+            placeholder="Enter your password"
+          />
 
-            <StyledLogInFooter>
-              <p className="footer-title">Need a new account?</p>
-              <Button
-                className="link-to-sign-up"
-                to="/sign-up"
-                variant="icon"
-                size={isMobile ? '24wide' : '34wide'}
-              >
-                Sign Up
-                <ArrowLongRight />
-              </Button>
-            </StyledLogInFooter>
-          </Column>
-        </Row>
-      </Container>
+          <Button
+            className="form-submit-button"
+            variant="filled"
+            size={54}
+            type="submit"
+          >
+            log in
+          </Button>
+        </StyledLogInContentForm>
+
+        <StyledLogInContentFooter>
+          <p className="footer-title">Need a new account?</p>
+          <Button
+            className="link-to-sign-up"
+            to="/sign-up"
+            variant="icon"
+            size={isMobile ? '24wide' : '34wide'}
+          >
+            Sign Up
+            <ArrowLongRight />
+          </Button>
+        </StyledLogInContentFooter>
+      </StyledLogInContentGroup>
     </StyledLogIn>
   )
 }
