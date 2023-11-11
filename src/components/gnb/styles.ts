@@ -181,6 +181,7 @@ export const StyledGnbSidebarIconButton = styled.button`
 
 export const StyledGnbSidebarDetails = styled.aside<StyledGnbSidebarDetailsProps>`
   position: fixed;
+  top: 0;
   left: 0;
   padding-top: calc(${GNB_HEIGHT} + ${GNB_MARGIN_BOTTOM});
   width: 100%;
@@ -261,7 +262,7 @@ export const StyledSidebarLogo = styled.div`
   ${flexbox()};
   position: absolute;
   right: -32px;
-  bottom: 20%;
+  bottom: 8%;
   width: 120px;
   height: 120px;
   z-index: 10;
