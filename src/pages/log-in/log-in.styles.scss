@@ -1,9 +1,0 @@
-.log-in {
-  @include column-flex(start, center);
-  margin: 0 22px 55px 22px;
-
-  @include responsive(T) {
-    width: 40%;
-    margin: 0 auto;
-  }
-}
