@@ -3,7 +3,7 @@ import { useState } from 'react'
 import clsx from 'clsx'
 
 import { StyledFormInput } from './styles'
-import { VisibleFalse, VisibleTrue } from '../../assets/icons'
+import { VisibleTrueIcon, VisibleFalseIcon } from '../../assets/icons'
 
 type FormInputProps = {
   label: string
@@ -41,7 +41,7 @@ export const FormInput: React.FC<FormInputProps> = ({
             type="button"
             onClick={togglePasswordVisible}
           >
-            {isPasswordVisible ? <VisibleTrue /> : <VisibleFalse />}
+            {isPasswordVisible ? <VisibleTrueIcon /> : <VisibleFalseIcon />}
           </button>
         ) : null}
       </div>
