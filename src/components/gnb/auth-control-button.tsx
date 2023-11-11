@@ -16,14 +16,14 @@ export const AuthControlButton = () => {
 
   const signOutUser = () => dispatch(signOutStart())
 
-  const { isMobile } = useResponsive()
+  const { isDesktop } = useResponsive()
 
   return (
     <>
       {currentUser ? (
         <StyledGnbIconButton className="signout" onClick={signOutUser}>
           <SignOutIcon />
-          {isMobile ? (
+          {!isDesktop ? (
             <p className="signout-text-sm">Sign Out</p>
           ) : (
             <p className="signout-text-lg">Sign Out</p>
@@ -32,7 +32,7 @@ export const AuthControlButton = () => {
       ) : (
         <StyledGnbIconButton className="login" as={Link} to="/log-in">
           <LogInIcon />
-          {isMobile ? (
+          {!isDesktop ? (
             <p className="login-text-sm">Log In</p>
           ) : (
             <p className="login-text-lg">Log In</p>
