@@ -1,4 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import clsx from 'clsx'
 
@@ -30,6 +31,7 @@ const defaultFormFields = {
 
 export const LogIn = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
   const { isMobile } = useResponsive()
@@ -48,6 +50,8 @@ export const LogIn = () => {
     try {
       dispatch(emailSignInStart(email, password))
       resetFormFields()
+      alert('Logged in successfully. Welcome back!')
+      navigate(-1)
     } catch (error) {
       switch (error) {
         case 'auth/wrong-password':
