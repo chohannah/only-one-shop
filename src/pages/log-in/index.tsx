@@ -7,9 +7,12 @@ import {
   emailSignInStart,
 } from '../../store/user/user.action'
 
-import { useResponsive } from '../../hooks/useResponsive'
+import { useResponsive } from '../../hooks'
 
 import { FormInput, Button } from '../../components'
+
+import { ArrowLongRight, GoogleIcon } from '../../assets/icons'
+import { LogoCircle } from '../../assets/logos'
 
 import {
   StyledLogIn,
@@ -19,8 +22,6 @@ import {
   StyledLogInContentHeader,
   StyledLogInImage,
 } from './styles'
-import { ArrowLongRight, GoogleIcon } from '../../assets/icons'
-import { LogoCircle } from '../../assets/logos'
 
 const defaultFormFields = {
   email: '',
@@ -84,7 +85,7 @@ export const LogIn = () => {
 
       <StyledLogInContentGroup>
         <StyledLogInContentHeader>
-          <span className="header-welcome">Welcom back</span>
+          <span className="header-welcome">Welcome back</span>
           <h3 className="header-title">Log In</h3>
 
           <button
@@ -126,12 +127,13 @@ export const LogIn = () => {
             size={54}
             type="submit"
           >
-            log in
+            Log In
           </Button>
         </StyledLogInContentForm>
 
         <StyledLogInContentFooter>
           <p className="footer-title">Need a new account?</p>
+
           <Button
             className="link-to-sign-up"
             to="/sign-up"
