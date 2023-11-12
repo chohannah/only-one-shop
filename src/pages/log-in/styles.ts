@@ -18,13 +18,27 @@ export const StyledLogIn = styled.section`
   `}
 `
 
+export const StyledLogInImage = styled.div`
+  ${flexbox()};
+  width: 50vw;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    display: inline-block;
+    height: 100%;
+    object-fit: cover;
+  }
+`
+
 export const StyledLogInContentGroup = styled.div`
-  padding: 64px calc(${DEFAULT_CONTAINER_GUTTER}* 4);
-  width: 100%;
+  ${columnFlexbox('cetner', 'start')};
+  flex-grow: 1;
+  padding: 0 calc(${DEFAULT_CONTAINER_GUTTER}* 4);
+  height: 100%;
 
   ${media.greaterThan('tablet')`
-    width: 100%;
-    padding-right: calc(${DEFAULT_CONTAINER_GUTTER}* 12);
+    padding: 64px calc(${DEFAULT_CONTAINER_GUTTER}* 12) 64px calc(${DEFAULT_CONTAINER_GUTTER}* 4);
   `}
 
   ${media.greaterThan('desktop')`
@@ -83,6 +97,7 @@ export const StyledLogInContentHeader = styled.header`
 
 export const StyledLogInContentForm = styled.form`
   margin-bottom: 48px;
+  width: 100%;
 
   .form-submit-button {
     margin-top: 64px;
@@ -92,24 +107,11 @@ export const StyledLogInContentForm = styled.form`
 
 export const StyledLogInContentFooter = styled.footer`
   ${columnFlexbox()};
+  width: 100%;
 
   .footer-title {
     ${textStyle('xs')};
     margin-bottom: 4px;
     color: ${({ theme }) => theme.colors.coolGray[700]};
-  }
-`
-
-export const StyledLogInImage = styled.div`
-  ${flexbox()};
-  flex-shrink: 0;
-  width: 50vw;
-  height: auto;
-  overflow: hidden;
-
-  img {
-    display: inline-block;
-    height: 100%;
-    object-fit: cover;
   }
 `
