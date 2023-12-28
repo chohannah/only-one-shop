@@ -30,7 +30,7 @@ export const Instagram = () => {
               <Column sm={4}>
                 <StyledInstagramImageGroup>
                   {images.map((index) => (
-                    <StyledInstagramImage>
+                    <StyledInstagramImage key={index}>
                       <img
                         src={`${process.env.PUBLIC_URL}/images/instagram/instagram-${index}.jpg`}
                         alt="Instagram"
