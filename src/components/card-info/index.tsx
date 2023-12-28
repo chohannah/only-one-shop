@@ -11,6 +11,7 @@ import { selectCurrentUser } from '../../store/user/user.selector'
 import { Button } from '../button'
 
 import { StyledCardInfo } from './styles'
+import { scrollToTop } from '../../utils/scroll/scroll-to-top'
 
 const ifValidCardElement = (
   card: StripeCardElement | null
@@ -66,6 +67,7 @@ export const CardInfo = () => {
       if (paymentResult.paymentIntent.status === 'succeeded') {
         alert('Payment is successfuly done! We will redirect you to home.')
         navigate('/')
+        scrollToTop()
       }
     }
   }
