@@ -37,9 +37,16 @@
 
 ## 👀 Todo list
 
-- [ ] Style with Styled Components
-- [ ] Type with Typescript
-- [ ] Fix Login/out bug
+- [x] Set StyledCartCounterButton as a link to `/cart`in mobile and tablet screens
+- [ ] Set as the product's own category -- StyledCartDropdownListItemInfoCategory
+- [ ] Set cartCount as 0 when payment is success -- CartDropdown > index, CardInfo
+- [ ] Align cartCount visually -- StyledCartCounterButton
+- [ ] Implement scrollToUp utility function to navigation links
+- [ ] Align images on LogIn and SignUp page
+- [ ] Add smooth transitions to components
+- [ ] Set up `Collections` page
+- [ ] Set up `Designers` page
+- [ ] Create test codes
 
 <br />
 <br />
