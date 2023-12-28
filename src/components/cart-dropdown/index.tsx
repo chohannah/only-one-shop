@@ -20,11 +20,11 @@ export const CartDropdown = () => {
 
   const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen))
 
-  const { isMobile, isDesktop } = useResponsive()
+  const { isDesktop } = useResponsive()
 
   return (
     <StyledCartDropdown>
-      {isMobile ? (
+      {!isDesktop ? (
         <StyledCartCounterButton as={Link} to="/cart">
           {cartCount > 99 ? '99+' : cartCount}
         </StyledCartCounterButton>
