@@ -5,6 +5,7 @@ import { CategoryCard } from '../category-card'
 
 import { Container, Row, Column } from '../grid'
 import { StyledDirectory, StyledDirectoryTitle } from './styles'
+import clsx from 'clsx'
 
 export type DirectoryCategory = {
   id: Key
@@ -30,7 +31,7 @@ const categories: DirectoryCategory[] = [
 
 export const Directory = () => {
   return (
-    <StyledDirectory>
+    <StyledDirectory className={clsx('directory')}>
       <Container>
         <Row justifyContent="center">
           <Column sm={4} md={10} lg={8}>
