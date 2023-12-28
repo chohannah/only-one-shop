@@ -36,12 +36,9 @@ export const Collections = () => {
               sm={4}
               md={pathname === '/' ? 4 : 6}
               lg={pathname === '/' ? 4 : 6}
+              key={item}
             >
-              <StyledCollectionsLinkCard
-                as={Link}
-                to={`/collections/${item}`}
-                key={item}
-              >
+              <StyledCollectionsLinkCard as={Link} to={`/collections/${item}`}>
                 <StyledCollectionsLinkCardImageButton>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/collections/${item}/hero.jpg`}
@@ -49,11 +46,7 @@ export const Collections = () => {
                   />
                 </StyledCollectionsLinkCardImageButton>
 
-                <Button
-                  to={`/collections/${item}`}
-                  variant="underlined"
-                  size={isMobile ? 24 : 34}
-                >
+                <Button variant="underlined" size={isMobile ? 24 : 34}>
                   {collectionsMap[item].linkTitle}
                 </Button>
               </StyledCollectionsLinkCard>
