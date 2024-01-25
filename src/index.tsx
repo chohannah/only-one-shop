@@ -14,8 +14,6 @@ import { GlobalStyle } from './globalStyles'
 import { Elements } from '@stripe/react-stripe-js'
 import { stripePromise } from './utils/stripe/stripe.utils'
 
-// import reportWebVitals from "./reportWebVitals";
-
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
