@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Balancer from 'react-wrap-balancer'
 
 import { useResponsive } from '../../hooks'
-import { collectionsMap } from '../collections-map'
+import { navMap } from '../nav-map'
 
 import { SectionHeader } from '../section-header'
 
@@ -20,7 +20,7 @@ import {
 } from './styles'
 
 export const Collections = () => {
-  const collectionsList = Object.keys(collectionsMap)
+  const collectionsList = Object.keys(navMap.navMenu.sideProducts)
   let pathname = window.location.pathname
 
   const { isMobile } = useResponsive()
@@ -47,7 +47,7 @@ export const Collections = () => {
                 </StyledCollectionsLinkCardImageButton>
 
                 <Button variant="underlined" size={isMobile ? 24 : 34}>
-                  {collectionsMap[item].linkTitle}
+                  {navMap.navMenu.sideProducts[item]}
                 </Button>
               </StyledCollectionsLinkCard>
             </Column>
