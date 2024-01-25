@@ -24,7 +24,7 @@ import {
   query,
   getDocs,
   QueryDocumentSnapshot,
-  orderBy,
+  // orderBy,
 } from 'firebase/firestore'
 
 import { Category } from '../../store/categories/category.types'
@@ -43,12 +43,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 // const firestore = getFirestore(app)
-// const analytics = getAnalytics(app)
 const googleProvider = new GoogleAuthProvider()
 googleProvider.setCustomParameters({
   prompt: 'select_account',
 })
 
+// auth and firestore instance creation
 export const auth = getAuth()
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
 export const signInWithGoogleRedirect = () =>
@@ -60,6 +60,7 @@ export type ObjectToAdd = {
   title: string
 }
 
+// add multiple documents to a Firestore collection
 export const addCollectionAndDocuments = async <T extends ObjectToAdd>(
   collectionKey: string,
   objectsToAdd: T[]
@@ -97,6 +98,7 @@ export const addCollectionAndDocuments = async <T extends ObjectToAdd>(
 //   })
 // })
 
+// retrieve documents from 'categories' collection in Firestore and returns them as an array of 'category'
 export const getCategoriesAndDocuments = async (): Promise<Category[]> => {
   const collectionRef = collection(db, 'categories')
   const q = query(collectionRef)
@@ -116,6 +118,7 @@ export type UserData = {
   email: string
 }
 
+// create a user document in Firestore when a user logs in
 export const createUserDocumentFromAuth = async (
   userAuth: User,
   additionalInformation = {} as AdditionalInformation
@@ -148,6 +151,7 @@ export const createUserDocumentFromAuth = async (
   return userSnapshot as QueryDocumentSnapshot<UserData>
 }
 
+// create a user using email and password
 export const createAuthWithEmailAndPassword = async (
   email: string,
   password: string
@@ -156,6 +160,7 @@ export const createAuthWithEmailAndPassword = async (
   return await createUserWithEmailAndPassword(auth, email, password)
 }
 
+// authenticate a user using email and password
 export const signInAuthWithEmailAndPassword = async (
   email: string,
   password: string
@@ -164,11 +169,14 @@ export const signInAuthWithEmailAndPassword = async (
   return await signInWithEmailAndPassword(auth, email, password)
 }
 
+// log out the user
 export const signOutUser = async () => await signOut(auth)
 
+// invoke a callback function whenever the user's login state changes
 export const onAuthStateChangedListener = (callback: NextOrObserver<User>) =>
   onAuthStateChanged(auth, callback)
 
+// returns the current user
 export const getCurrentUser = (): Promise<User | null> => {
   return new Promise((resolve, reject) => {
     const unsubscribe = onAuthStateChanged(
