@@ -44,6 +44,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
           >
             <NavLink to={`${menuItem}`}>All</NavLink>
           </StyledGnbNavDropdownNavListItem>
+
           {dropdownMenuList.map((item) => (
             <StyledGnbNavDropdownNavListItem
               key={item}
@@ -88,7 +89,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
               </StyledGnbNavDropdownLinkCardImage>
 
               <Button to={`${menuItem}/${menu}`} variant="underlined">
-                {navMap.navMenu.sideProducts[menu][0]}
+                {navMap.navMenu.sideProducts[menu]}
               </Button>
             </StyledGnbNavDropdownLinkCard>
           ))}
@@ -111,7 +112,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({
                 type="button"
                 variant="underlined"
               >
-                {navMap.navMenu.sideMagazine[menu][0]}
+                {navMap.navMenu.sideMagazine[menu]}
               </Button>
             </StyledGnbNavDropdownLinkCard>
           ))}

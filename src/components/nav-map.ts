@@ -11,10 +11,10 @@ export type NavMap = {
       [key: string]: string
     }
     sideProducts: {
-      [key: string]: string[]
+      [key: string]: string
     }
     sideMagazine: {
-      [key: string]: string[]
+      [key: string]: string
     }
   }
 }
@@ -54,12 +54,12 @@ export const navMap: NavMap = {
       automotive: 'Automotive',
     },
     sideProducts: {
-      bauhaus: ['Bauhaus Collections'],
-      braun: ['Braun Collections'],
+      bauhaus: 'Bauhaus Collections',
+      braun: 'Braun Collections',
     },
     sideMagazine: {
-      'vintage-land-rovers': ['Vintage Land Rovers in style'],
-      designers: ['Designers'],
+      'vintage-land-rovers': 'Vintage Land Rovers in style',
+      designers: 'Designers',
     },
   },
 }
